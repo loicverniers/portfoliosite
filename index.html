@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Snelle, minimalistische websites voor lokale bedrijven die resultaat willen zonder gedoe."
+    />
+    <title>Websites die stil verkopen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <nav class="nav container" aria-label="Hoofdnavigatie">
+        <a class="brand" href="#home" aria-label="Naar home">Loic Studio</a>
+        <button class="nav-toggle" type="button" aria-label="Menu openen" data-nav-toggle>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-menu" data-nav-menu>
+          <a href="#home">Home</a>
+          <a href="#diensten">Diensten</a>
+          <a href="#aanbod">Aanbod</a>
+          <a href="#werk">Werk</a>
+          <a href="#over">Over</a>
+          <a href="#contact">Contact</a>
+          <a class="button button-small" href="#contact">Start project</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-dark" id="home">
+        <div class="hero-inner container">
+          <p class="eyebrow reveal">Minimal webdesign voor lokale bedrijven</p>
+          <h1 class="reveal">Websites die stil verkopen.</h1>
+          <p class="hero-copy reveal">
+            Ik ontwerp en bouw snelle, minimalistische websites voor lokale bedrijven die
+            resultaat willen zonder gedoe.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="button" href="#werk">Bekijk mijn werk</a>
+            <a class="button button-secondary" href="#contact">Start een project</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="diensten" aria-labelledby="diensten-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Diensten</p>
+            <h2 id="diensten-title">Duidelijk werk. Sterke uitvoering.</h2>
+          </div>
+          <div class="services-grid">
+            <article class="service-card reveal">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5.5h16v13H4z" />
+                <path d="M4 9h16" />
+                <path d="M8 14h4" />
+              </svg>
+              <h3>Websites op maat</h3>
+              <p>Van design tot code, volledig afgestemd op jouw bedrijf.</p>
+            </article>
+            <article class="service-card reveal">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v3" />
+                <path d="M12 18v3" />
+                <path d="M4.2 7.5l2.6 1.5" />
+                <path d="M17.2 15l2.6 1.5" />
+                <path d="M4.2 16.5l2.6-1.5" />
+                <path d="M17.2 9l2.6-1.5" />
+                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" />
+              </svg>
+              <h3>Onderhoud & updates</h3>
+              <p>Je website blijft snel, veilig en up-to-date.</p>
+            </article>
+            <article class="service-card reveal">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 18.5h12a4 4 0 0 0 .5-8 6 6 0 0 0-11.7-1.6A4.8 4.8 0 0 0 6 18.5z" />
+                <path d="M9 14h6" />
+              </svg>
+              <h3>Hosting & support</h3>
+              <p>Alles draait stabiel, zonder dat jij iets moet doen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="aanbod" aria-labelledby="aanbod-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow dark">Aanbod</p>
+            <h2 id="aanbod-title">Kies wat bij je bedrijf past.</h2>
+          </div>
+          <div class="offer-grid">
+            <article class="offer-card reveal">
+              <h3>Eenmalige website</h3>
+              <p>Alles wat je nodig hebt om online te starten:</p>
+              <ul>
+                <li>Design op maat</li>
+                <li>Snelle development</li>
+                <li>Volledige oplevering</li>
+              </ul>
+              <a class="button" href="#contact">Start een project</a>
+            </article>
+            <article class="offer-card offer-card-accent reveal">
+              <h3>Abonnement</h3>
+              <p>Voor bedrijven die geen zorgen willen:</p>
+              <ul>
+                <li>Hosting inbegrepen</li>
+                <li>Doorlopende updates</li>
+                <li>Persoonlijke support</li>
+              </ul>
+              <a class="button button-dark" href="#contact">Bekijk opties</a>
+            </article>
+          </div>
+
+          <div class="extras reveal" aria-label="Extra opties">
+            <p>Extra opties</p>
+            <ul>
+              <li>Professionele fotografie</li>
+              <li>Direct contact via e-mail</li>
+              <li>Basis SEO optimalisatie</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="werk" aria-labelledby="werk-title">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Portfolio</p>
+            <h2 id="werk-title">Selectie van recent werk</h2>
+          </div>
+          <div class="portfolio-grid">
+            <a
+              class="project-card reveal"
+              href="../Geike%20Verniers%20Gallery%20Site/geike-verniers-gallery-site/index.html"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Geike Verniers Photography Gallery"
+            >
+              <img
+                src="../Geike%20Verniers%20Gallery%20Site/geike-verniers-gallery-site/assets/web/gallery-wall.webp"
+                alt="Gallery wall uit de Geike Verniers Photography Gallery site"
+                loading="lazy"
+              />
+              <span>Geike Verniers Photography Gallery</span>
+            </a>
+            <a
+              class="project-card reveal"
+              href="../angelique%27s%20site/index.html"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open Angelique Kunstgalerij"
+            >
+              <img
+                src="../angelique%27s%20site/assets/paintings/painting-01-dsc05474-detail.jpg"
+                alt="Schilderij uit de Angelique Kunstgalerij site"
+                loading="lazy"
+              />
+              <span>Angelique Kunstgalerij</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark about" id="over" aria-labelledby="over-title">
+        <div class="container about-grid">
+          <div class="about-image reveal">
+            <img
+              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80&fm=webp"
+              alt="Rustige werkplek met laptop en notities"
+              loading="lazy"
+            />
+          </div>
+          <div class="about-copy reveal">
+            <p class="eyebrow">Over mij</p>
+            <h2 id="over-title">Direct, zonder lagen of gedoe.</h2>
+            <p>
+              Je spreekt met één persoon die alles bouwt.
+            </p>
+            <p>
+              Mijn focus ligt op snelheid, duidelijkheid en resultaat. Geen overbodige
+              features, alleen wat werkt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light contact" id="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <div class="contact-panel reveal">
+            <p class="eyebrow dark">Contact</p>
+            <h2 id="contact-title">Start een project</h2>
+            <form
+              class="contact-form"
+              action="https://formsubmit.co/loicverniers@outlook.be"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="Nieuw project via Loic Studio" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <label>
+                <span>Naam</span>
+                <input type="text" name="name" autocomplete="name" required />
+              </label>
+              <label>
+                <span>E-mail</span>
+                <input type="email" name="email" autocomplete="email" required />
+              </label>
+              <label>
+                <span>Bericht</span>
+                <textarea name="message" rows="5" required></textarea>
+              </label>
+              <button class="button" type="submit">Verstuur bericht</button>
+            </form>
+            <div class="contact-details" aria-label="Directe contactgegevens">
+              <a href="tel:+32000000000">+32 000 00 00 00</a>
+              <a href="mailto:loicverniers@outlook.be">loicverniers@outlook.be</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 Loic Studio — Alle rechten voorbehouden</p>
+        <div>
+          <a href="#contact">Privacybeleid</a>
+          <a href="#contact">Algemene voorwaarden</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
