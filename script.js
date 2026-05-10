@@ -1,22 +1,45 @@
+document.documentElement.classList.add("can-reveal");
+
 const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 const revealItems = document.querySelectorAll(".reveal");
+
 let lastScrollY = window.scrollY;
+let ticking = false;
 
 const setHeaderState = () => {
   const currentScrollY = window.scrollY;
   const isScrollingDown = currentScrollY > lastScrollY;
   const navIsOpen = navMenu.classList.contains("is-open");
 
-  header.classList.toggle("is-scrolled", currentScrollY > 24);
-  header.classList.toggle("is-hidden", isScrollingDown && currentScrollY > 120 && !navIsOpen);
+  header.classList.toggle("is-scrolled", currentScrollY > 18);
+  header.classList.toggle("is-hidden", isScrollingDown && currentScrollY > 140 && !navIsOpen);
 
   lastScrollY = currentScrollY;
 };
 
+const closeMenu = () => {
+  navMenu.classList.remove("is-open");
+  navToggle.classList.remove("is-active");
+  header.classList.remove("is-open");
+  document.body.classList.remove("nav-open");
+  navToggle.setAttribute("aria-label", "Menu openen");
+};
+
+const onScroll = () => {
+  if (ticking) return;
+
+  window.requestAnimationFrame(() => {
+    setHeaderState();
+    ticking = false;
+  });
+
+  ticking = true;
+};
+
 setHeaderState();
-window.addEventListener("scroll", setHeaderState, { passive: true });
+window.addEventListener("scroll", onScroll, { passive: true });
 
 navToggle.addEventListener("click", () => {
   const isOpen = navMenu.classList.toggle("is-open");
@@ -27,13 +50,11 @@ navToggle.addEventListener("click", () => {
 });
 
 navMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("is-open");
-    navToggle.classList.remove("is-active");
-    header.classList.remove("is-open");
-    document.body.classList.remove("nav-open");
-    navToggle.setAttribute("aria-label", "Menu openen");
-  });
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu();
 });
 
 const revealObserver = new IntersectionObserver(
@@ -46,8 +67,8 @@ const revealObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.16,
-    rootMargin: "0px 0px -40px",
+    threshold: 0.14,
+    rootMargin: "0px 0px -42px",
   }
 );
 

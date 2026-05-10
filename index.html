@@ -5,244 +5,315 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Snelle, minimalistische websites voor lokale bedrijven die resultaat willen zonder gedoe."
+      content="LV Sites maakt snelle, menselijke websites voor zelfstandigen, artiesten en lokale bedrijven. Bekijk portfolio, aanpak en contact."
     />
-    <title>Websites die stil verkopen</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>LV Sites | Menselijke websites op maat</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" data-header>
       <nav class="nav container" aria-label="Hoofdnavigatie">
-        <a class="brand" href="#home" aria-label="Naar home">Loic Studio</a>
+        <a class="brand" href="#home" aria-label="LV Sites home">
+          <span class="brand-mark">LV</span>
+          <span class="brand-text">LV Sites</span>
+        </a>
+
         <button class="nav-toggle" type="button" aria-label="Menu openen" data-nav-toggle>
           <span></span>
           <span></span>
         </button>
+
         <div class="nav-menu" data-nav-menu>
-          <a href="#home">Home</a>
-          <a href="#diensten">Diensten</a>
-          <a href="#aanbod">Aanbod</a>
           <a href="#werk">Werk</a>
+          <a href="#aanpak">Aanpak</a>
+          <a href="#diensten">Diensten</a>
           <a href="#over">Over</a>
-          <a href="#contact">Contact</a>
-          <a class="button button-small" href="#contact">Start project</a>
+          <a class="button button-small" href="#contact">Project starten</a>
         </div>
       </nav>
     </header>
 
-    <main>
-      <section class="hero section-dark" id="home">
-        <div class="hero-inner container">
-          <p class="eyebrow reveal">Minimal webdesign voor lokale bedrijven</p>
-          <h1 class="reveal">Websites die stil verkopen.</h1>
-          <p class="hero-copy reveal">
-            Ik ontwerp en bouw snelle, minimalistische websites voor lokale bedrijven die
-            resultaat willen zonder gedoe.
-          </p>
-          <div class="hero-actions reveal">
-            <a class="button" href="#werk">Bekijk mijn werk</a>
-            <a class="button button-secondary" href="#contact">Start een project</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="diensten" aria-labelledby="diensten-title">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Diensten</p>
-            <h2 id="diensten-title">Duidelijk werk. Sterke uitvoering.</h2>
-          </div>
-          <div class="services-grid">
-            <article class="service-card reveal">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 5.5h16v13H4z" />
-                <path d="M4 9h16" />
-                <path d="M8 14h4" />
-              </svg>
-              <h3>Websites op maat</h3>
-              <p>Van design tot code, volledig afgestemd op jouw bedrijf.</p>
-            </article>
-            <article class="service-card reveal">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v3" />
-                <path d="M12 18v3" />
-                <path d="M4.2 7.5l2.6 1.5" />
-                <path d="M17.2 15l2.6 1.5" />
-                <path d="M4.2 16.5l2.6-1.5" />
-                <path d="M17.2 9l2.6-1.5" />
-                <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z" />
-              </svg>
-              <h3>Onderhoud & updates</h3>
-              <p>Je website blijft snel, veilig en up-to-date.</p>
-            </article>
-            <article class="service-card reveal">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M6 18.5h12a4 4 0 0 0 .5-8 6 6 0 0 0-11.7-1.6A4.8 4.8 0 0 0 6 18.5z" />
-                <path d="M9 14h6" />
-              </svg>
-              <h3>Hosting & support</h3>
-              <p>Alles draait stabiel, zonder dat jij iets moet doen.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-light" id="aanbod" aria-labelledby="aanbod-title">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow dark">Aanbod</p>
-            <h2 id="aanbod-title">Kies wat bij je bedrijf past.</h2>
-          </div>
-          <div class="offer-grid">
-            <article class="offer-card reveal">
-              <h3>Eenmalige website</h3>
-              <p>Alles wat je nodig hebt om online te starten:</p>
-              <ul>
-                <li>Design op maat</li>
-                <li>Snelle development</li>
-                <li>Volledige oplevering</li>
-              </ul>
-              <a class="button" href="#contact">Start een project</a>
-            </article>
-            <article class="offer-card offer-card-accent reveal">
-              <h3>Abonnement</h3>
-              <p>Voor bedrijven die geen zorgen willen:</p>
-              <ul>
-                <li>Hosting inbegrepen</li>
-                <li>Doorlopende updates</li>
-                <li>Persoonlijke support</li>
-              </ul>
-              <a class="button button-dark" href="#contact">Bekijk opties</a>
-            </article>
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow reveal">Portfolio van een websitebouwer uit Belgie</p>
+            <h1 id="hero-title" class="reveal">
+              Websites die menselijk voelen, snel laden en serieus werk tonen.
+            </h1>
+            <p class="hero-lead reveal">
+              LV Sites ontwerpt en bouwt websites voor zelfstandigen, makers en lokale bedrijven.
+              Geen opgeblazen AI-taal, geen generieke template-look. Wel een site die duidelijk
+              zegt wie je bent, wat je doet en waarom iemand jou moet contacteren.
+            </p>
+            <div class="hero-actions reveal">
+              <a class="button" href="#werk">Bekijk portfolio</a>
+              <a class="button button-secondary" href="#aanpak">Zie mijn aanpak</a>
+            </div>
           </div>
 
-          <div class="extras reveal" aria-label="Extra opties">
-            <p>Extra opties</p>
-            <ul>
-              <li>Professionele fotografie</li>
-              <li>Direct contact via e-mail</li>
-              <li>Basis SEO optimalisatie</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-dark" id="werk" aria-labelledby="werk-title">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Portfolio</p>
-            <h2 id="werk-title">Selectie van recent werk</h2>
-          </div>
-          <div class="portfolio-grid">
+          <div class="hero-board reveal" aria-label="Preview van gemaakte websites">
             <a
-              class="project-card reveal"
+              class="browser-card browser-card-large"
               href="../Geike%20Verniers%20Gallery%20Site/geike-verniers-gallery-site/index.html"
               target="_blank"
               rel="noreferrer"
-              aria-label="Open Geike Verniers Photography Gallery"
             >
+              <span class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></span>
               <img
                 src="../Geike%20Verniers%20Gallery%20Site/geike-verniers-gallery-site/assets/web/gallery-wall.webp"
-                alt="Gallery wall uit de Geike Verniers Photography Gallery site"
-                loading="lazy"
+                width="900"
+                height="620"
+                alt="Websitepreview van Geike Verniers Photography Gallery"
               />
-              <span>Geike Verniers Photography Gallery</span>
+              <strong>Geike Verniers</strong>
             </a>
+
             <a
-              class="project-card reveal"
+              class="browser-card browser-card-small"
               href="../angelique%27s%20site/index.html"
               target="_blank"
               rel="noreferrer"
-              aria-label="Open Angelique Kunstgalerij"
             >
+              <span class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></span>
               <img
-                src="../angelique%27s%20site/assets/paintings/painting-01-dsc05474-detail.jpg"
-                alt="Schilderij uit de Angelique Kunstgalerij site"
-                loading="lazy"
+                src="../angelique%27s%20site/assets/schilderijen/DSC05474.jpg"
+                width="620"
+                height="780"
+                alt="Websitepreview van Angelique kunstgalerij"
               />
-              <span>Angelique Kunstgalerij</span>
+              <strong>Angelique</strong>
             </a>
           </div>
         </div>
+
+        <div class="container proof-strip reveal" aria-label="Kernkwaliteiten">
+          <span>2 echte portfolio-sites</span>
+          <span>Responsive vanaf de eerste schets</span>
+          <span>Heldere copy zonder gladde praat</span>
+          <span>Contactflow die niet verstopt zit</span>
+        </div>
       </section>
 
-      <section class="section section-dark about" id="over" aria-labelledby="over-title">
-        <div class="container about-grid">
-          <div class="about-image reveal">
+      <section class="section section-paper" id="werk" aria-labelledby="werk-title">
+        <div class="container section-intro">
+          <p class="eyebrow dark reveal">Gemaakt werk</p>
+          <h2 id="werk-title" class="reveal">Portfolio dat bewijst wat de site belooft.</h2>
+          <p class="intro reveal">
+            Een portfolio-site moet niet doen alsof. Daarom staan hier echte projecten met echte
+            beelden en klikbare links. Nieuwe cases kun je later simpel toevoegen zonder de
+            structuur van de pagina te breken.
+          </p>
+        </div>
+
+        <div class="container work-grid">
+          <a
+            class="work-card work-card-wide reveal"
+            href="../Geike%20Verniers%20Gallery%20Site/geike-verniers-gallery-site/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img
-              src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80&fm=webp"
-              alt="Rustige werkplek met laptop en notities"
+              src="../Geike%20Verniers%20Gallery%20Site/geike-verniers-gallery-site/assets/web/gallery-wall.webp"
+              width="1200"
+              height="760"
+              alt="Gallery wall van de Geike Verniers website"
               loading="lazy"
             />
+            <span class="work-meta">Photography gallery</span>
+            <div class="work-content">
+              <h3>Geike Verniers</h3>
+              <p>Een visuele galerij waar fotografie het tempo bepaalt en de interface stil blijft.</p>
+            </div>
+          </a>
+
+          <a
+            class="work-card reveal"
+            href="../angelique%27s%20site/index.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="../angelique%27s%20site/assets/schilderijen/DSC05474.jpg"
+              width="900"
+              height="1100"
+              alt="Schilderij uit de Angelique kunstgalerij website"
+              loading="lazy"
+            />
+            <span class="work-meta">Kunstgalerij</span>
+            <div class="work-content">
+              <h3>Angelique</h3>
+              <p>Een rustige kunstsite met aandacht voor beeld, detail en eenvoudige navigatie.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section section-ink" id="aanpak" aria-labelledby="aanpak-title">
+        <div class="container split">
+          <div>
+            <p class="eyebrow reveal">Geen AI slop</p>
+            <h2 id="aanpak-title" class="reveal">
+              Een website voelt menselijk wanneer de keuzes controleerbaar zijn.
+            </h2>
           </div>
+          <div class="human-list reveal">
+            <p>
+              Mensen vertrouwen geen website omdat die veel woorden gebruikt. Ze vertrouwen een
+              website omdat ze echte signalen zien: duidelijk werk, consistente details, heldere
+              taal, bereikbaarheid en een ontwerp dat bij het bedrijf past.
+            </p>
+            <ul>
+              <li>Echte projectbeelden in plaats van stock-vulling.</li>
+              <li>Concrete zinnen: wat je doet, voor wie, en wat de volgende stap is.</li>
+              <li>Rustige typografie, duidelijke secties en genoeg witruimte om te scannen.</li>
+              <li>Beweging alleen waar ze helpt: feedback, ritme, focus en niet als truc.</li>
+              <li>Prestatiegericht gebouwd: lichte CSS, weinig JavaScript, stabiele layouts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container principles">
+          <article class="principle reveal">
+            <span>01</span>
+            <h3>Bewijs voor belofte</h3>
+            <p>Portfolio-links staan vroeg op de pagina. Bezoekers moeten je werk kunnen openen.</p>
+          </article>
+          <article class="principle reveal">
+            <span>02</span>
+            <h3>Menselijke taal</h3>
+            <p>Geen buzzwords. Liever een duidelijke zin die klinkt alsof je hem zelf zou zeggen.</p>
+          </article>
+          <article class="principle reveal">
+            <span>03</span>
+            <h3>Details die kloppen</h3>
+            <p>Focus states, mobiele navigatie, vaste beeldverhoudingen en leesbare contrasten.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-paper" id="diensten" aria-labelledby="diensten-title">
+        <div class="container section-intro narrow">
+          <p class="eyebrow dark reveal">Wat LV Sites maakt</p>
+          <h2 id="diensten-title" class="reveal">Alles wat nodig is voor een sterke eerste versie.</h2>
+        </div>
+
+        <div class="container services-grid">
+          <article class="service-card reveal">
+            <span>Design</span>
+            <h3>Structuur en stijl</h3>
+            <p>
+              Ik zet je verhaal om naar secties die logisch lezen: hero, bewijs, diensten, cases,
+              proces en contact.
+            </p>
+          </article>
+          <article class="service-card reveal">
+            <span>Code</span>
+            <h3>Snelle frontend</h3>
+            <p>
+              Responsive HTML, CSS en JavaScript met aandacht voor laadtijd, toegankelijkheid en
+              onderhoudbare bestanden.
+            </p>
+          </article>
+          <article class="service-card reveal">
+            <span>Launch</span>
+            <h3>Online zetten</h3>
+            <p>
+              Ik help met de laatste stap: formulieren, basis SEO, meta-informatie en een nette
+              oplevering zodat je zelf weet wat waar staat.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-lines" id="over" aria-labelledby="over-title">
+        <div class="container about-grid">
+          <div class="about-sticky">
+            <p class="eyebrow dark reveal">Over LV Sites</p>
+            <h2 id="over-title" class="reveal">Klein gebouwd, persoonlijk begeleid.</h2>
+          </div>
+
           <div class="about-copy reveal">
-            <p class="eyebrow">Over mij</p>
-            <h2 id="over-title">Direct, zonder lagen of gedoe.</h2>
             <p>
-              Je spreekt met één persoon die alles bouwt.
+              LV Sites is bewust persoonlijk. Je praat niet met een laag projectmanagers of een
+              anonieme tool, maar met iemand die je site ontwerpt, bouwt en mee nadenkt over wat
+              de bezoeker moet begrijpen.
             </p>
             <p>
-              Mijn focus ligt op snelheid, duidelijkheid en resultaat. Geen overbodige
-              features, alleen wat werkt.
+              Mijn smaak is helder: websites moeten snel, geloofwaardig en visueel verzorgd zijn.
+              Het design mag karakter hebben, zolang de bezoeker nooit moet raden waar hij is of
+              wat hij kan doen.
             </p>
+
+            <div class="process">
+              <div>
+                <span>Stap 1</span>
+                <strong>Richting kiezen</strong>
+                <p>Doel, doelgroep, stijl, voorbeelden en de belangrijkste inhoud.</p>
+              </div>
+              <div>
+                <span>Stap 2</span>
+                <strong>Bouwen en verfijnen</strong>
+                <p>Een werkende pagina, getest op mobiel en desktop, met echte content.</p>
+              </div>
+              <div>
+                <span>Stap 3</span>
+                <strong>Opleveren</strong>
+                <p>Laatste feedback, formuliercheck, basis SEO en duidelijke uitleg.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-light contact" id="contact" aria-labelledby="contact-title">
-        <div class="container">
-          <div class="contact-panel reveal">
-            <p class="eyebrow dark">Contact</p>
-            <h2 id="contact-title">Start een project</h2>
-            <form
-              class="contact-form"
-              action="https://formsubmit.co/loicverniers@outlook.be"
-              method="POST"
-            >
-              <input type="hidden" name="_subject" value="Nieuw project via Loic Studio" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <label>
-                <span>Naam</span>
-                <input type="text" name="name" autocomplete="name" required />
-              </label>
-              <label>
-                <span>E-mail</span>
-                <input type="email" name="email" autocomplete="email" required />
-              </label>
-              <label>
-                <span>Bericht</span>
-                <textarea name="message" rows="5" required></textarea>
-              </label>
-              <button class="button" type="submit">Verstuur bericht</button>
-            </form>
-            <div class="contact-details" aria-label="Directe contactgegevens">
-              <a href="tel:+32000000000">+32 000 00 00 00</a>
-              <a href="mailto:loicverniers@outlook.be">loicverniers@outlook.be</a>
-            </div>
+      <section class="section section-contact" id="contact" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Heb je een site nodig die niet klinkt alsof hij uit een prompt komt?</h2>
+            <p>
+              Stuur je idee, je bestaande website of een paar voorbeeldlinks. Ik antwoord met wat
+              ik zou bouwen, welke inhoud ik nodig heb en hoe we het concreet kunnen aanpakken.
+            </p>
+            <a class="mail-link" href="mailto:loicverniers@outlook.be">loicverniers@outlook.be</a>
           </div>
+
+          <form
+            class="contact-form reveal"
+            action="https://formsubmit.co/loicverniers@outlook.be"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nieuw project via LV Sites" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <label>
+              <span>Naam</span>
+              <input type="text" name="name" autocomplete="name" required />
+            </label>
+            <label>
+              <span>E-mail</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <label>
+              <span>Wat wil je laten maken?</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Bijvoorbeeld: een portfolio, bedrijfssite, redesign of landingspagina."
+                required
+              ></textarea>
+            </label>
+            <button class="button" type="submit">Verstuur bericht</button>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>© 2026 Loic Studio — Alle rechten voorbehouden</p>
-        <div>
-          <a href="#contact">Privacybeleid</a>
-          <a href="#contact">Algemene voorwaarden</a>
-        </div>
+        <p>&copy; 2026 LV Sites. Websites op maat.</p>
+        <a href="#home">Terug naar boven</a>
       </div>
     </footer>
 
