@@ -1,10 +1,8 @@
 const root = document.documentElement;
-const body = document.body;
 const canvas = document.querySelector("[data-void]");
 const ctx = canvas.getContext("2d");
 const cursor = document.querySelector("[data-cursor]");
 const progress = document.querySelector("[data-progress]");
-const calmButton = document.querySelector("[data-calm]");
 const worksScene = document.querySelector(".scene-works");
 const worksTrack = document.querySelector("[data-track]");
 const magneticItems = document.querySelectorAll(".magnetic");
@@ -159,13 +157,6 @@ projectPanels.forEach((panel) => {
       image.style.setProperty("--hover-y", `${y}%`);
     }
   });
-});
-
-calmButton.addEventListener("click", () => {
-  body.classList.toggle("is-calm");
-  calmButton.innerHTML = body.classList.contains("is-calm")
-    ? "<span></span> Motion on"
-    : "<span></span> Calm mode";
 });
 
 window.addEventListener("resize", () => {

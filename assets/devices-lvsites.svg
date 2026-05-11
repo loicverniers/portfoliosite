@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
+  <title id="title">LVSites MacBook and iPhone mockup</title>
+  <desc id="desc">A luxury dark MacBook and iPhone product-style mockup with LVSites on both screens.</desc>
+  <defs>
+    <radialGradient id="blueGlow" cx="65%" cy="35%" r="58%">
+      <stop offset="0%" stop-color="#5B8CFF" stop-opacity=".55"/>
+      <stop offset="45%" stop-color="#5B8CFF" stop-opacity=".13"/>
+      <stop offset="100%" stop-color="#5B8CFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="goldGlow" cx="34%" cy="76%" r="50%">
+      <stop offset="0%" stop-color="#C8AD78" stop-opacity=".38"/>
+      <stop offset="100%" stop-color="#C8AD78" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5E0D5"/>
+      <stop offset="18%" stop-color="#7C7E86"/>
+      <stop offset="48%" stop-color="#262932"/>
+      <stop offset="72%" stop-color="#AFA899"/>
+      <stop offset="100%" stop-color="#30333D"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#13151D"/>
+      <stop offset="42%" stop-color="#090A0D"/>
+      <stop offset="100%" stop-color="#1C2234"/>
+    </linearGradient>
+    <linearGradient id="phoneScreen" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#19131A"/>
+      <stop offset="46%" stop-color="#0B0C10"/>
+      <stop offset="100%" stop-color="#18233E"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="42" stdDeviation="38" flood-color="#000000" flood-opacity=".56"/>
+    </filter>
+    <filter id="screenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.36 0 0 0 0 0.55 0 0 0 0 1 0 0 0 .55 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <clipPath id="laptopClip">
+      <rect x="278" y="179" width="832" height="516" rx="28"/>
+    </clipPath>
+    <clipPath id="phoneClip">
+      <rect x="190" y="426" width="240" height="424" rx="42"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1400" height="980" fill="none"/>
+  <ellipse cx="780" cy="494" rx="520" ry="330" fill="url(#blueGlow)"/>
+  <ellipse cx="430" cy="700" rx="360" ry="210" fill="url(#goldGlow)"/>
+
+  <g filter="url(#softShadow)" transform="rotate(-7 725 525)">
+    <path d="M250 152h880c28 0 50 22 50 50v540c0 27-22 50-50 50H250c-28 0-50-23-50-50V202c0-28 22-50 50-50Z" fill="#161820"/>
+    <path d="M263 166h854c25 0 45 20 45 45v511c0 25-20 45-45 45H263c-25 0-45-20-45-45V211c0-25 20-45 45-45Z" fill="#0A0B0E"/>
+    <rect x="278" y="179" width="832" height="516" rx="28" fill="url(#screen)"/>
+    <g clip-path="url(#laptopClip)">
+      <circle cx="905" cy="256" r="210" fill="#5B8CFF" opacity=".20"/>
+      <circle cx="424" cy="646" r="180" fill="#FF8A4C" opacity=".13"/>
+      <path d="M324 608c110-106 239-145 387-119 122 22 223-1 304-69" fill="none" stroke="#5B8CFF" stroke-width="2" opacity=".38"/>
+      <path d="M326 312h250M326 348h150M326 384h310" stroke="#F4EFE7" stroke-width="2" opacity=".13"/>
+      <rect x="832" y="260" width="190" height="260" rx="95" fill="#F4EFE7" opacity=".88"/>
+      <rect x="856" y="286" width="142" height="214" rx="71" fill="#D8CFBE" opacity=".36"/>
+      <text x="334" y="486" fill="#F4EFE7" font-family="Georgia, 'Times New Roman', serif" font-size="132" font-weight="700" letter-spacing="-10">LVSites</text>
+      <text x="342" y="548" fill="#C8AD78" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" letter-spacing="6">DIGITALE ERVARINGEN</text>
+      <rect x="336" y="592" width="220" height="4" fill="#5B8CFF" opacity=".85"/>
+      <rect x="574" y="592" width="72" height="4" fill="#C8AD78" opacity=".7"/>
+    </g>
+    <path d="M160 790h1060l98 70c12 9 6 28-9 28H69c-16 0-21-21-8-29l99-69Z" fill="url(#metal)"/>
+    <path d="M531 805h318l-22 20H553l-22-20Z" fill="#171920" opacity=".55"/>
+    <path d="M110 872h1170" stroke="#F4EFE7" stroke-opacity=".17"/>
+  </g>
+
+  <g filter="url(#softShadow)" transform="rotate(8 315 640)">
+    <rect x="154" y="386" width="322" height="520" rx="62" fill="#11131A"/>
+    <rect x="174" y="405" width="282" height="482" rx="50" fill="#08090D"/>
+    <rect x="190" y="426" width="240" height="424" rx="42" fill="url(#phoneScreen)"/>
+    <g clip-path="url(#phoneClip)">
+      <circle cx="302" cy="560" r="116" fill="#FF8A4C" opacity=".32"/>
+      <circle cx="416" cy="458" r="130" fill="#5B8CFF" opacity=".22"/>
+      <path d="M218 720c58-74 121-94 190-63" fill="none" stroke="#5B8CFF" stroke-width="2" opacity=".42"/>
+      <text x="220" y="632" fill="#C8AD78" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="3">LV</text>
+      <text x="218" y="690" fill="#F4EFE7" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" letter-spacing="-4">LVSites</text>
+      <text x="222" y="736" fill="#F4EFE7" opacity=".58" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3">DESIGN / CODE</text>
+      <rect x="222" y="762" width="132" height="3" fill="#5B8CFF"/>
+    </g>
+    <rect x="274" y="416" width="82" height="16" rx="8" fill="#050608"/>
+    <circle cx="372" cy="424" r="5" fill="#222832"/>
+    <rect x="248" y="878" width="134" height="5" rx="3" fill="#F4EFE7" opacity=".16"/>
+  </g>
+</svg>
