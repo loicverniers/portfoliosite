@@ -229,14 +229,6 @@ img { display: block; max-width: 100%; }
 
 .service-item:hover { background: var(--dark-surface); }
 
-.service-item .num {
-  font-family: var(--serif);
-  font-size: 0.8rem;
-  color: var(--gold);
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
 .service-item h3 {
   font-family: var(--serif);
   font-size: 1.35rem;
