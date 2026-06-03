@@ -1,238 +1,222 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schoonheidssalon Ingrid — Preview</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schoonheidssalon Ingrid | Wellen</title>
+<meta name="description" content="Schoonheidssalon Ingrid in Wellen. NANNIC facials, manicure, pedicure, epilatie, Gelish, make-up en massage. Hier ben je in goede handen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVIGATION: minimal top bar, NOT pill-shaped -->
-    <nav class="topbar">
-        <div class="topbar-inner">
-            <div class="nav-logo">
-                <span class="logo-mark">S</span>
-                <span class="logo-text">Schoonheidssalon <em>Ingrid</em></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#welkom">Welkom</a></li>
-                <li><a href="#diensten">Diensten</a></li>
-                <li><a href="#over">Over</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-name">Schoonheidssalon Ingrid</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#over">Over ons</a></li>
+      <li><a href="#nieuws">Nieuws</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+3247****388" class="nav-cta">Afspraak</a>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <p class="hero-sub">Schoonheidssalon · Wellen</p>
+    <h1 class="hero-title">Hier ben je<br>in goede handen</h1>
+    <p class="hero-desc">NANNIC facials, manicure, epilatie, Gelish, make-up en ontspannende massages. Kom genieten van professionele verzorging.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Afspraak maken</a>
+      <a href="#diensten" class="btn btn-ghost">Onze diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" class="section services">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Diensten</p>
+      <h2 class="section-title">Wat wij voor u doen</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-emoji">✨</div>
+        <h3>NANNIC Facials</h3>
+        <p>Professionele huidverzorging met NANNIC producten voor een stralende huid.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">💆</div>
+        <h3>NANNIC Deep Skin</h3>
+        <p>Diepe huidverzorging voor een intuïtieve en resultaatgerichte behandeling.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">💅</div>
+        <h3>Manicure</h3>
+        <p>Verzorgde handen en nagels met aandacht voor detail en hygiëne.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">🦶</div>
+        <h3>Pedicure</h3>
+        <p>Verzorgende pedicure voor zachte, gevoete voetjes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">🪒</div>
+        <h3>Epilatie</h3>
+        <p>Bareend epilatie voor glad en zacht resultaat op alle lichaamszones.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">💜</div>
+        <h3>Gelish Gelnagellak</h3>
+        <p>Duurzame Gelish kleuren die lang meegaan en uw nagels beschermen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">💪</div>
+        <h3>Polygel &amp; IBX</h3>
+        <p>Polygel voor sterkere nagels en IBX voor nagelversteviging.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">💄</div>
+        <h3>Make-up</h3>
+        <p>Professionele make-up voor speciale gelegenheden of een alledaagse look.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-emoji">🧘</div>
+        <h3>Lichaamsmassage</h3>
+        <p>Ontspannende massage om lichaam en geest weer in balans te brengen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over" class="section about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">Over ons</p>
+        <h2 class="section-title">Een ontmoetingsplek<br>voor uw welzijn</h2>
+        <p>Welkom bij Schoonheidssalon Ingrid! Hier bent u in goede handen. In mijn salon in Wellen bied ik een breed scala aan schoonheidsbehandelingen aan, altijd met aandacht voor persoonlijke service en optimale resultaten.</p>
+        <p>Ik werk uitsluitend op afspraak zodat ik elke cliënt de tijd kan geven die verdient. Het salon is een plek voor iedereen — mannen zijn ook welkom om zich te laten verzorgen.</p>
+        <p>Op zoek naar een cadeau? U kunt bij mij terecht voor een cadeaubon of een verzorgingsproduct. Ik kijk er naar u te mogen verwelkomen!</p>
+      </div>
+      <div class="about-badges">
+        <div class="badge">
+          <span class="badge-icon">🏆</span>
+          <span class="badge-text">NANNIC Certified Beauty Centre</span>
         </div>
-    </nav>
-
-    <!-- HERO: full-viewport editorial masthead, NOT split, NOT pill-nav -->
-    <section class="hero" id="welkom">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-accent-line"></div>
-            <p class="hero-eyebrow">Schoonheidsspecialiste in Wellen</p>
-            <h1 class="hero-title">Hier ben je<br>in goede handen</h1>
-            <p class="hero-subtitle">Ontspannende verzorgingen met NANNIC, Gelish, Polygel en meer — altijd op afspraak, altijd met zorg.</p>
-            <a href="#contact" class="hero-cta">Maak een afspraak</a>
+        <div class="badge">
+          <span class="badge-icon">⭐</span>
+          <span class="badge-text">Persoonlijke aanpak</span>
         </div>
-        <div class="hero-scroll-hint">
-            <span>Ontdek meer</span>
-            <div class="scroll-line"></div>
+        <div class="badge">
+          <span class="badge-icon">💝</span>
+          <span class="badge-text">Cadeaubonen beschikbaar</span>
         </div>
-    </section>
-
-    <!-- DIENSTEN: spa-menu style, NOT three cards in a row -->
-    <section class="diensten" id="diensten">
-        <div class="container">
-            <div class="section-header">
-                <div class="accent-line-small"></div>
-                <h2>Onze diensten</h2>
-                <p class="section-intro">Bij Schoonheidssalon Ingrid staat persoonlijke aandacht centraal. Elke behandeling wordt afgestemd op jouw behoeften.</p>
-            </div>
-
-            <div class="service-menu">
-                <div class="service-category">
-                    <h3 class="category-title">Gezichtsverzorging</h3>
-                    <div class="service-items">
-                        <div class="service-item">
-                            <span class="service-name">NANNIC Facials</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Gecertificeerd Beauty Centre</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">NANNIC Deep Skin</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Diepe huidverzorging</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">Make-up</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Voor elke gelegenheid</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-category">
-                    <h3 class="category-title">Nagels</h3>
-                    <div class="service-items">
-                        <div class="service-item">
-                            <span class="service-name">Gelish Gelnagellak</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Langhoudende kleur</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">Polygel</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Verlenging & versteviging</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">IBX Nagelversteviging</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Natuurlijke nagels sterker</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">Manicure</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Verzorgde handen</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="service-category">
-                    <h3 class="category-title">Lichaam</h3>
-                    <div class="service-items">
-                        <div class="service-item">
-                            <span class="service-name">Verzorgende Pedicure</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Tot in de puntjes</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">Epilaties</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Zachte huid</span>
-                        </div>
-                        <div class="service-item">
-                            <span class="service-name">Ontspannende Lichaamsmassage</span>
-                            <span class="service-dots"></span>
-                            <span class="service-note">Volledige ontspanning</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cadeau-hint">
-                <p>🎁 <strong>Op zoek naar een cadeau?</strong> Bij ons kun je terecht voor een cadeaubon of een verzorgingsproduct.</p>
-            </div>
+        <div class="badge">
+          <span class="badge-icon">👫</span>
+          <span class="badge-text">Mannen welkom</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- OVER: editorial two-column with vertical accent, NOT split-hero -->
-    <section class="over" id="over">
-        <div class="container">
-            <div class="over-layout">
-                <div class="over-image-col">
-                    <div class="over-image-frame">
-                        <div class="over-image-placeholder">
-                            <div class="placeholder-inner">
-                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                </svg>
-                                <span>Uw schoonheidssalon</span>
-                            </div>
-                        </div>
-                        <div class="frame-accent"></div>
-                    </div>
-                </div>
-                <div class="over-text-col">
-                    <div class="accent-line-small"></div>
-                    <h2>Ingrid Ghijsens</h2>
-                    <p class="over-lead">Schoonheidssalon Ingrid in Wellen is de perfecte plek om te komen genieten van ontspannende verzorgingen.</p>
-                    <p>Ik werk uitsluitend op afspraak, zodat ik voor iedereen de tijd en aandacht kan nemen die verdient. Of je nu komt voor een NANNIC facial, een nieuwe set nagels of een ontspannende massage — je bent bij mij verzekerd van een royale behandeling met optimaal resultaat voor een correcte prijs.</p>
-                    <p>Manieren zijn natuurlijk ook welkom om zich te laten verzorgen!</p>
-                    <div class="over-detail">
-                        <div class="detail-item">
-                            <span class="detail-label">Locatie</span>
-                            <span class="detail-value">Langenakker 82, 3830 Wellen</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Werking</span>
-                            <span class="detail-value">Enkel op afspraak</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Certificering</span>
-                            <span class="detail-value">NANNIC Certified Beauty Centre</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- NIEUWS -->
+<section id="nieuws" class="section news">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Nieuws</p>
+      <h2 class="section-title">Laatste updates</h2>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <span class="news-date">31 juli 2017</span>
+        <h3>NANNIC Certified Beauty Centre</h3>
+        <p>Vanaf nu werken we met NANNIC huidverzorgingsproducten voor optimale resultaten.</p>
+      </div>
+      <div class="news-item">
+        <span class="news-date">14 mei</span>
+        <h3>Moederdag</h3>
+        <p>Verras mama met een verzorging of cadeaubon — de perfecte aandacht voor haar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Kom langs of bel ons</h2>
+        <p>Langenakker 82<br>3830 Wellen</p>
+        <div class="contact-detail">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Telefoon</strong><br>
+            <a href="tel:+3247****388">0475/85.83.88</a>
+          </div>
         </div>
-    </section>
-
-    <!-- CONTACT: clean, elegant -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-layout">
-                <div class="contact-info">
-                    <div class="accent-line-small"></div>
-                    <h2>Kom langs</h2>
-                    <p class="contact-intro">Ik kijk er naar uit om je te mogen verwelkomen. Neem gerust contact op om een afspraak te maken.</p>
-
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                            <div>
-                                <strong>Telefoon</strong>
-                                <a href="tel:+32475858388">0475/85.83.88</a>
-                                <span class="contact-separator">of</span>
-                                <a href="tel:+3211262400">011/26.24.00</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                            <div>
-                                <strong>E-mail</strong>
-                                <a href="mailto:ingrid.ghijsens@skynet.be">ingrid.ghijsens@skynet.be</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            <div>
-                                <strong>Adres</strong>
-                                <span>Langenakker 82, 3830 Wellen</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-cta-box">
-                    <h3>Plan je bezoek</h3>
-                    <p>Werkt uiteraard enkel op afspraak. Bel of mail voor een vrijblijvende afspraak.</p>
-                    <a href="tel:+32475858388" class="cta-button">Bel nu</a>
-                    <a href="mailto:ingrid.ghijsens@skynet.be" class="cta-button secondary">Stuur een e-mail</a>
-                </div>
-            </div>
+        <div class="contact-detail">
+          <span class="contact-icon">📞</span>
+          <div>
+            <strong>Telefoon 2</strong><br>
+            <a href="tel:+3211262400">011/26.24.00</a>
+          </div>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <p class="footer-brand">Schoonheidssalon <em>Ingrid</em></p>
-                <p class="footer-slogan">"Hier ben je in goede handen"</p>
-                <p class="footer-copy">&copy; 2026 Schoonheidssalon Ingrid — Langenakker 82, 3830 Wellen</p>
-            </div>
+        <div class="contact-detail">
+          <span class="contact-icon">✉️</span>
+          <div>
+            <strong>E-mail</strong><br>
+            <a href="mailto:ingrid.ghijsens@skynet.be">ingrid.ghijsens@skynet.be</a>
+          </div>
         </div>
-    </footer>
+      </div>
+      <div class="contact-cta-box">
+        <h3>Afspraak maken?</h3>
+        <p>Bel ons of stuur een e-mail om een vrijblijvende afspraak te plannen. Wij werken uitsluitend op afspraak.</p>
+        <a href="tel:+3247****388" class="btn btn-primary btn-full">Bel ons nu</a>
+        <a href="mailto:ingrid.ghijsens@skynet.be" class="btn btn-ghost btn-full">Stuur e-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">Schoonheidssalon Ingrid</span>
+      <span class="footer-copy">© 2025 · Alle rechten voorbehouden</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.nav-burger').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
+</script>
 </body>
 </html>
