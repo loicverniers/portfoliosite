@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vajo Esthetiek — Schoonheidssalon Kuurne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #c9a96e;
+  --gold-light: #e8d5a8;
+  --cream: #faf8f4;
+  --dark: #2c2c2c;
+  --text: #4a4a4a;
+  --text-light: #7a7a7a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(250, 248, 244, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: 0.05em;
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 4rem;
+}
+
+.hero-image {
+  background: linear-gradient(135deg, #f5efe4 0%, #e8ddd0 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-image::after {
+  content: '✦';
+  font-size: 12rem;
+  color: rgba(201, 169, 110, 0.08);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-image-circle {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 169, 110, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image-circle::before {
+  content: '';
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+  opacity: 0.15;
+}
+
+.hero-image-text {
+  position: absolute;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--dark);
+}
+
+.hero-image-text .big {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.hero-image-text .small {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.5rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 420px;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--dark);
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* DIENSTEN */
+.diensten {
+  padding: 6rem 3.5rem;
+  background: white;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--dark);
+  margin-bottom: 3rem;
+}
+
+.diensten-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.dienst-card {
+  padding: 2rem;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.dienst-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.dienst-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.dienst-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.8rem;
+}
+
+.dienst-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* OVER */
+.over {
+  padding: 6rem 3.5rem;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.over-image {
+  background: linear-gradient(135deg, #f0e8d8 0%, #e0d4c0 100%);
+  aspect-ratio: 4/5;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.over-image::before {
+  content: '34 jaar';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem;
+  font-weight: 600;
+  color: rgba(201, 169, 110, 0.15);
+  position: absolute;
+}
+
+.over-image-text {
+  text-align: center;
+  z-index: 1;
+}
+
+.over-image-text .number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.over-image-text .label {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dark);
+  margin-top: 0.5rem;
+}
+
+.over-content .section-title { margin-bottom: 1.5rem; }
+
+.over-content p {
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+}
+
+.over-signature {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--gold);
+  margin-top: 2rem;
+}
+
+/* FAQ */
+.faq {
+  padding: 6rem 3.5rem;
+  background: white;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 3rem;
+}
+
+.faq-item {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.1);
+}
+
+.faq-item h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* CONTACT */
+.contact {
+  padding: 6rem 3.5rem;
+  background: var(--dark);
+  color: white;
+}
+
+.contact .section-label { margin-bottom: 1rem; }
+
+.contact .section-title { color: white; margin-bottom: 3rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.contact-block h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.contact-block p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+
+.contact-block a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+
+.contact-block a:hover { color: var(--gold); }
+
+.contact-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.contact-cta .btn {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.contact-cta .btn:hover {
+  background: white;
+}
+
+/* FOOTER */
+footer {
+  padding: 2rem 3.5rem;
+  background: #222;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  nav { padding: 1rem 2rem; }
+  .nav-links { display: none; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 5rem;
+  }
+
+  .hero-image { min-height: 300px; }
+  .hero-image-circle { width: 200px; height: 200px; }
+  .hero-image-circle::before { width: 170px; height: 170px; }
+  .hero-image-text .big { font-size: 2rem; }
+
+  .hero-content { padding: 2rem; }
+  .hero h1 { font-size: 2.2rem; }
+
+  .diensten { padding: 4rem 2rem; }
+  .diensten-grid { grid-template-columns: 1fr; }
+
+  .over { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 2rem; }
+
+  .faq { padding: 4rem 2rem; }
+  .faq-grid { grid-template-columns: 1fr; }
+
+  .contact { padding: 4rem 2rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  footer { padding: 1.5rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">VAJO <span>Esthetiek</span></div>
+  <ul class="nav-links">
+    <li><a href="#diensten">Behandelingen</a></li>
+    <li><a href="#over">Over ons</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-image">
+    <div class="hero-image-circle">
+      <div class="hero-image-text">
+        <div class="big">Verwen<br>jezelf</div>
+        <div class="small">Vajo Esthetiek</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Schoonheidssalon Kuurne</div>
+    <h1>Gun jezelf de <em>beste</em> verzorging</h1>
+    <p>Ontspan en geniet van persoonlijke aandacht in een sfeervolle schoonheidssalon. Met 34 jaar ervaring en de Jean d'Arcel producten zorgen wij voor een zichtbaar resultaat.</p>
+    <a href="#contact" class="btn">Maak een afspraak</a>
+  </div>
+</section>
+
+<section class="diensten" id="diensten">
+  <div class="section-label">Onze behandelingen</div>
+  <h2 class="section-title">Wat wij voor u doen</h2>
+  <div class="diensten-grid">
+    <div class="dienst-card">
+      <h3>Gelaatsverzorging</h3>
+      <p>Professionele gezichtsverzorgingen op maat met Jean d'Arcel producten voor een stralende huid.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Permanent make-up</h3>
+      <p>Definitieve make-up voor wenkbrauwen, lippen en eyelijnen. Altijd een perfecte look, moeiteloos.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Definitieve ontharing</h3>
+      <p>SHR-methode voor pijnloze, blijvende ontharing. Geschikt voor alle huidtypen.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Huidverbetering</h3>
+      <p>Medical Pro toestellen voor huidverbetering, couperose en pigmentstoringen.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Epilatie</h3>
+      <p>Zachte en effectieve epilatiemethoden voor een glad resultaat op elk lichaamsdeel.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Hand- & nagelverzorging</h3>
+      <p>Complete nagelverzorging van manicure tot gelish, plus verzorgde handen.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Wimperlift & verven</h3>
+      <p>Liften van wimpers en verven van wenkbrauwen en wimpers voor een expressieve blik.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>SPM & Pressotherapie</h3>
+      <p>Behandelingen tegen cellulitis en voor betere bloedsomloop.</p>
+    </div>
+    <div class="dienst-card">
+      <h3>Infra Sauna</h3>
+      <p>Ontspannen en ontgiften met de infraroodsauna. Ook heren zijn welkom.</p>
+    </div>
+  </div>
+</section>
+
+<section class="over" id="over">
+  <div class="over-image">
+    <div class="over-image-text">
+      <div class="number">34</div>
+      <div class="label">jaar ervaring</div>
+    </div>
+  </div>
+  <div class="over-content">
+    <div class="section-label">Over ons</div>
+    <h2 class="section-title">Joke Vanruymbeke</h2>
+    <p>Ik ben Joke Vanruymbeke, al 34 jaar actief in de schoonheidsbranche. Als eigenares van Vajo Esthetiek zorg ik ervoor dat elke klant zich welkom en gewaardeerd voelt.</p>
+    <p>De kracht van de Jean d'Arcel producten zit niet alleen in het verzorgen, maar ook in het effectief verbeteren van de huid. Ik bied een breed scala aan specialiteiten voor zowel gezicht als lichaam — ook heren zijn welkom voor aangepaste behandelingen.</p>
+    <p>Wil iemand anders laten genieten? Een cadeaubon is steeds het geslaagde geschenk.</p>
+    <div class="over-signature">— Joke</div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="section-label">Veelgestelde vragen</div>
+  <h2 class="section-title">Uw vragen, onze antwoorden</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Hoe maak ik een afspraak?</h4>
+      <p>Bel ons op 0473 831 427 of stuur een e-mail naar vajo.esthetiek@telenet.be. U kunt ook via onze Facebookpagina contact opnemen.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Welke betaalmethoden worden geaccepteerd?</h4>
+      <p>Wij acteren cash en mobiel betalen. Cadeaubonnen zijn ook verkrijgbaar in de salon.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Zijn ook heren welkom?</h4>
+      <p>Zeker! Wij bieden aangepaste behandelingen voor heren, waaronder de Homme Relax gelaatsbehandeling en definitieve ontharing.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Wat is de SHR-methode?</h4>
+      <p>SHR (Super Hair Removal) is een moderne, pijnloze methode voor blijvende ontharing die geschikt is voor alle huidtypen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-label">Contact</div>
+  <h2 class="section-title">Bezoek ons in Kuurne</h2>
+  <div class="contact-grid">
+    <div class="contact-block">
+      <h4>Adres</h4>
+      <p>Kerkstraat 6<br>8520 Kuurne</p>
+    </div>
+    <div class="contact-block">
+      <h4>Openingsuren</h4>
+      <p>Ma: 9:00 – 12:00 / 13:30 – 18:30<br>
+         Di: 9:00 – 12:00 / 13:30 – 18:30<br>
+         Wo: gesloten<br>
+         Do: 9:00 – 12:00 / 13:30 – 18:30<br>
+         Vr: 9:00 – 12:00 / 13:30 – 18:30<br>
+         Za: 9:00 – 14:00</p>
+    </div>
+    <div class="contact-block">
+      <h4>Contact</h4>
+      <p>
+        <a href="tel:+32473831427">0473 831 427</a><br>
+        <a href="mailto:vajo.esthetiek@telenet.be">vajo.esthetiek@telenet.be</a>
+      </p>
+    </div>
+  </div>
+  <div class="contact-cta">
+    <a href="tel:+32473831427" class="btn">Bel voor een afspraak</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Vajo Esthetiek — Kerkstraat 6, 8520 Kuurne</p>
+</footer>
+
+</body>
+</html>
