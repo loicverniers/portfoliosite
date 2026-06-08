@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="nl-nl">
+<head>
+		        	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0">
+	    <base href="https://www.goudcentrale.be/site/media/widgetkit/3.Raymond_Weil-d19456a9ad386b9718f2fefca53455b8.jpg" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="'Kortrijkse Goudcentrale', juwelier, Kortrijk, juwelen, kettingen, hangers, oorbellen, armbanden, ringen, trouwringen, horloges" />
+	<meta property="og:title" content="Messages" />
+	<meta property="og:type" content="site" />
+	<meta property="og:url" content="https://www.goudcentrale.be/site/media/widgetkit/3.Raymond_Weil-d19456a9ad386b9718f2fefca53455b8.jpg" />
+	<meta property="og:site_name" content="Kortrijkse Goudcentrale" />
+	<meta name="description" content="Juwelier De Kortrijkse Goudcentrale staat sinds 2 generaties garant voor de meest uitgebreide collectie juwelen in iedereprijsklasse. De keuze is heel ruim, van klassiek tot zeer hedendaags : halskettingen met of zonder hanger, armbanden, ringen, oorbellen, baby- en kinderarmbandjes, trouwringen, sportieve en klassieke uurwerken, gouden uurwerken,… De familie De Block zorgt reeds meer dan 40 jaar voor een persoonlijke en professionele service. Ervaring, vertrouwen en een eigen atelier verzekeren u een vlotte dienstverlening in veilige handen." />
+	<meta name="generator" content="Nise Solutions Content Management System" />
+	<title>Messages - Kortrijkse Goudcentrale</title>
+	<link href="https://www.goudcentrale.be/site/templates/gk_hotel/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="/site/templates/gk_hotel/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet" type="text/css" />
+	<link href="//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic" rel="stylesheet" type="text/css" />
+	<link href="//fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+	<link href="/site/cache/gk/fc730ae799ba8a3b2ddd9723d775b2d4.css.php" rel="stylesheet" type="text/css" />
+	<link href="https://www.goudcentrale.be/site/modules/mod_image_show_gk4/styles/gk_hotel_tabs/style.css" rel="stylesheet" type="text/css" />
+	<link href="/site/media/com_widgetkit/css/site.css" rel="stylesheet" type="text/css" id="widgetkit-site-css" />
+	<style type="text/css">
+
+          		.childcontent { padding: 16px; }
+            	.childcontent .gkcol { width: 200px; }
+            .contact-form {
+    padding: 0 65px 0 0;
+    width: 50%;
+   float: left;
+}
+
+.contact-details {
+    float: left;
+    padding: 0 0 0 65px;
+    width: 50%;
+}
+
+@media only screen and (max-width: 840px) {
+.contact-form {
+    width: 100% !important;
+    padding: 0 10px 0 10px;
+  }
+.contact-form input[type="text"], .contact-form input[type="email"] {
+    width: 92%;
+ }
+.contact-details {
+    width: 100% !important;
+    padding: 0 10px 0 10px !important;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+.contact-form {
+    width: 100% !important;
+  }
+.contact-form input[type="text"], .contact-form input[type="email"] {
+    width: 92% !important;
+  }
+}
+
+.single-page .item-body, .blog-page .item-body {
+    float: none;
+}
+
+.single-page .item-info + .item-body, .blog-page .item-info + .item-body {
+    width: 78%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.single-page .item-info, .blog-page .item-info {
+    float: none;
+    margin: 0px 0 0 0;
+    width: 26%;
+}
+
+.single-page .item-content, .blog-page .item-content {
+    max-width: 100%;
+}
+
+a:hover {
+    color: #A67D4E !important;
+}
+
+#gkLogo img {
+  max-width: 400px;
+}
+#gkTopInfo {
+    border-bottom: 0px;
+}
+
+#gkHeaderNav .gkMainMenu .gkmenu > li > span {
+    padding: 12px 0px;
+}
+
+#gkHeaderNav .gkMainMenu .gkmenu.level0 > li > a.active,
+#gkHeaderNav .gkMainMenu .gkmenu.level0 > li > span.active {
+  border-bottom: 1px solid #A67D4E;
+}
+
+#gkHeaderNav .gkMainMenu .gkmenu.level0 > li {
+    padding: 0px 20px;
+}
+
+#gkHeaderNav {
+  padding: 36px 0 0 0;
+}
+
+#gkHeader {
+    min-height: 150px;
+    padding: 0 0 25px 0;
+}
+
+#gkFooter {
+    background: black;
+}
+
+#gkTopInfo {
+    top: 10px;
+}
+
+#gkTopInfo i[class^="gk-icon"] {
+    font-size: 24px;
+}
+
+#gkFooterNav a:active, #gkFooterNav a:focus, #gkFooterNav a:hover {
+    color: #A67D4E;
+}
+
+hr {
+  border-top: 1px solid #A67D4E;
+  width: 80px;
+}
+
+.item-body ul li:before {
+display: none;  
+}
+
+/* remove underline */
+.single-page .item-body a,
+.blog-page .item-body a {
+  border-bottom: 0px;
+}
+
+/* ALIGN IMAGES NAMES */
+.uk-panel-title {
+    TEXT-ALIGN: center;
+}
+
+/* VERWIJDER li bollen in menu */
+#gkHeaderNav .gkmenu.level0 > li:before {
+display: none;
+}
+
+/* VERWIJDER lijn onder widgetkit in module position */
+.box li {
+  border-bottom: 0px;
+}
+
+/* Header white overal */
+#gkHeader {
+    background: #ffffff;
+}
+
+.uk-subnav-pill>.uk-active>* {
+    background: #a67d4e;
+}
+
+.knop {
+    background-color: #a67d4e !important;
+    min-width: 135px;
+/*    padding: 15px 32px;
+    font-size: 16px; */
+}
+
+.knop a {
+    color: #ffffff !important;
+}
+
+.knop a:hover {
+    background-color: #a67d4e !important;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.gk-photo-grid.offset-left {
+    margin-left: 0px !important;
+}
+
+.goudcentrale-nieuws {
+font-size: 16px;
+}
+
+.goudcentrale-nieuws h3 {
+font-size: 27px;
+}
+
+.uk-article-meta {
+    font-size: 0px;
+    float: left;
+    width: 24%;
+}
+
+.uk-article-meta time {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    float: left;
+    /* max-width: 90px; */
+    max-height: 90px;
+    padding: 8px 10px;
+    background-color: #a67d4e !important;
+}
+
+.uk-margin-top-remove {
+    margin-top: 0!important;
+    float: right;
+    max-width: 73%;
+    /* width: 200px; */
+    height: 72px;
+    /* white-space: nowrap; */
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* font-size: 22px; */
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.fototekst {
+    display: block;
+    /* position: absolute; */
+    z-index: 2;
+    /* width: 82%; */
+    margin-top: -90px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 1px 1px 158px rgba(0,0,0,1);
+}
+
+#acymodifyform .acykey {
+  clear: both;
+  float: left;
+  width: 25% !important;
+}
+#acymodifyform .inputVal {
+  float: left;
+  margin-bottom: 10px;
+  width: 60%;
+}
+
+.jsn-uniform.jsn-master .jsn-row-container.form-horizontal .jsn-form-content label.control-label {
+    float: left !important;
+/*    width: 220px !important; */
+}
+
+.jsn-uniform.jsn-master .jsn-row-container.form-horizontal .jsn-form-content div.controls {
+/*    margin-left: 300px !important; */
+}
+body,
+button,
+.button,
+select,
+textarea,
+input[type="submit"],
+input[type="button"],
+input[type="text"],
+input[type="password"],
+input[type="url"],
+input[type="email"],
+cite small,
+blockquote > cite,
+#gkHeaderNav .gkMainMenu .gkmenu > li div.childcontent li,
+h3.roomtype_name > .label,
+.ui-widget,
+.breakdown,
+#gkHeaderSidebar .box .header > small,
+label.error { font-family: 'Open Sans', Arial, sans-serif; }
+h1,h2,h3,h4,h5,h6,
+select,
+#gkLogo,
+.box.big-title .header,
+cite,
+.gkIsWrapper-gk_hotel_tabs figcaption h2,
+.gkIsWrapper-gk_hotel_tabs figcaption small,
+blockquote,
+.blog-page .header .item-title,
+ol.item-list li,
+.profile fieldset legend, .profile-edit fieldset legend,
+.min_tariff, .normal_tariff,
+#gkHeaderSidebar .box .header,
+#sr-checkavailability-form .datefield,
+.button-row,
+#acymodifyform legend,
+#cc-modal #cc-modal-wrapper h2, #cc-settingsmodal-wrapper h2 { font-family: 'PT Serif', Arial, sans-serif; }
+.gkMainMenu,
+.box .header,
+.gkTab,
+.gkIsWrapper-gk_hotel_tabs figcaption .readon,
+.itemSubheader h3,
+.item-desc,
+.blog-page .item-view .cat-item-date,
+.blog-page .item-view .cat-item-author,
+.user-page .item-author-details .item-desc,
+#gkFooterNav h3,
+.box.offers .nspHeader,
+.box.category-layout .nspHeader,
+.latest-page h2,
+.latest-page h3 { font-family: 'Montserrat', Arial, sans-serif; }
+.blank { font-family: Arial, Helvetica, sans-serif; }
+@media screen and (max-width: 780px) {
+	    	#k2Container .itemsContainer { width: 100%!important; } 
+	    	.cols-2 .column-1,
+	    	.cols-2 .column-2,
+	    	.cols-3 .column-1,
+	    	.cols-3 .column-2,
+	    	.cols-3 .column-3,
+	    	.demo-typo-col2,
+	    	.demo-typo-col3,
+	    	.demo-typo-col4 {width: 100%; }
+	    	}#gkHeaderSidebar { width: 45%; }
+#gkSidebar { width: 45%; }
+#gkContent { width: 55%; }
+#gkContentWrap { width: 100%; }
+.gkPage, #gkHeaderNav .gkPage, #gkMainbody .content { max-width: 1240px; }
+#menu640 > div,
+#menu640 > div > .childcontent-inner { width: 200px; }
+#menu1187 > div,
+#menu1187 > div > .childcontent-inner { width: 200px; }
+#menu1188 > div,
+#menu1188 > div > .childcontent-inner { width: 200px; }
+#menu1189 > div,
+#menu1189 > div > .childcontent-inner { width: 200px; }
+#menu1190 > div,
+#menu1190 > div > .childcontent-inner { width: 200px; }
+#menu426 > div,
+#menu426 > div > .childcontent-inner { width: 200px; }
+
+		#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs {
+			min-height: 590px;
+		}
+		
+		#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs,
+		#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs .gkIsSlide {
+			height: 590px;
+			max-width: 1600px;
+		}
+		
+		#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs figure,
+		#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs .gkIsPreloader {
+			max-width: 1600px;
+		}
+		
+		@media (max-width: 1040px) {
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs {
+				min-height: 380px;
+			}
+			
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs,
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs .gkIsSlide {
+				height: 380px;
+				max-width: 1040px;
+			}
+			
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs figure,
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs .gkIsPreloader {
+				max-width: 1040px;
+			}
+		}
+		
+		@media (max-width: 640px) {
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs {
+				min-height: 280px;
+			}
+			
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs,
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs .gkIsSlide {
+				height: 280px;
+				max-width: 640px;
+			}
+			
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs figure,
+			#gkIs-gk-is-893.gkIsWrapper-gk_hotel_tabs .gkIsPreloader {
+				max-width: 640px;
+			}
+		}
+		
+	</style>
+	<script type="application/json" class="joomla-script-options new">{"csrf.token":"6a285e4c025a6dfbb7d5012c1db13f26","system.paths":{"root":"\/site","base":"\/site"},"system.keepalive":{"interval":840000,"uri":"\/site\/component\/ajax\/?format=json"}}</script>
+	<script src="/site/media/jui/js/jquery.min.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/jui/js/jquery-noconflict.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/jui/js/jquery-migrate.min.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/k2/assets/js/k2.frontend.js?v=2.10.3&b=20200429&sitepath=/site/" type="text/javascript"></script>
+	<script src="/site/media/jui/js/bootstrap.min.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/system/js/mootools-core.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/system/js/core.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/system/js/mootools-more.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="/site/media/system/js/modal.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/templates/gk_hotel/js/modernizr.js" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/templates/gk_hotel/js/gk.scripts.js" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/templates/gk_hotel/js/gk.menu.js" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/templates/gk_hotel/js/photoswipe.min.js" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/templates/gk_hotel/js/photoswipe-ui.min.js" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/templates/gk_hotel/js/scrollreveal.js" type="text/javascript"></script>
+	<!--[if lt IE 9]><script src="/site/media/system/js/polyfill.event.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script><![endif]-->
+	<script src="/site/media/system/js/keepalive.js?13c639265cf4aee55df75b41a7e93719" type="text/javascript"></script>
+	<script src="https://www.goudcentrale.be/site/modules/mod_image_show_gk4/styles/gk_hotel_tabs/engine.js" type="text/javascript"></script>
+	<script src="/site/media/com_widgetkit/js/maps.js" defer="defer" type="text/javascript"></script>
+	<script src="/site/media/com_widgetkit/lib/uikit/dist/js/uikit.min.js" type="text/javascript"></script>
+	<script src="/site/administrator/components/com_widgetkit/vendor/assets/uikit/js/components/slideset.min.js" type="text/javascript"></script>
+	<script src="/site/media/com_widgetkit/lib/uikit/dist/js/uikit-icons.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+
+		jQuery(function($) {
+			SqueezeBox.initialize({});
+			initSqueezeBox();
+			$(document).on('subform-row-add', initSqueezeBox);
+
+			function initSqueezeBox(event, container)
+			{
+				SqueezeBox.assign($(container || document).find('a.modal').get(), {
+					parse: 'rel'
+				});
+			}
+		});
+
+		window.jModalClose = function () {
+			SqueezeBox.close();
+		};
+
+		// Add extra modal close functionality for tinyMCE-based editors
+		document.onreadystatechange = function () {
+			if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE)
+			{
+				if (typeof window.jModalClose_no_tinyMCE === 'undefined')
+				{
+					window.jModalClose_no_tinyMCE = typeof(jModalClose) == 'function'  ?  jModalClose  :  false;
+
+					jModalClose = function () {
+						if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+
+				if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined')
+				{
+					if (typeof(SqueezeBox) == 'undefined')  SqueezeBox = {};
+					window.SqueezeBoxClose_no_tinyMCE = typeof(SqueezeBox.close) == 'function'  ?  SqueezeBox.close  :  false;
+
+					SqueezeBox.close = function () {
+						if (window.SqueezeBoxClose_no_tinyMCE)  window.SqueezeBoxClose_no_tinyMCE.apply(this, arguments);
+						tinyMCE.activeEditor.windowManager.close();
+					};
+				}
+			}
+		};
+		
+ $GKMenu = { height:true, width:false, duration: 150 };
+$GK_TMPL_URL = "https://www.goudcentrale.be/site/templates/gk_hotel";
+
+$GK_URL = "https://www.goudcentrale.be/site/";
+try {$Gavick;}catch(e){$Gavick = {};};$Gavick["gkIs-gk-is-893"] = { "animSpeed": 500, "animInterval": 5000, "slideLinks": 0 };GOOGLE_MAPS_API_KEY = "AIzaSyAGu6BYdsRaDgLUE2IcwQDf0ur-2Iq8Kys";
+	</script>
+	<link rel="apple-touch-icon" href="https://www.goudcentrale.be/site/templates/gk_hotel/images/touch-device.png">
+	<link rel="apple-touch-icon-precomposed" href="https://www.goudcentrale.be/site/templates/gk_hotel/images/touch-device.png">
+
+    <link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/small.desktop.css" media="(max-width: 1920px)" />
+<link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/tablet.css" media="(max-width: 1040px)" />
+<link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/small.tablet.css" media="(max-width: 840px)" />
+<link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/mobile.css" media="(max-width: 640px)" />
+
+<!--[if IE 9]>
+<link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/ie/ie9.css" type="text/css" />
+<![endif]-->
+
+<!--[if IE 8]>
+<link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/ie/ie8.css" type="text/css" />
+<![endif]-->
+
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="https://www.goudcentrale.be/site/templates/gk_hotel/css/ie/ie7.css" type="text/css" />
+<![endif]-->
+
+<!--[if lte IE 9]>
+<script type="text/javascript" src="https://www.goudcentrale.be/site/templates/gk_hotel/js/ie.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+<script type="text/javascript" src="https://www.goudcentrale.be/site/templates/gk_hotel/js/respond.js"></script>
+<script type="text/javascript" src="https://www.goudcentrale.be/site/templates/gk_hotel/js/selectivizr.js"></script>
+<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->	  	<!-- Begin Cookie Consent plugin by Silktide -->
+      <script>
+          window.cookieconsent_options = {
+              message: 'We gebruiken cookies om u de beste ervaring te kunnen aanbieden op deze website.',
+              dismiss: 'Toestaan',
+              learnMore: 'Learn more',
+              link: "",
+              theme: "dark-bottom",
+          };
+      </script>
+
+      <!-- Minified Cookie Consent served from CDN -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+    
+      
+      <!-- End Cookie Consent plugin -->
+ 	
+	</head>
+<body class="frontpage"  data-tablet-width="1040" data-mobile-width="640" data-zoom-size="150" data-parallax="true">	
+	<script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-10725110-15', 'auto'); ga('send', 'pageview');</script>	
+		
+	
+	
+	<div id="gkBg">	
+		
+	    <header id="gkHeader" class="gk-clearfix">		
+			<div id="gkHeaderNav" class="gk-clearfix gk-fixed" data-fixed="1"><div>
+        
+     	 <a href="https://www.goudcentrale.be/site/" id="gkLogo">
+        <img 
+        	src="https://www.goudcentrale.be/site/images/logo.png" 
+        	alt="Kortrijkse Goudcentrale" 
+        />
+     </a>
+                      
+				
+							    <div id="gkTopInfo">
+			         <div class="no-mobile">
+<ul class="gk-social-links">
+<a href="https://www.facebook.com/Kortrijkse-Goudcentrale-694735623918018/" target="_blank"><i class="gk-icon-fb"></i></a>
+<a href="https://www.instagram.com/kortrijkse_goudcentrale_kuurne/" target="_blank"><i class="gk-icon-instagram"></i></a>
+</ul>
+</div>
+			    </div>
+			  
+			 	       	       	<nav class="gkMainMenu gkMenu" data-duration="150" data-opacity="1" data-height="1" data-width="0">
+<ul class="gkmenu level0"><li  class="first haschild active"><a href="https://www.goudcentrale.be/site/"  class=" first haschild active" id="menu640" title=" Home Menu Item" >Home</a><div class="childcontent has-cols-1">
+<div class="childcontent-inner">
+<div class="gkcol gkcol1  first"><ul class="gkmenu level1"><li  class="first"><a href="/site/#overons"  class=" first" id="menu1270"  >Over ons</a></li><li ><a href="/site/#services"  id="menu1271"  >Services</a></li><li ><a href="/site/#nieuws"  id="menu1272"  >Nieuws</a></li><li  class="last"><a href="/site/cadeaubon.html"  class=" last" id="menu1561"  >Cadeaubon</a></li></ul></div>
+</div>
+</div></li><li  class="haschild"><a href="/site/uurwerken.html"  class=" haschild" id="menu1187"  >Uurwerken</a><div class="childcontent has-cols-1">
+<div class="childcontent-inner">
+<div class="gkcol gkcol1  first"><ul class="gkmenu level1"><li  class="first"><a href="/site/uurwerken/raymond-weil.html"  class=" first" id="menu1198"  >Raymond Weil</a></li><li ><a href="/site/uurwerken/pontiac.html"  id="menu1200"  >Pontiac</a></li><li ><a href="/site/uurwerken/candino.html"  id="menu1199"  >Candino</a></li><li ><a href="/site/uurwerken/festina.html"  id="menu1197"  >Festina</a></li><li  class="last"><a href="/site/uurwerken/calypso.html"  class=" last" id="menu1195"  >Calypso</a></li></ul></div>
+</div>
+</div></li><li  class="haschild"><a href="/site/juwelen.html"  class=" haschild" id="menu1188"  >Juwelen</a><div class="childcontent has-cols-1">
+<div class="childcontent-inner">
+<div class="gkcol gkcol1  first"><ul class="gkmenu level1"><li  class="first"><a href="/site/juwelen/the-flanders-collection.html"  class=" first" id="menu1201"  >The Flanders Collection</a></li><li ><a href="/site/juwelen/ligne-vendome.html"  id="menu1202"  >Ligne Vendôme</a></li><li ><a href="/site/juwelen/davice.html"  id="menu1203"  >Davice</a></li><li ><a href="/site/juwelen/bdb.html"  id="menu1204"  >BDB</a></li><li ><a href="/site/juwelen/femme-adoree.html"  id="menu1205"  >Femme Adorée</a></li><li ><a href="/site/juwelen/di-luna.html"  id="menu1206"  >Di Luna</a></li><li ><a href="/site/juwelen/you-me.html"  id="menu1207"  >You &amp; Me</a></li><li ><a href="/site/juwelen/dulci-nea.html"  id="menu1208"  >Dulci Nea</a></li><li ><a href="/site/juwelen/joy.html"  id="menu1209"  >Joy</a></li><li ><a href="/site/juwelen/verlovingsringen.html"  id="menu1210"  >Verlovingsringen</a></li><li ><a href="/site/juwelen/parels.html"  id="menu1211"  >Parels</a></li><li ><a href="/site/juwelen/urban-angels-pearls.html"  id="menu1212"  >Urban Angels Pearls</a></li><li  class="last"><a href="/site/juwelen/souven-or.html"  class=" last" id="menu1213"  >Souven'or</a></li></ul></div>
+</div>
+</div></li><li  class="haschild"><a href="/site/trouwringen.html"  class=" haschild" id="menu1189"  >Trouwringen</a><div class="childcontent has-cols-1">
+<div class="childcontent-inner">
+<div class="gkcol gkcol1  first"><ul class="gkmenu level1"><li  class="first"><a href="/site/trouwringen/briljanten.html"  class=" first" id="menu1223"  >Briljanten</a></li><li ><a href="/site/trouwringen/memoire.html"  id="menu1224"  >Mémoire</a></li><li ><a href="/site/trouwringen/aurodesign.html"  id="menu1225"  >Aurodesign</a></li><li ><a href="/site/trouwringen/tessina.html"  id="menu1226"  >Tessina</a></li><li ><a href="/site/trouwringen/traditions.html"  id="menu1227"  >Traditions</a></li><li ><a href="/site/trouwringen/f-oru.html"  id="menu1228"  >f'OrU</a></li><li ><a href="/site/trouwringen/dora.html"  id="menu1229"  >Dora</a></li><li ><a href="/site/trouwringen/d-euxx.html"  id="menu1230"  >d'Euxx</a></li><li ><a href="/site/trouwringen/pollori.html"  id="menu1231"  >Pollori</a></li><li ><a href="/site/trouwringen/fair-belle.html"  id="menu1232"  >Fair'Belle</a></li><li ><a href="/site/trouwringen/linaria.html"  id="menu1233"  >Linaria</a></li><li ><a href="/site/trouwringen/amici.html"  id="menu1234"  >Amici</a></li><li  class="last"><a href="http://ringconfigurator.goudcentrale.be/" target="_blank"  class=" last" id="menu1678"   rel="nofollow">Ring Configurator</a></li></ul></div>
+</div>
+</div></li><li  class="haschild"><a href="/site/transformaties.html"  class=" haschild" id="menu1190"  >Transformaties</a><div class="childcontent has-cols-1">
+<div class="childcontent-inner">
+<div class="gkcol gkcol1  first"><ul class="gkmenu level1"><li  class="first"><a href="/site/transformaties/ringen.html"  class=" first" id="menu1235"  >Ringen</a></li><li ><a href="/site/transformaties/oorringen.html"  id="menu1236"  >Oorringen</a></li><li ><a href="/site/transformaties/hangers.html"  id="menu1237"  >Hangers</a></li><li ><a href="/site/transformaties/kettingen.html"  id="menu1238"  >Kettingen</a></li><li ><a href="/site/transformaties/armbanden.html"  id="menu1239"  >Armbanden</a></li><li  class="last"><a href="/site/transformaties/heren-ringen.html"  class=" last" id="menu1240"  >Heren ringen</a></li></ul></div>
+</div>
+</div></li><li ><a href="/site/folders.html"  id="menu1193"  >Folders</a></li><li  class="last haschild"><a href="/site/contact.html"  class=" last haschild" id="menu426"  >Contact</a><div class="childcontent has-cols-1">
+<div class="childcontent-inner">
+<div class="gkcol gkcol1  first"><ul class="gkmenu level1"><li  class="first"><a href="/site/inschrijven-nieuwsbrief.html"  class=" first" id="menu1318"  >Nieuwsbrief</a></li><li  class="last"><a href="/site/cadeaubon.html"  class=" last" id="menu1562"  >Cadeaubon</a></li></ul></div>
+</div>
+</div></li></ul>
+</nav>	       	       
+	       <div id="gkMobileMenu" class="gkPage">
+	           <span id="gk-mobile-menu-text">Menu</span>
+	           <i id="static-aside-menu-toggler"></i>
+	       </div>
+              
+              
+       </div>
+	    	</div>
+	    </header>
+
+	        	<div id="gkHeaderMod" class="gk-clearfix">
+    		<div class="uk-scope">
+<div  uk-slideshow="animation: fade;autoplay: true ;autoplay-interval: 2700;ratio: 16:6.4;min-height: 300">
+
+    <div class="uk-position-relative uk-visible-toggle">
+
+        <ul class="uk-slideshow-items " >
+        
+            <li>
+
+                
+                                        <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-uk-animation-middle-left">
+                    
+                        <img src="/site/media/widgetkit/1.BDB-33949c7d92a36a9b72e378700ad882d2.jpg" alt=".BDB" uk-cover width="1600" height="650">
+                                        </div>
+                    
+                    
+                    
+                
+            </li>
+
+        
+            <li>
+
+                
+                                        <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-uk-animation-middle-left">
+                    
+                        <img src="/site/media/widgetkit/2.Nobless-48ba513306cfc37c9f9026869d174e22.jpg" alt=".Nobless" uk-cover width="1600" height="650">
+                                        </div>
+                    
+                    
+                    
+                
+            </li>
+
+        
+            <li>
+
+                
+                                        <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-uk-animation-middle-left">
+                    
+                        <img src="/site/media/widgetkit/3.Raymond_Weil-d19456a9ad386b9718f2fefca5345588.jpg" alt=".Raymond Weil" uk-cover width="1600" height="650">
+                                        </div>
+                    
+                    
+                    
+                
+            </li>
+
+        
+            <li>
+
+                
+                                        <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-uk-animation-middle-left">
+                    
+                        <img src="/site/media/widgetkit/4.The_Flanders_Collection-a0dcc8919bc1508f43a125332bf7659b.jpg" alt=".The Flanders Collection" uk-cover width="1600" height="650">
+                                        </div>
+                    
+                    
+                    
+                
+            </li>
+
+        
+            <li>
+
+                
+                                        <div class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-uk-animation-middle-left">
+                    
+                        <img src="/site/media/widgetkit/5.Nbless2-191f60699e71191db308027719c95750.jpg" alt=".Nbless2" uk-cover width="1600" height="650">
+                                        </div>
+                    
+                    
+                    
+                
+            </li>
+
+                </ul>
+
+        
+                        <div class="uk-light">
+            
+                <a href="#" class="uk-position-center-left uk-position-small uk-hidden-hover" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                <a href="#" class="uk-position-center-right uk-position-small uk-hidden-hover" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                        </div>
+            
+        
+                <div class="uk-overlay uk-position-bottom uk-light">
+            
+<ul class="uk-dotnav uk-flex-center" uk-margin>
+    <li uk-slideshow-item="0"><a href="#">.BDB</a></li>
+    <li uk-slideshow-item="1"><a href="#">.Nobless</a></li>
+    <li uk-slideshow-item="2"><a href="#">.Raymond Weil</a></li>
+    <li uk-slideshow-item="3"><a href="#">.The Flanders Collection</a></li>
+    <li uk-slideshow-item="4"><a href="#">.Nbless2</a></li>
+</ul>
+        </div>
+        
+    </div>
+
+    
+</div>
+</div>
+    		
+    				</div>
+    		
+			
+		<div id="gkPageContent">
+	    		    	
+	    		    	
+	    	<div> 	
+	    		<div data-sidebar-pos="right">
+			    	
+			    				    	<div id="gkContent">					
+			    								
+						
+												<section id="gkMainbody">
+														
+																<div class="box border-title"><div class="box-wrap"><h3 class="header"><span>Kortrijkse Goudcentrale</span></h3><div class="content">
+<div id="overons"> </div>
+<h2>Over ons</h2>
+<div class="gk-cols" data-cols="2">
+<div class="gk-text-justified">
+<p>Juwelier de Kortrijkse Goudcentrale staat sinds 2 generaties garant voor de meest uitgebreide collectie juwelen in iedere prijsklasse. De keuze is heel ruim, van klassiek tot zeer hedendaags : halskettingen met of zonder hanger, armbanden, ringen, oorbellen, baby- en kinderarmbandjes, trouwringen, sportieve en klassieke uurwerken, gouden uurwerken,… Ook voor transformaties en herdenkingsjuwelen kan u bij ons terecht.</p>
+</div>
+<div class="gk-text-justified">
+<p>De familie De Block zorgt reeds meer dan 40 jaar voor een persoonlijke en professionele service. Ervaring, vertrouwen en een eigen atelier verzekeren u een vlotte dienstverlening in veilige handen. Kom gerust eens binnen, vrijblijvend !<cite>"Kurt en Christ De Block"<small>- Zaakvoerders</small></cite></p>
+</div>
+</div>
+<div class="gk-photo-grid offset-left">
+<figure class="gk-grid-1" data-sr="scale up 10%"><img src="/site/images/services/goudcentrale3.jpg" alt="" />
+<figcaption>Toonzaal</figcaption>
+</figure>
+<figure class="gk-grid-2" data-sr="scale up 10% and wait .15s"><img src="/site/images/services/goudcentrale-uurwerken.jpg" alt="" />
+<figcaption>Uuwerken</figcaption>
+</figure>
+<figure class="gk-grid-2" data-sr="scale up 10% and wait .3s"><img src="/site/images/services/goudcentrale-juwelen.jpg" alt="" />
+<figcaption>Juwelen</figcaption>
+</figure>
+</div>
+<div id="services"> </div>
+</div></div></div><div class="box border-title"><div class="box-wrap"><h3 class="header"><span>Bij ons bent u in goede handen</span></h3><div class="content">
+<h2>Services</h2>
+<div class="gk-cols" data-cols="2">
+<div>
+<p>Alle herstellingen van sieraden in eigen atelier</p>
+<p>Herstellen van uurwerken door gediplomeerd uurwerkmaker</p>
+<p>Vakkundig plaatsen van batterijen</p>
+<p>Knopen van parelsnoeren</p>
+</div>
+<div>
+<p>Professioneel prikken van gaatjes in de oren</p>
+<p>Professioneel reinigen van juwelen</p>
+<p>Uurwerkbanden in leder en metaal</p>
+<p>Fotogravure op gouden of zilveren plaatjes</p>
+</div>
+</div>
+</div></div></div>
+															
+													</section>
+												
+														    	</div>
+			    				    	
+			    				    	<aside id="gkSidebar">
+			    		<div>
+			    			
+<div class="box "><div class="box-wrap"><div class="content">
+<div class="gk-photo-grid no-margin">
+<figure class="gk-grid-1" data-sr="scale up 10%"><img src="/site/images/services/diensten-1.jpg" alt="" /></figure>
+<figure class="gk-grid-1" data-sr="scale up 10% and wait 0.15s"><img src="/site/images/services/diensten-2.jpg" alt="" /></figure>
+</div>
+</div></div></div>
+
+<div class="box border-title"><div class="box-wrap"><h3 class="header"><span>Informatie</span></h3><div class="content">
+<ul class="gk-info">
+<li class="gk-info-col-2"><dl><dt>Voormiddag:</dt><dd><strong>9:00 - 12:00</strong></dd></dl></li>
+<li><dl class="gk-info-col-2"><dt>Namiddag:</dt><dd><strong>14:00 - 19:00<br />Zat tot 18:00</strong><strong><br /></strong></dd></dl></li>
+<li><dl><dt>Gesloten:</dt><dd>dinsdag en zondag</dd></dl></li>
+<li><dl><dt>Parking:</dt><dd>Ruime gratis parking voor de deur</dd></dl></li>
+<li><dl><dt>Telefoon:</dt><dd>056 71 02 83</dd></dl></li>
+<li><dl><dt>Verlof:</dt><dd>/</dd></dl></li>
+</ul>
+</div></div></div>
+
+<div class="box "><div class="box-wrap"><div class="content">
+<div class="gk-photo-grid">
+<figure class="gk-grid-1" data-sr="scale up 10%"><img src="/site/images/services/diensten-3.jpg" alt="" /></figure>
+<figure class="gk-grid-1" data-sr="scale up 10% and wait 0.15s"><img src="/site/images/services/diensten-4.jpg" alt="" /></figure>
+</div>
+</div></div></div>
+
+			    		</div>
+			    	</aside>
+			    			    	</div>
+			</div>
+		</div>
+		
+			    
+	    	    
+	    	    <section id="gkBottom3" class="gk-clearfix">
+	    	<div  class="gk-clearfix">
+	    		<div class="box wide gkmod-1"><div class="box-wrap"><div class="content"><div 
+	id="gkIs-gk-is-893" 
+	class="gkIsWrapper-gk_hotel_tabs"
+			data-pagination="disabled"
+	data-count="5"
+	data-mode="testimonial"
+>
+	<div class="gkIsPreloader"></div>
+
+	
+						<figure data-url="https://www.goudcentrale.be/site/images/services/herstellingen.jpg" data-link="#" data-zindex="5" data-title="Charissa Campe">
+				
+			<figcaption class="gkPage mode-testimonial">
+				<div>
+											<blockquote>
+							Net onze trouwringen hier gekozen, enorm veel keuze, wat kiezen niet makkelijk maakt! de juwelier liet ons op ons gemak kijken, echt oprecht vriendelijke mensen.							<cite>Charissa Campe</cite>
+						</blockquote>
+									</div>
+			</figcaption>
+					</figure>
+							<figure data-url="https://www.goudcentrale.be/site/images/services/herstellingen.jpg" data-link="#" data-zindex="4" data-title="Caroline Hellebuyck">
+				
+			<figcaption class="gkPage mode-testimonial">
+				<div>
+											<blockquote>
+							Super vriendelijk. heel veel keuze. Bedankt voor de goede hulp in het kiezen van ons trouwringen.							<cite>Caroline Hellebuyck</cite>
+						</blockquote>
+									</div>
+			</figcaption>
+					</figure>
+							<figure data-url="https://www.goudcentrale.be/site/images/services/herstellingen.jpg" data-link="#" data-zindex="3" data-title="Provoost Annick">
+				
+			<figcaption class="gkPage mode-testimonial">
+				<div>
+											<blockquote>
+							Ze verwelkomen je daar met een smile!
+De keuze is reuze :)							<cite>Provoost Annick</cite>
+						</blockquote>
+									</div>
+			</figcaption>
+					</figure>
+							<figure data-url="https://www.goudcentrale.be/site/" data-link="#" data-zindex="2" data-title="Mervillie-Vereecke Bart-Benoit">
+				
+			<figcaption class="gkPage mode-testimonial">
+				<div>
+											<blockquote>
+							Prachtige juwelen, super ontvangst...
+Een aanrader voor je juwelen!
+Topzaak.							<cite>Mervillie-Vereecke Bart-Benoit</cite>
+						</blockquote>
+									</div>
+			</figcaption>
+					</figure>
+							<figure data-url="https://www.goudcentrale.be/site/images/services/herstellingen.jpg" data-link="" data-zindex="1" data-title="Kathy Lannoo">
+				
+			<figcaption class="gkPage mode-testimonial">
+				<div>
+											<blockquote>
+							Zeer vriendelijke mensen en veel variatie en niets is te veel gevraagd.zeker een aanrader, voor elk wat wils. Goeie service!							<cite>Kathy Lannoo</cite>
+						</blockquote>
+									</div>
+			</figcaption>
+					</figure>
+		
+	
+	</div>
+</div></div></div>
+	    	</div>
+	    </section>
+	    	    
+	    	    <section id="gkBottom4" class="gk-clearfix gkPage">
+	    	<div  class="gk-clearfix">
+	    		<div class="box border-title gkmod-1"><div class="box-wrap"><h3 class="header"><span>Laatste Nieuws</span></h3><div class="content">
+<div id="nieuws"> </div>
+<h2 style="margin-bottom: -30px; margin-top: -20px;">Nieuws</h2>
+</div></div></div>
+	    	</div>
+	    </section>
+	    	    
+	    	    <section id="gkBottom5" class="gk-clearfix gkPage">
+	    	<div  class="gk-clearfix">
+	    		<div class="box  gkmod-1"><div class="box-wrap"><div class="content"><div class="uk-scope">
+
+    <div id="wk-grid71d" class="uk-child-width-1-1 uk-child-width-1-1@s uk-child-width-1-3@l uk-grid-large uk-grid-match uk-text-left " uk-height-match="target: &gt; div &gt; .uk-panel, &gt; div &gt; .uk-card; row: true" uk-grid  uk-scrollspy="cls: uk-animation-scale-up; target: &gt; div &gt; .uk-panel, &gt; div &gt; .uk-card; delay: 200">
+
+    
+        <div >
+            <div class="uk-panel">
+
+                                <a class="uk-position-cover uk-position-z-index" href="/site/nieuws/184-trouw-opendeurdagen-kortrijkse-goudcentrale.html" title="Trouw opendeurdagen Kortrijkse Goudcentrale"></a>
+                
+                
+                
+                
+                    
+                        
+                                                <h3 class="uk-h4 uk-margin-remove-top">
+
+                                                            <a class="uk-link-reset" href="/site/nieuws/184-trouw-opendeurdagen-kortrijkse-goudcentrale.html">Trouw opendeurdagen Kortrijkse Goudcentrale</a>
+                            
+                            
+                        </h3>
+                        
+                                                <p class="uk-article-meta">Geschreven op <time datetime="2020-03-01 22:49:01">01-03-2020</time></p>
+                        
+                                                <div class="uk-margin uk-text-center"><img src="/site/media/widgetkit/opendeurdagen-2020-5602c1530fd53a71e03f277184e0e693.jpg" alt="Trouw opendeurdagen Kortrijkse Goudcentrale" height="260"></div>
+                        
+                                                <div class="uk-margin"><p style="text-align: center;">Kom en ontdek onze volledige collecties trouwringen in een gezellige sfeer met hapje en een glaasje bubbels.</p>
+</div>
+                        
+                        
+                                                <p><a  href="/site/nieuws/184-trouw-opendeurdagen-kortrijkse-goudcentrale.html">Lees meer</a></p>
+                        
+                    
+                
+            </div>
+        </div>
+
+    
+        <div >
+            <div class="uk-panel">
+
+                                <a class="uk-position-cover uk-position-z-index" href="/site/nieuws/183-opendeurdag-kortrijkse-goudcentrale.html" title="Trouw opendeurdagen Kortrijkse Goudcentrale 2019"></a>
+                
+                
+                
+                
+                    
+                        
+                                                <h3 class="uk-h4 uk-margin-remove-top">
+
+                                                            <a class="uk-link-reset" href="/site/nieuws/183-opendeurdag-kortrijkse-goudcentrale.html">Trouw opendeurdagen Kortrijkse Goudcentrale 2019</a>
+                            
+                            
+                        </h3>
+                        
+                                                <p class="uk-article-meta">Geschreven op <time datetime="2019-02-04 14:00:00">04-02-2019</time></p>
+                        
+                                                <div class="uk-margin uk-text-center"><img src="/site/media/widgetkit/kaart_trouwbeurs_goudcentrale-b-fd3db1054953680926641c16f3bae1a7.jpg" alt="Trouw opendeurdagen Kortrijkse Goudcentrale 2019" height="260"></div>
+                        
+                                                <div class="uk-margin"><p style="text-align: center;">Kom en ontdek onze volledige collecties trouwringen in een gezellige sfeer met hapje en een glaasje bubbels.</p>
+</div>
+                        
+                        
+                                                <p><a  href="/site/nieuws/183-opendeurdag-kortrijkse-goudcentrale.html">Lees meer</a></p>
+                        
+                    
+                
+            </div>
+        </div>
+
+    
+        <div >
+            <div class="uk-panel">
+
+                                <a class="uk-position-cover uk-position-z-index" href="/site/nieuws/182-liefdevol-trouwen-2019.html" title="Liefdevol trouwen 2019 Kortrijk"></a>
+                
+                
+                
+                
+                    
+                        
+                                                <h3 class="uk-h4 uk-margin-remove-top">
+
+                                                            <a class="uk-link-reset" href="/site/nieuws/182-liefdevol-trouwen-2019.html">Liefdevol trouwen 2019 Kortrijk</a>
+                            
+                            
+                        </h3>
+                        
+                                                <p class="uk-article-meta">Geschreven op <time datetime="2019-01-02 10:00:00">02-01-2019</time></p>
+                        
+                                                <div class="uk-margin uk-text-center"><img src="/site/media/widgetkit/trouwbeurs-kortrijk-2019-in-0353234a995516541f8186c33896e233.png" alt="Liefdevol trouwen 2019 Kortrijk" height="260"></div>
+                        
+                                                <div class="uk-margin"><p>In 2019 staat de Kortrijkse Goudcentrale terug op de grootste huwelijksbeurs van België:&nbsp;Liefdevol trouwen 2019.</p>
+</div>
+                        
+                        
+                                                <p><a  href="/site/nieuws/182-liefdevol-trouwen-2019.html">Lees meer</a></p>
+                        
+                    
+                
+            </div>
+        </div>
+
+    
+    </div>
+
+</div></div></div></div>
+	    	</div>
+	    </section>
+	    	    
+	    	    
+	    	    
+	    	    
+	    	    
+	    
+<footer id="gkFooter">
+	<div class="gkPage">
+				<div id="gkFooterNav">
+			
+<div class="gk-cols" data-cols="3">
+<div>
+<h3 style="color: white;">Snelle Links</h3>
+<div class="gk-cols" data-cols="2">
+<div>
+<ul>
+<li><a href="https://www.nise-project.be/site/">Home</a></li>
+<li><a href="/site/nieuws.html">Nieuws</a></li>
+</ul>
+</div>
+<div>
+<ul>
+<li><a href="/site/contact.html">Contact</a></li>
+<li><a href="/site/privacy.html">Privacybeleid</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<h3 style="color: white;">Contact</h3>
+<div class="gk-cols" data-cols="2">
+<div>
+<p>Telefoon</p>
+<p>Fax</p>
+</div>
+<div>
+<p>056 / 710283</p>
+<p>056 / 726230</p>
+</div>
+</div>
+</div>
+<div>
+<h3 style="color: white;">Kortrijkse Goudcentrale</h3>
+<p>Abelenstraat 21-23, B-8520 Kuurne</p>
+<p><small>Created &amp; Powered © by <a title="Nise Solutions" href="http://www.nise-solutions.be/" target="_blank" rel="nofollow noopener noreferrer">Nise Solutions</a> / <a href="http://www.bgraphix.be" target="_blank" rel="nofollow noopener noreferrer">Design Bgraphix</a></small></p>
+</div>
+</div>
+
+		</div>
+				
+			</div>
+</footer>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                
+                <div class="pswp__preloader"></div>
+                
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+    
+   	
+
+
+<!-- +1 button -->
+
+
+	<!-- twitter -->
+     <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+
+
+
+   	
+   		
+   		
+        <div id="gk-login-popup">
+    	 <a href="#" id="gk-login-popup-close">&times;</a>
+         <div class="login">
+	<h3>Log in</h3>
+
+	<form action="https://www.goudcentrale.be/site/media/widgetkit/3.Raymond_Weil-d19456a9ad386b9718f2fefca53455b8.jpg" method="post" id="login-form" class="form-inline">
+          <fieldset class="userdata">
+                    <p class="login-fields">
+                              <label>Gebruikersnaam</label>
+                              <input id="modlgn-username" type="text" name="username" class="inputbox"  size="24" />
+                    </p>
+                    <p class="login-fields">
+                    		  <label>Wachtwoord</label>
+                              <input id="modlgn-passwd" type="password" name="password" class="inputbox" size="24" />
+                    </p>
+                                        <button class="button">Inloggen</button>
+                    <ul>
+                              <li> <a href="/site/login.html?view=reset" class="inverse"> Wachtwoord vergeten?</a> </li>
+                              <li> <a href="/site/login.html?view=remind" class="inverse"> Gebruikersnaam vergeten?</a> </li>
+                                                  </ul>
+                    <input type="hidden" name="option" value="com_users" />
+                    <input type="hidden" name="task" value="user.login" />
+                    <input type="hidden" name="return" value="aHR0cHM6Ly93d3cuZ291ZGNlbnRyYWxlLmJlL3NpdGUvbWVkaWEvd2lkZ2V0a2l0LzMuUmF5bW9uZF9XZWlsLWQxOTQ1NmE5YWQzODZiOTcxOGYyZmVmY2E1MzQ1NWI4LmpwZw==" />
+                    <input type="hidden" name="6a285e4c025a6dfbb7d5012c1db13f26" value="1" />                    
+          </fieldset>
+          <div class="posttext">  </div>
+	</form>
+</div>
+
+    </div>
+    <div id="gk-login-popup-overlay"></div>
+        
+       		
+   	 
+	<script>
+		if(jQuery(window).outerWidth() > 600) {	
+			jQuery('.nspMain').each(function(i, el) {
+				el = jQuery(el);
+				if(el.hasClass('offers') || el.hasClass('category-layout')) {
+					var imgs = el.find('.nspArtPage').first().find('.nspImage');
+					for(var i = 0; i < imgs.length; i++) {
+						jQuery(imgs[i]).attr('data-sr', 'scale up 10% and wait ' + i * 0.15 + 's');
+					}
+				}
+			});
+			
+			jQuery('.gkIsWrapper-gk_hotel_tabs[data-mode="testimonial"]').each(function(i, el) {
+				jQuery(el).parent().attr('data-sr', 'scale up 10%');
+			});
+			
+			var config = {
+				complete: function(el) {
+					el = jQuery(el);
+				
+					if(el.hasClass('bar')) {
+						el.addClass('gk-loaded');
+					}
+				},
+				mobile: true
+			};
+				
+			window.sr = new scrollReveal(config);
+		} else {
+			jQuery('*[data-sr]').each(function(i, el) {
+				el = jQuery(el);
+				
+				if(el.hasClass('bar')) {
+					el.addClass('gk-loaded');
+				}
+			});
+		}
+	</script>
+		
+	
+</body>
+</html>
