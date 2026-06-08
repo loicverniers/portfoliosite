@@ -1,0 +1,616 @@
+/* ====================================
+   Erik Pauwels Fotografie — Preview
+   ==================================== */
+
+:root {
+    --donker: #1a1a2e;
+    --donker-2: #16213e;
+    --accent: #e57300;
+    --accent-licht: #FF8833;
+    --blauw: #0072B1;
+    --wit: #ffffff;
+    --off-white: #f8f6f3;
+    --grijs: #6b7280;
+    --grijs-licht: #e5e7eb;
+    --grijs-donker: #374151;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+
+    --radius: 8px;
+    --shadow: 0 2px 16px rgba(26, 26, 46, 0.08);
+    --shadow-lg: 0 8px 32px rgba(26, 26, 46, 0.12);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--grijs-donker);
+    background: var(--off-white);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover { color: var(--accent-licht); }
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ====================================
+   NAVIGATION
+   ==================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--donker);
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--grijs-donker);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.4rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--donker);
+    transition: 0.3s;
+}
+
+/* ====================================
+   HERO
+   ==================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,26,46,0.35) 0%, rgba(26,26,46,0.65) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3.5rem 1.5rem;
+    max-width: 700px;
+}
+
+.hero-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-licht);
+    margin-bottom: 1.2rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 7vw, 4.8rem);
+    font-weight: 700;
+    color: var(--wit);
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* ====================================
+   BUTTONS
+   ==================================== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: var(--wit);
+}
+
+.btn-primary:hover {
+    background: var(--accent-licht);
+    color: var(--wit);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 115, 0, 0.35);
+}
+
+/* ====================================
+   SECTIONS
+   ==================================== */
+.section {
+    padding: 3.5rem 0;
+}
+
+.section-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--donker);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ====================================
+   OVER MIJ
+   ==================================== */
+.over { background: var(--wit); }
+
+.over-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.over-text p {
+    margin-bottom: 1.2rem;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.over-text strong { color: var(--donker); }
+
+.over-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.over-card {
+    background: linear-gradient(135deg, var(--donker) 0%, var(--donker-2) 100%);
+    border-radius: var(--radius);
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+.over-stat {
+    text-align: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.over-stat:last-child { border-bottom: none; }
+
+.stat-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-licht);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ====================================
+   DIENSTEN
+   ==================================== */
+.diensten {
+    background: var(--off-white);
+}
+
+.diensten-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.dienst-card {
+    background: var(--wit);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 3px solid transparent;
+}
+
+.dienst-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: var(--accent);
+}
+
+.dienst-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1.2rem;
+    color: var(--accent);
+}
+
+.dienst-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.dienst-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--donker);
+    margin-bottom: 0.7rem;
+}
+
+.dienst-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+/* ====================================
+   TAAL STRIP
+   ==================================== */
+.taal {
+    background: var(--donker);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.taal p {
+    color: var(--wit);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.taal-sub {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 0.9rem !important;
+    font-weight: 300 !important;
+    margin-top: 0.3rem;
+}
+
+/* ====================================
+   FAQ
+   ==================================== */
+.faq { background: var(--wit); }
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+}
+
+.faq-item {
+    background: var(--off-white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--accent);
+}
+
+.faq-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--donker);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.faq-item p {
+    color: #666;
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+/* ====================================
+   CONTACT
+   ==================================== */
+.contact {
+    background: var(--off-white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+.contact-info p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--accent);
+    margin-top: 3px;
+}
+
+.contact-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--donker);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.2rem;
+}
+
+.contact-item p {
+    color: #555;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.contact-item a { color: #555; }
+.contact-item a:hover { color: var(--accent); }
+
+.contact-hours {
+    background: var(--wit);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-hours h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--donker);
+    margin-bottom: 1.2rem;
+}
+
+.contact-hours table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.contact-hours td {
+    padding: 0.5rem 0;
+    font-size: 0.93rem;
+    color: #555;
+    border-bottom: 1px solid var(--grijs-licht);
+}
+
+.contact-hours td:first-child {
+    font-weight: 600;
+    color: var(--donker);
+    width: 110px;
+}
+
+.contact-hours tr:last-child td { border-bottom: none; }
+
+.hours-note {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--grijs-licht);
+    font-size: 0.85rem;
+    color: var(--grijs);
+    font-style: italic;
+}
+
+/* ====================================
+   FOOTER
+   ==================================== */
+.footer {
+    background: var(--donker);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.footer-brand {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--wit);
+    margin-bottom: 0.5rem;
+}
+
+.footer p {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.85rem;
+}
+
+/* ====================================
+   RESPONSIVE
+   ==================================== */
+@media (max-width: 992px) {
+    .over-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .over-visual { order: -1; }
+    .over-card { max-width: 100%; }
+
+    .diensten-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 0;
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--wit);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active { display: flex; }
+    .nav-toggle { display: flex; }
+
+    .dienst-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .contact-hours {
+        padding: 1.5rem;
+    }
+}
