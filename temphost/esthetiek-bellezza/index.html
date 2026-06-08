@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esthetiek Bellezza — Schoonheidssalon Kortrijk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --pink: #d97197;
+  --pink-light: #f0c4d4;
+  --pink-bg: #fdf5f8;
+  --dark: #2a2a2a;
+  --dark-soft: #4a4a4a;
+  --white: #ffffff;
+  --cream: #faf8f5;
+  --gray: #8a8a8a;
+  --gray-light: #e8e4e0;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  color: var(--dark);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(217,113,151,0.1);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .nav-logo {
+  height: 36px;
+  width: auto;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav .nav-links a {
+  text-decoration: none;
+  color: var(--dark-soft);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+nav .nav-links a:hover { color: var(--pink); }
+
+nav .nav-cta {
+  background: var(--pink);
+  color: var(--white) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+nav .nav-cta:hover { background: #c45e82; }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--dark); margin: 5px 0; transition: 0.3s; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--white);
+  padding-top: 64px;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.5rem 4rem 3.5rem 5rem;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--pink);
+  font-weight: 400;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--dark-soft);
+  line-height: 1.8;
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--pink);
+  color: var(--white);
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover { background: #c45e82; transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid var(--pink-light);
+  color: var(--pink);
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.btn-outline:hover { border-color: var(--pink); background: var(--pink-bg); }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--pink-bg);
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-right::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(transparent, rgba(253,245,248,0.8));
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 2.5rem;
+  left: -3rem;
+  background: var(--white);
+  padding: 1.25rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  z-index: 2;
+}
+
+.hero-badge .badge-text {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--pink);
+  line-height: 1.4;
+}
+
+/* ── SERVICES ── */
+.services {
+  padding: 5rem 3.5rem;
+  background: var(--cream);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-header .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(217,113,151,0.08);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(217,113,151,0.1);
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--pink-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.4rem;
+}
+
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── ABOUT ── */
+.about {
+  padding: 5rem 3.5rem;
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--pink-light);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.about-text h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  color: var(--dark-soft);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+.about-text .highlight {
+  color: var(--pink);
+  font-weight: 500;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-light);
+}
+
+.about-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--dark-soft);
+}
+
+.about-detail .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--pink);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: 5rem 3.5rem;
+  background: var(--pink-bg);
+}
+
+.faq-grid {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(217,113,151,0.08);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 2rem;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.faq-question::after {
+  content: '+';
+  font-size: 1.3rem;
+  color: var(--pink);
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.faq-item.open .faq-question::after {
+  content: '−';
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 2rem 1.5rem;
+}
+
+.faq-answer p {
+  font-size: 0.9rem;
+  color: var(--dark-soft);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 5rem 3.5rem;
+  background: var(--dark);
+  color: var(--white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-info h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.contact-info p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.contact-list .icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(217,113,151,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.contact-list .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pink-light);
+  margin-bottom: 0.2rem;
+}
+
+.contact-list .value {
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+}
+
+.contact-list a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-list a:hover { color: var(--pink-light); }
+
+.contact-form {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+.contact-form h3 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pink-light);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-submit {
+  width: 100%;
+  background: var(--pink);
+  color: var(--white);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  letter-spacing: 0.04em;
+}
+
+.form-submit:hover { background: #c45e82; }
+
+/* ── FOOTER ── */
+footer {
+  background: #1a1a1a;
+  padding: 2rem 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer img { height: 28px; opacity: 0.7; }
+
+footer p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-left {
+    padding: 2rem 2rem 2.5rem;
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+    height: 350px;
+  }
+
+  .hero-badge { display: none; }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image { order: 1; }
+  .about-text { order: 2; }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  nav .nav-links { display: none; }
+  nav .nav-cta { display: none; }
+
+  .nav-toggle { display: block; }
+
+  .services, .about, .faq, .contact {
+    padding: 3rem 2rem;
+  }
+
+  footer {
+    padding: 1.5rem 2rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-left { padding: 2rem 1.5rem; }
+  .hero-right { height: 280px; }
+  .services, .about, .faq, .contact { padding: 2.5rem 1.5rem; }
+  .contact-form { padding: 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="assets/logo.png" alt="Esthetiek Bellezza" class="nav-logo">
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over">Over ons</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Schoonheidssalon Kortrijk</span>
+    <h1>Echte schoonheid is <em>een beleving</em>, niet alleen een uitstraling.</h1>
+    <p class="hero-desc">
+      Welkom bij Esthetiek Bellezza. Een plek waar je jezelf kunt verwennen en tot rust kunt komen. Van verwenarrangementen tot gelaatsverzorgingen — geniet van pure ontspanning in een sfeervolle omgeving.
+    </p>
+    <div class="hero-actions">
+      <a href="#diensten" class="btn-primary">Ontdek onze behandelingen</a>
+      <a href="#contact" class="btn-outline">Neem contact op</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80" alt="Schoonheidssalon behandeling">
+    <div class="hero-badge">
+      <div class="badge-text">Pure ontspanning<br>in hartje Kortrijk</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="diensten">
+  <div class="section-header">
+    <p class="eyebrow">Onze behandelingen</p>
+    <h2>Verwenner voor lichaam&nbsp;&amp;&nbsp;geest</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">✨</div>
+      <h3>Gelaatsverzorgingen</h3>
+      <p>Professionele gelaatsbehandelingen op maat voor elk huidtype. Van diepgaande reiniging tot verjongende behandelingen met Jean D'Arcel producten.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💅</div>
+      <h3>Manicure &amp; Pedicure</h3>
+      <p>Complete nagelverzorging met o.a. Gelish behandelingen. Perfect gepoliste nagelkunst en verzorgde handen en voeten om trots op te zijn.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🌸</div>
+      <h3>Epilaties</h3>
+      <p>Zachte en effectieve ontharing voor een gladde huid. Van wenkbrauwen tot benen — altijd met de zachtste methode voor uw huid.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💆</div>
+      <h3>Massages</h3>
+      <p>Ontspan uw lichaam en geest met een professionele massage. Kies uit verschillende technieken voor ultieme rust en herstel.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎀</div>
+      <h3>Verwenarrangementen</h3>
+      <p>Geniet van een complete beauty-ervening, speciaal samengesteld voor één of twee personen. Het perfecte geschenk voor uzelf of iemand dierbaar.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🧴</div>
+      <h3>Jean D'Arcel Producten</h3>
+      <p>Biologische, dierproefvrije kwaliteitsproducten voor thuisgebruik. Gepersonaliseerd advies voor de beste verzorging van uw huid.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="over">
+  <div class="about-grid">
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80" alt="Esthetiek Bellezza interieur">
+    </div>
+    <div class="about-text">
+      <p class="eyebrow" style="font-size:0.75rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;">Over Esthetiek Bellezza</p>
+      <h2>Welkom bij Nancy — uw <span class="highlight">schoonheidsspecialiste</span> in Kortrijk</h2>
+      <p>
+        "Bellezza" betekent schoonheid in het Italiaans, en dat is precies wat ik u wil bieden: een plek waar je jezelf kunt verwennen en tot rust kunt komen.
+      </p>
+      <p>
+        Gesitueerd op het pittoreske 't Hoge in Kortrijk, richt Esthetiek Bellezza zich op behandelingen die je helpen ontstressen. In een sfeervolle en comfortabele omgeving ervaar je pure ontspanning.
+      </p>
+      <p>
+        Naast verwenarrangementen bied ik ook diverse behandelingen aan voor gezicht, lichaam en epilaties — altijd met hoogwaardige <strong>Jean D'Arcel</strong> producten.
+      </p>
+      <div class="about-details">
+        <div class="about-detail">
+          <span class="dot"></span>
+          <span>Gelegen op het 't Hoge in Kortrijk</span>
+        </div>
+        <div class="about-detail">
+          <span class="dot"></span>
+          <span>Verwenarrangementen voor 1 of 2 personen</span>
+        </div>
+        <div class="about-detail">
+          <span class="dot"></span>
+          <span>Biologische Jean D'Arcel producten</span>
+        </div>
+        <div class="about-detail">
+          <span class="dot"></span>
+          <span>Hygiënische &amp; professionele omgeving</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-header">
+    <p class="eyebrow">Veelgestelde vragen</p>
+    <h2>Wat u misschien wilt weten</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Hoe kan ik een afspraak maken?</button>
+      <div class="faq-answer"><p>U kunt ons bereiken via telefoon op <strong>+32 477 41 16 64</strong> of stuur een e-mail naar <strong>info@esthetiekbellezza.be</strong>. We plannen graag een moment dat u past.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Welke producten gebruiken jullie?</button>
+      <div class="faq-answer"><p>Wij werken exclusief met <strong>Jean D'Arcel</strong> — biologische, dierproefvrije kwaliteitsproducten. Er is een passende keuze voor elk huidtype en budget.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Wat zijn de tarieven?</button>
+      <div class="faq-answer"><p>Onze tarieven variëren per behandeling. Neem contact op voor een offerte op maat of kom langs in het salon voor een persoonlijk advies.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is er parkeergelegenheid in de buurt?</button>
+      <div class="faq-answer"><p>Esthetiek Bellezza is gelegen op het 't Hoge in Kortrijk. Er is voldoende parkeergelegenheid in de nabije omgeving.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Kan ik een cadeaubon kopen?</button>
+      <div class="faq-answer"><p>Zeker! Een behandeling bij Esthetiek Bellezza is het perfecte cadeau. Vraag een cadeaubon aan in het salon of via e-mail.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Kom langs of<br>neem contact op</h2>
+      <p>Wij staan klaar om u te verwelkomen in ons salon in hartje Kortrijk. Aarzel niet om ons te contacteren voor meer informatie of een afspraak.</p>
+      <ul class="contact-list">
+        <li>
+          <span class="icon">📍</span>
+          <div>
+            <div class="label">Adres</div>
+            <div class="value">Volksv. Tahonstraat 9<br>8500 Kortrijk</div>
+          </div>
+        </li>
+        <li>
+          <span class="icon">📞</span>
+          <div>
+            <div class="label">Telefoon</div>
+            <div class="value"><a href="tel:+32477411664">+32 477 41 16 64</a></div>
+          </div>
+        </li>
+        <li>
+          <span class="icon">✉️</span>
+          <div>
+            <div class="label">E-mail</div>
+            <div class="value"><a href="mailto:info@esthetiekbellezza.be">info@esthetiekbellezza.be</a></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-form">
+      <h3>Stuur een bericht</h3>
+      <p class="form-sub">We reageren zo snel mogelijk</p>
+      <form onsubmit="event.preventDefault(); alert('Bedankt! Uw bericht is verzonden.');">
+        <div class="form-group">
+          <label>Naam</label>
+          <input type="text" placeholder="Uw naam" required>
+        </div>
+        <div class="form-group">
+          <label>E-mail</label>
+          <input type="email" placeholder="uw@email.be" required>
+        </div>
+        <div class="form-group">
+          <label>Bericht</label>
+          <textarea placeholder="Uw vraag of bericht..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Verstuur bericht</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/logo.png" alt="Esthetiek Bellezza">
+  <p>&copy; 2025 Esthetiek Bellezza — Alle rechten voorbehouden</p>
+</footer>
+
+</body>
+</html>
