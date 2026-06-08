@@ -1,0 +1,583 @@
+/* ====================================
+   Patisserie Vercruysse — Preview
+   ==================================== */
+
+:root {
+    --bruin: #42332d;
+    --bruin-donker: #282828;
+    --oranje: #dd6b33;
+    --goud: #be9e60;
+    --goud-licht: #d48a31;
+    --wit: #ffffff;
+    --off-white: #faf6f1;
+    --grijs: #838282;
+    --grijs-licht: #ededed;
+    --zwart: #010101;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lato', 'Open Sans', sans-serif;
+
+    --radius: 12px;
+    --shadow: 0 4px 24px rgba(66, 51, 45, 0.10);
+    --shadow-lg: 0 8px 40px rgba(66, 51, 45, 0.15);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--bruin-donker);
+    background: var(--off-white);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--oranje);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+a:hover { color: var(--goud); }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ====================================
+   NAVIGATION
+   ==================================== */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo img {
+    height: 48px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bruin);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--oranje);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--bruin);
+    transition: 0.3s;
+}
+
+/* ====================================
+   HERO
+   ==================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(40,40,40,0.3) 0%, rgba(40,40,40,0.6) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 3.5rem 1.5rem;
+    max-width: 750px;
+}
+
+.hero-tag {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--goud);
+    margin-bottom: 1.2rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 700;
+    color: var(--wit);
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--goud);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: rgba(255,255,255,0.88);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* ====================================
+   BUTTONS
+   ==================================== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-goud {
+    background: var(--goud);
+    color: var(--bruin-donker);
+}
+
+.btn-goud:hover {
+    background: var(--oranje);
+    color: var(--wit);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(221, 107, 51, 0.35);
+}
+
+/* ====================================
+   SECTIONS
+   ==================================== */
+.section {
+    padding: 3.5rem 0;
+}
+
+.section-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--oranje);
+    margin-bottom: 0.8rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--bruin);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--oranje);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* ====================================
+   OVER ONS
+   ==================================== */
+.over { background: var(--wit); }
+
+.over-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+}
+
+.over-text p {
+    margin-bottom: 1.2rem;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.over-text strong { color: var(--bruin); }
+
+.over-stats {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--grijs-licht);
+}
+
+.stat-num {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--oranje);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--grijs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.over-img img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ====================================
+   PRODUCTEN
+   ==================================== */
+.producten {
+    background: var(--off-white);
+}
+
+.producten-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--wit);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--bruin);
+    margin-bottom: 0.8rem;
+}
+
+.product-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ====================================
+   GALERIJ
+   ==================================== */
+.galerij { background: var(--wit); }
+
+.galerij-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.galerij-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    transition: transform 0.3s;
+}
+
+.galerij-img:hover {
+    transform: scale(1.02);
+}
+
+.galerij-img-lg {
+    grid-column: span 2;
+}
+
+/* ====================================
+   FAQ
+   ==================================== */
+.faq { background: var(--off-white); }
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.faq-item {
+    background: var(--wit);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--goud);
+}
+
+.faq-item h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--bruin);
+    margin-bottom: 0.6rem;
+}
+
+.faq-item p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ====================================
+   CONTACT
+   ==================================== */
+.contact { background: var(--bruin-donker); color: var(--wit); }
+
+.contact .section-tag { color: var(--goud); }
+.contact .section-title { color: var(--wit); }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+.contact-info p {
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--goud);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.3rem;
+}
+
+.contact-item p {
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+}
+
+.contact-item a {
+    color: rgba(255,255,255,0.85);
+}
+
+.contact-item a:hover { color: var(--goud); }
+
+/* ====================================
+   FOOTER
+   ==================================== */
+.footer {
+    background: var(--zwart);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+
+.footer-logo {
+    height: 40px;
+    margin: 0 auto 1rem;
+    opacity: 0.8;
+}
+
+.footer p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+}
+
+/* ====================================
+   RESPONSIVE
+   ==================================== */
+@media (max-width: 992px) {
+    .over-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .over-img img { height: 350px; }
+
+    .producten-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galerij-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .galerij-img-lg {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 2rem 0;
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--wit);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .producten-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .over-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .galerij-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galerij-img {
+        height: 220px;
+    }
+}
