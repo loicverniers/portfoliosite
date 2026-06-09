@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slagerij 't Halenplein — Beenhouwer Kortrijk | Vers Ambachtelijk Vlees</title>
+    <meta name="description" content="Slagerij 't Halenplein — Beenhouwer in Kortrijk. Dagverse bereidingen, artisanale charcuterie, huisgemaakte specialiteiten. Halenplein 5, 8500 Kortrijk.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --color-primary: #8B1A1A;
+            --color-primary-dark: #6B0F0F;
+            --color-primary-light: #A52A2A;
+            --color-cream: #FDF6EC;
+            --color-warm: #F5E6D3;
+            --color-charcoal: #2C2C2C;
+            --color-text: #3A3A3A;
+            --color-text-light: #6B6B6B;
+            --color-gold: #C4952A;
+            --color-gold-light: #D4AF37;
+            --color-white: #FFFFFF;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Sans Pro', -apple-system, sans-serif;
+            --shadow-soft: 0 4px 24px rgba(0,0,0,0.08);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.12);
+            --radius: 4px;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(253, 246, 236, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 26, 26, 0.1);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span { color: var(--color-gold); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-charcoal);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--color-primary); }
+
+        .nav-cta {
+            display: inline-block;
+            background: var(--color-primary);
+            color: var(--color-white) !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius);
+            font-size: 0.85rem !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.04em !important;
+        }
+
+        .nav-cta:hover { background: var(--color-primary-dark) !important; color: var(--color-white) !important; }
+
+        .burger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .burger span { display: block; width: 24px; height: 2px; background: var(--color-charcoal); margin: 5px 0; transition: 0.3s; }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--color-charcoal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #3A2A1A 0%, #2C1810 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&q=80') center/cover no-repeat;
+            opacity: 0.35;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139,26,26,0.3) 0%, rgba(44,24,16,0.6) 100%);
+        }
+
+        .hero-image-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            width: 120px;
+            height: 120px;
+            border: 3px solid var(--color-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge svg { width: 60px; height: 60px; }
+
+        .hero-text {
+            padding: 6rem 4rem 6rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-text::before {
+            content: '';
+            position: absolute;
+            top: 3rem;
+            left: 5rem;
+            width: 60px;
+            height: 3px;
+            background: var(--color-gold);
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-gold-light);
+            font-weight: 400;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+        }
+
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(139,26,26,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-gold-light);
+            border: 2px solid var(--color-gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-gold);
+            color: var(--color-charcoal);
+        }
+
+        /* ── Intro Section ── */
+        .intro {
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            line-height: 1.9;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .intro-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--color-gold);
+            margin: 2rem auto;
+        }
+
+        /* ── Services / Products ── */
+        .products {
+            padding: 2rem 2rem 6rem;
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-primary);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            text-align: center;
+            margin-bottom: 4rem;
+            line-height: 1.2;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--color-white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info { padding: 1.5rem; }
+
+        .product-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-info p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* ── About / Story ── */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .about-image {
+            background: url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=800&q=80') center/cover no-repeat;
+            position: relative;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(139,26,26,0.15) 0%, transparent 100%);
+        }
+
+        .about-content {
+            background: var(--color-warm);
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.25;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.9;
+            margin-bottom: 1.2rem;
+        }
+
+        .about-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid rgba(139,26,26,0.15);
+            margin-top: 1rem;
+        }
+
+        .about-highlight-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .about-highlight-text { font-weight: 600; color: var(--color-charcoal); font-size: 0.95rem; }
+
+        /* ── Gallery ── */
+        .gallery {
+            padding: 6rem 2rem;
+            background: var(--color-charcoal);
+        }
+
+        .gallery .section-label { color: var(--color-gold-light); }
+        .gallery .section-title { color: var(--color-white); }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: #333;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.05); }
+
+        /* ── FAQ ── */
+        .faq {
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq .section-title { margin-bottom: 3rem; }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(139,26,26,0.12);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover { color: var(--color-primary); }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--color-gold);
+            font-family: var(--font-body);
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-top: 1rem;
+        }
+
+        .faq-answer p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+
+        /* ── Contact ── */
+        .contact {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+            padding: 6rem 2rem;
+        }
+
+        .contact-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .contact p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details { list-style: none; }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            color: var(--color-white);
+            font-size: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            background: var(--color-white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .contact-form h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group { margin-bottom: 1.2rem; }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #E8E0D8;
+            border-radius: var(--radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            transition: border-color 0.3s;
+            background: var(--color-cream);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .contact-form .btn { width: 100%; text-align: center; }
+
+        /* ── Opening Hours ── */
+        .hours {
+            padding: 4rem 2rem;
+            background: var(--color-cream);
+            text-align: center;
+        }
+
+        .hours h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.7rem 1.2rem;
+            background: var(--color-white);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .hours-day { font-weight: 600; font-size: 0.9rem; color: var(--color-charcoal); }
+        .hours-time { font-size: 0.9rem; color: var(--color-text-light); }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--color-charcoal);
+            color: rgba(255,255,255,0.6);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p { font-size: 0.9rem; }
+
+        footer a {
+            color: var(--color-gold-light);
+            text-decoration: none;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            html { font-size: 15px; }
+
+            nav { padding: 1rem 1.5rem; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-cream);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(139,26,26,0.1);
+                box-shadow: var(--shadow-soft);
+            }
+
+            .nav-links.open { display: flex; }
+            .burger { display: block; }
+
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-image { height: 300px; }
+            .hero-text { padding: 3.5rem 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-text::before { left: 2rem; top: 2rem; }
+
+            .intro { padding: 3.5rem 1.5rem; }
+            .intro h2 { font-size: 1.8rem; }
+
+            .products { padding: 1rem 1.5rem 3.5rem; }
+            .products-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .product-image { height: 180px; }
+
+            .about { grid-template-columns: 1fr; }
+            .about-image { height: 250px; }
+            .about-content { padding: 3.5rem 2rem; }
+
+            .gallery { padding: 3.5rem 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+            .faq { padding: 3.5rem 1.5rem; }
+
+            .contact { padding: 3.5rem 1.5rem; }
+            .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-form { padding: 1.5rem; }
+
+            .hours-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">Slagerij <span>'t Halenplein</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#specialiteiten">Specialiteiten</a></li>
+            <li><a href="#over-ons">Over ons</a></li>
+            <li><a href="#faq">Veelgestelde vragen</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+        <button class="burger" id="burgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-image">
+            <div class="hero-image-bg"></div>
+            <div class="hero-image-overlay"></div>
+            <div class="hero-image-content">
+                <div class="hero-badge">
+                    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="28" stroke="#D4AF37" stroke-width="2"/>
+                        <text x="30" y="25" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="bold">SINCE</text>
+                        <text x="30" y="38" text-anchor="middle" fill="#D4AF37" font-size="14" font-weight="bold">1985</text>
+                    </svg>
+                </div>
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.15em;">Beenhouwerij · Kortrijk</p>
+            </div>
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">Ambachtelijke Beenhouwerij</p>
+            <h1>Het lekkerste <em>vlees</em> van de streek</h1>
+            <p class="hero-sub">Bij Slagerij 't Halenplein vindt u overheerlijk hoogkwalitatief runds- en varkensvlees, verse charcuterie en huisgemaakte specialiteiten — bereid met meer dan passie voor ambacht.</p>
+            <div class="hero-actions">
+                <a href="#specialiteiten" class="btn btn-primary">Ontdek onze specialiteiten</a>
+                <a href="#contact" class="btn btn-outline">Bezoek ons</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="intro">
+        <h2>Van het beste runds- en varkensvlees tot huisgemaakte charcuterie</h2>
+        <div class="intro-divider"></div>
+        <p>Ons team bereidt dagelijks dagverse gerechten vanuit één beweegreden: enkel het allerbeste is goed genoeg. Van overheerlijke salades tot vol au vent — bij ons vindt u het hele gamma aan fijnkost en ambachtelijke bereidingen.</p>
+    </section>
+
+    <!-- Products / Specialiteiten -->
+    <section class="products" id="specialiteiten">
+        <p class="section-label">Ons aanbod</p>
+        <h2 class="section-title">Onze specialiteiten</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500&q=80" alt="Kwaliteitsvlees" loading="lazy">
+                <div class="product-info">
+                    <h3>Kwaliteitsvlees</h3>
+                    <p>Overheerlijk, hoogkwalitatief runds- en varkensvlees uit de streek. Dagvers gecontroleerd door onze beenhouwer.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Dagverse gerechten" loading="lazy">
+                <div class="product-info">
+                    <h3>Dagverse bereidingen</h3>
+                    <p>Stoofvlees, vol au vent, gevulde kalkoenrollade en meer — elke dag opnieuw bereid met verse ingredienten.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?w=500&q=80" alt="Charcuterie" loading="lazy">
+                <div class="product-info">
+                    <h3>Charcuterie &amp; fijnkost</h3>
+                    <p>Huisgemaakte paté's, salades, hesp en worst — artisanale bereidingen vol smaak, klaar voor bij de borrel of het avondeten.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1551028150-64b9f398f678?w=500&q=80" alt="Schotels & bereidingen" loading="lazy">
+                <div class="product-info">
+                    <h3>Schotels &amp; bereidingen</h3>
+                    <p>Warme en koude schotels op maat — perfect voor feestjes, families of gewoon een makkelijke doordeweekse dag.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1504973960431-1c467e159aa4?w=500&q=80" age" loading="lazy">
+                <div class="product-info">
+                    <h3>Traiteur</h3>
+                    <p>Voor recepties, bedrijfsevents of gezellige samensmeltingen — wij stellen een op maat gemaakte traiteurformule samen.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img class="product-image" src="https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=500&q=80" alt="BBQ selectie" loading="lazy">
+                <div class="product-info">
+                    <h3>BBQ selectie</h3>
+                    <p>De beste stukken voor aan de grill — van ribeyes tot gemarineerde kippetjes, altijd van de beste kwaliteit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="over-ons">
+        <div class="about-image"></div>
+        <div class="about-content">
+            <p class="section-label" style="text-align:left; margin-bottom:1rem;">Over ons</p>
+            <h2>Een beenhouwerij met passie voor kwaliteit</h2>
+            <p>Bij Slagerij 't Halenplein in Kortrijk staat ambacht centraal. Ons ervaren team rost, snijdt en bereidt dagelijks met de grootste zorg — van het selecteren van het beste vlees tot het afwerken van ons meest geliefde gerecht.</p>
+            <p>Onze klanten weten ons te vinden voor de lekkerste charcuterie, overheerlijke maaltijden en het altijd verse vlees. Of u nu langskomt voor uw dagelijkse boodschappen of een speciale gelegeente traject — u bent altijd welkom op het Halenplein.</p>
+            <div class="about-highlight">
+                <div class="about-highlight-icon">✦</div>
+                <div>
+                    <div class="about-highlight-text">Dagvers &amp; ambachtelijk</div>
+                    <p style="font-size:0.9rem; color:var(--color-text-light); margin:0.3rem 0 0;">Elke dag vers bereid met aandacht voor detail</p>
+                </div>
+            </div>
+            <div class="about-highlight">
+                <div class="about-highlight-icon">❖</div>
+                <div>
+                    <div class="about-highlight-text">Lokale aanpak</div>
+                    <p style="font-size:0.9rem; color:var(--color-text-light); margin:0.3rem 0 0;">Werkten samen met lokale boerderijen en leveranciers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <p class="section-label">In beeld</p>
+        <h2 class="section-title">Proef de kwaliteit</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&q=80" alt="Vers vlees" loading="lazy"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Ambachtelijke bereidingen" loading="lazy"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?w=400&q=80" alt="Charcuterie" loading="lazy"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1606728035253-49e8a23146de?w=400&q=80" alt="Salades" loading="lazy"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551028150-64b9f398f678?w=400&q=80" alt="Schotels" loading="lazy"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504973960431-1c467e159aa4?w=400&q=80" alt="Traiteur" loading="lazy"></div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <p class="section-label">Veelgestelde vragen</p>
+        <h2 class="section-title">Zeggen onze klanten</h2>
+
+        <div class="faq-item active">
+            <div class="faq-question">Wat zijn jullie openingstijden?</div>
+            <div class="faq-answer"><p>Open maandag, dinsdag, donderdag en vrijdag van 8:00–12:15 en 14:00–18:00. Woensdag en zaterdag van 8:00–12:30. Gesloten op zondag.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Kunnen we ook bestellingen plaatsen?</div>
+            <div class="faq-answer"><p>Zeker! U kunt bij ons terecht voor bestellingen van schotels, charcuterie of een op maat samengesteld pakket. Neem telefonisch contact op of vraag het volgende keer dat u langskomt.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is er parkeergelegenheid?</div>
+            <div class="faq-answer"><p>Ja, op het Halenplein en de omliggende straten is ruim voldoende parkingsruimte verkrijgbaar.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Bieden jullie traiteur aan?</div>
+            <div class="faq-answer"><p>Uiteraard. Voor feesten, bedrijfsevents of gewoon een gezamenlijke maaltijd stellen we met u een op maat gemaakte formule samen. Neem contact op voor de mogelijkheden.</p></div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Waar komt jullie vlees vandaan?</div>
+            <div class="faq-answer"><p>Wij werken nauw samen met lokale boerderijen en geselecteerde leveranciers. Kwaliteit en versheid staan voorop — wij weten precies waar onze producten vandaan komen.</p></div>
+        </div>
+    </section>
+
+    <!-- Opening Hours -->
+    <section class="hours">
+        <h3>Openingsuren</h3>
+        <div class="hours-grid">
+            <div class="hours-item"><span class="hours-day">Maandag</span><span class="hours-time">8–12:15 / 14–18</span></div>
+            <div class="hours-item"><span class="hours-day">Dinsdag</span><span class="hours-time">8–12:15 / 14–18</span></div>
+            <div class="hours-item"><span class="hours-day">Woensdag</span><span class="hours-time">8–12:30</span></div>
+            <div class="hours-item"><span class="hours-day">Donderdag</span><span class="hours-time">8–12:15 / 14–18</span></div>
+            <div class="hours-item"><span class="hours-day">Vrijdag</span><span class="hours-time">8–12:15 / 14–18</span></div>
+            <div class="hours-item"><span class="hours-day">Zaterdag</span><span class="hours-time">8–12:30</span></div>
+            <div class="hours-item"><span class="hours-day">Zondag</span><span class="hours-time" style="color:var(--color-primary)">Gesloten</span></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-inner">
+            <div>
+                <h2>Langs op het Halenplein</h2>
+                <p>Vragen over onze specialiteiten, bestellingen of traiteur? We helpen u graag verder. Kom ook gerust eens langs in onze winkel op het Halenplein.</p>
+                <ul class="contact-details">
+                    <li>
+                        <span class="contact-icon">📍</span>
+                        <span>Halenplein 5, 8500 Kortrijk</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon">📞</span>
+                        <span>056 21 92 81</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon">✉️</span>
+                        <span>sylvie_van_eeckhoutte@hotmail.com</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h3>Stuur ons een bericht</h3>
+                <form action="mailto:sylvie_van_eeckhoutte@hotmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Uw naam</label>
+                        <input type="text" name="name" placeholder="Jan Janssens" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" placeholder="jan@voorbeeld.be" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Bericht</label>
+                        <textarea name="message" placeholder="Uw vraag of bericht..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verstuur bericht</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Slagerij 't Halenplein — Beenhouwerij, Halenplein 5, 8500 Kortrijk</p>
+        <p style="margin-top:0.5rem; font-size:0.8rem;">Voorbeeld website door <a href="https://lvsites.solutions">LVsites</a></p>
+    </footer>
+
+    <script>
+        // Mobile menu
+        document.getElementById('burgerBtn').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var item = this.parentElement;
+                var isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
