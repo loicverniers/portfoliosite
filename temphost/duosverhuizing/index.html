@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DuosVerhuizing — Professionele Website Preview | LVsites</title>
+    <meta name="description" content="Website preview voor DuosVerhuizing, verhuisbedrijf in Merelbeke en West-Vlaanderen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0f172a;
+            --color-secondary: #1e3a5f;
+            --color-accent: #e8922e;
+            --color-accent-hover: #d48020;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --color-bg: #faf9f7;
+            --color-white: #ffffff;
+            --color-border: #e8e4de;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            line-height: 1.2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0 2rem;
+            transition: var(--transition);
+        }
+
+        .navbar-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .navbar-logo {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-white);
+            text-decoration: none;
+        }
+
+        .navbar-logo span {
+            color: var(--color-accent);
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .navbar-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .navbar-cta {
+            background: var(--color-accent) !important;
+            color: var(--color-primary) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius);
+            font-weight: 600 !important;
+            transition: var(--transition);
+        }
+
+        .navbar-cta:hover {
+            background: var(--color-accent-hover) !important;
+            color: var(--color-primary) !important;
+        }
+
+        .navbar-mobile {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 70px 2rem 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="rgba(232,146,46,0.08)"/><circle cx="75" cy="75" r="0.5" fill="rgba(232,146,46,0.08)"/><circle cx="50" cy="10" r="0.3" fill="rgba(232,146,46,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(232, 146, 46, 0.15);
+            border: 1px solid rgba(232, 146, 46, 0.3);
+            color: var(--color-accent);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 em {
+            color: var(--color-accent);
+            font-style: normal;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .hero-stat span {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 2rem;
+            border-radius: var(--radius);
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-white);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 3.5rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+            color: var(--color-text-light);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-header .divider {
+            width: 60px;
+            height: 3px;
+            background: var(--color-accent);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About */
+        .about {
+            background: var(--color-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image-placeholder svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .about-feature .check {
+            width: 20px;
+            height: 20px;
+            background: rgba(232, 146, 46, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-accent);
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        /* Services */
+        .services {
+            background: var(--color-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-accent);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(232, 146, 46, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.15rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery */
+        .gallery {
+            background: var(--color-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item svg {
+            width: 50px;
+            height: 50px;
+            opacity: 0.2;
+        }
+
+        .gallery-item span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--color-white);
+            padding: 2rem 1rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .gallery-item:nth-child(1) { background: linear-gradient(135deg, #1e3a5f, #0f172a); }
+        .gallery-item:nth-child(2) { background: linear-gradient(135deg, #e8922e, #d48020); }
+        .gallery-item:nth-child(3) { background: linear-gradient(135deg, #2d6a4f, #1b4332); }
+        .gallery-item:nth-child(4) { background: linear-gradient(135deg, #6c757d, #495057); }
+        .gallery-item:nth-child(5) { background: linear-gradient(135deg, #374151, #1f2937); }
+        .gallery-item:nth-child(6) { background: linear-gradient(135deg, #0f172a, #1e3a5f); }
+
+        /* FAQ */
+        .faq {
+            background: var(--color-bg);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--color-white);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--color-primary);
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+        }
+
+        .faq-question:hover {
+            color: var(--color-accent);
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-answer {
+            padding: 0 2rem 1.5rem;
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--color-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.95rem;
+        }
+
+        .contact-details li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(232, 146, 46, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .contact-form-container {
+            background: var(--color-primary);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form-container h3 {
+            color: var(--color-white);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid rgba(255,255,255,0.15);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,0.08);
+            color: var(--color-white);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background: rgba(255,255,255,0.12);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--color-primary);
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h4 {
+            color: var(--color-white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .section {
+                padding: 2rem 1.25rem;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
+            .navbar-mobile {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="#" class="navbar-logo">Duos<span>Verhuizing</span></a>
+            <ul class="navbar-links">
+                <li><a href="#over-ons">Over Ons</a></li>
+                <li><a href="#diensten">Diensten</a></li>
+                <li><a href="#galerij">Galerij</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="navbar-cta">Offerte aanvragen</a></li>
+            </ul>
+            <button class="navbar-mobile" aria-label="Menu">&#9776;</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Verhuisbedrijf Merelbeke &amp; West-Vlaanderen</span>
+            <h1>Goedkoop en <em>zorgeloos</em> verhuizen</h1>
+            <p class="hero-subtitle">DuosVerhuizing is een ervaren familiebedrijf dat kwaliteit en scherpe prijzen combineert. Geen vervoerskosten, geen avondtoeslag — gewoon eerlijke prijzen.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+                <a href="#diensten" class="btn btn-outline">Onze diensten</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <strong>50%</strong>
+                    <span>Mogelijke besparing</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>0€</strong>
+                    <span>Vervoers-&amp; voorrijkosten</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>7/7</strong>
+                    <span>Bereikbaar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="over-ons" class="section about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.3)"><path d="M19 13v-2a7 7 0 00-14 0v2a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2zm-7-9a5 5 0 015 5v2H7V9a5 5 0 015-5z"/></svg>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Over DuosVerhuizing</h2>
+                    <p>DuosVerhuizing is een ervaren verhuisfirma in regio Oost- en West-Vlaanderen, klaar voor al uw opdrachten — zowel nationaal als internationaal. Wij tonen aan dat kwaliteit en scherpe prijzen gerust hand in hand kunnen gaan.</p>
+                    <p>Wij zijn een service- en klantgericht familiebedrijf met gekwalificeerde en gemotiveerde medewerkers. Onze grootte troeven zijn professionaliteit, service en een snelle levering.</p>
+                    <div class="about-features">
+                        <div class="about-feature"><span class="check">&#10003;</span> Geen verborgen kosten</div>
+                        <div class="about-feature"><span class="check">&#10003;</span> Ervaren verhuizers</div>
+                        <div class="about-feature"><span class="check">&#10003;</span> Verhuislift beschikbaar</div>
+                        <div class="about-feature"><span class="check">&#10003;</span> Maatwerk &amp; flexibiliteit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="diensten" class="section services">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Onze Diensten</h2>
+                <p>Van inpakken tot montage — wij zorgen voor een zorgeloze verhuis.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#128230;</div>
+                    <h3>Verhuisdienst</h3>
+                    <p>Professionele verhuizers die met uiterste zorg al uw bezittingen verhuizen. Combineer met een verhuislift voor optimale service.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128666;</div>
+                    <h3>Verhuislift huren</h3>
+                    <p>Huil onze verhuislift in met een ervaren bediening. Ideaal voor zware meubels op verdiepingen of lastige doorgangen.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128296;</div>
+                    <h3>Montageservice</h3>
+                    <p>Al uw meubels zorgeloos uit elkaar halen en terug monteren. Geen koppijn meer over pasfoto's of lastige kasten.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128203;</div>
+                    <h3>Inpakservice</h3>
+                    <p>Onze professionals pakken uw goederen in met de beste technieken. Alle dozen worden gelabeld voor een overzichtelijke verhuis.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#128665;</div>
+                    <h3>Meubeltransport</h3>
+                    <p>Hulp bij het ophalen of leveren van nieuwe of overgekochte meubels. Zowel voor particulieren als bedrijven.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">&#127968;</div>
+                    <h3>Opslagruimte</h3>
+                    <p>Heeft u tijdelijk opslag nodig? Wij bieden oplossingen voor het veilig opbergen van uw bezittingen tussentijds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="galerij" class="section gallery">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Ons Werk</h2>
+                <p>Een impressie van onze verhuisprojecten.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4z"/></svg>
+                    <span>Woningverhuis</span>
+                </div>
+                <div class="gallery-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                    <span>Kantoorverhuis</span>
+                </div>
+                <div class="gallery-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><path d="M22 13h-8v-2h8v2zm0-6h-8v2h8V7zm-8 10h8v-2h-8v2zm-2-8v6c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V9c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2z"/></svg>
+                    <span>Inpakwerk</span>
+                </div>
+                <div class="gallery-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>
+                    <span>Verhuislift</span>
+                </div>
+                <div class="gallery-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><path d="M12 2L1 21h22L12 2zm0 3.5L18.5 19H5.5L12 5.5z"/></svg>
+                    <span>Zware lasten</span>
+                </div>
+                <div class="gallery-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255,255,255,0.2)"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zM12 18H6v-4h6v4z"/></svg>
+                    <span>Meubeltransport</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Veelgestelde Vragen</h2>
+                <p>Antwoorden op de meest gestelde vragen.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Hoeveel kost een verhuis met DuosVerhuizing?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Onze prijzen zijn altijd op maat. Wij rekenen geen vervoers- of voorrijkosten en geen weekend- of avondtoeslag. Neem contact op voor een vrijblijvende offerte op maat.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Wat is inbegrepen in de verhuisdienst?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Onze verhuizers zijn tevens chauffeur én liftbediener. Zij verhuizen al uw bezittingen met uiterste zorg. U kunt ook onze inpak- en montageservice erbij nemen.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Hoe ver van tevoren moet ik reserveren?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Wij raden aan om minstens 2 tot 4 weken van tevoren te reserveren, vooral in de drukke zomermaanden. Neem zo snel mogelijk contact op om beschikbaarheid te checken.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Werkten jij in mijn regio?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Wij zijn actief in Oost- en West-Vlaanderen, en verder in heel België en internationaal. Mocht uw regio niet tussen onze standaardwerkgebieden vallen, neem gerust contact op.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Kan ik ook alleen een verhuislift huren?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absoluut! U kunt onze verhuislift afzonderlijk huren. De uren worden gerekend vanaf de aankomst bij u. Een ervaren bediener komt altijd mee.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Offerte Aanvragen</h2>
+                <p>Neem vrijblijvend contact op — wij helpen u graag verder.</p>
+                <div class="divider"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contactgegevens</h3>
+                    <p>Heeft u vragen of wilt u een offerte aanvullen? Ons team staat klaar om u te helpen.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <span class="contact-icon">&#128205;</span>
+                            <span>Lamstraat 63, 9820 Merelbeke</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#128222;</span>
+                            <span>+32 489 32 13 40</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#9993;</span>
+                            <span>info@duosverhuizing.be</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon">&#128339;</span>
+                            <span>Ma – Za: 08:00 – 17:00<br>Feestdagen: 10:00 – 21:00</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Offerte aanvragen</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="naam">Naam</label>
+                            <input type="text" id="naam" placeholder="Uw naam">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mailadres</label>
+                            <input type="email" id="email" placeholder="uw@email.be">
+                        </div>
+                        <div class="form-group">
+                            <label for="bericht">Uw bericht</label>
+                            <textarea id="bericht" placeholder="Beschrijf kort uw verhuwsituatie..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">Offerte aanvragen</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <h4>DuosVerhuizing</h4>
+                    <p>Verhuisbedrijf in regio Oost- en West-Vlaanderen. Familiebedrijf met aandacht voor kwaliteit, service en eerlijke prijzen.</p>
+                </div>
+                <div>
+                    <h4>Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#over-ons">Over Ons</a></li>
+                        <li><a href="#diensten">Diensten</a></li>
+                        <li><a href="#galerij">Galerij</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Juridisch</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacybeleid</a></li>
+                        <li><a href="#">Cookiebeleid</a></li>
+                        <li><a href="#">BTW BE 0831.495.579</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 DuosVerhuizing &mdash; Alle rechten voorbehouden.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
