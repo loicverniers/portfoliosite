@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Le Barbier Du Ciel – Barbiershop in Kortemark | LVsites Preview</title>
+    <meta name="description" content="Le Barbier Du Ciel – Men Only barbershop in Kortemark. Classic haircuts, hot towel shave en meer. Vakmanschap sinds 2018.">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Playfair+Display:400,700,900" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: 'Lato', sans-serif; color: #222; background: #fff; line-height: 1.6; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 700; color: #1a1a1a; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 3.5rem; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #b68034; text-decoration: none; }
+
+        /* NAV */
+        .navbar { background: #111; padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; padding: 0 3.5rem; }
+        .navbar .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #b68034; font-weight: 900; }
+        .navbar .logo span { color: #fff; font-weight: 400; font-size: 0.85rem; display: block; }
+        .nav-links { list-style: none; display: flex; gap: 1.5rem; }
+        .nav-links a { color: #ddd; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+        .nav-links a:hover { color: #b68034; }
+        .nav-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+
+        /* HERO */
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2c1e0e 60%, #3d2b14 100%); padding: 6rem 0; text-align: center; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to top, #fff, transparent); }
+        .hero h1 { font-size: 3.2rem; color: #b68034; margin-bottom: 0.5rem; }
+        .hero .tagline { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #ddd; font-style: italic; margin-bottom: 0.8rem; }
+        .hero p { color: #bbb; max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; }
+        .btn-cta { display: inline-block; background: #b68034; color: #fff; padding: 0.9rem 2.2rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; border: none; cursor: pointer; transition: background 0.3s; font-weight: 700; }
+        .btn-cta:hover { background: #9a6928; }
+
+        /* OVER ONS */
+        .about { padding: 5rem 0; background: #fafafa; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .about img { border-radius: 4px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); width: 100%; height: 380px; object-fit: cover; background: #b68034 url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22380%22><rect fill=%22%23b68034%22 width=%22400%22 height=%22380%22/><text x=%22200%22 y=%22190%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2224%22 font-family=%22Georgia,serif%22>Le Barbier Du Ciel</text></svg>'); }
+        .about h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .about h2 span { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b68034; font-family: 'Lato', sans-serif; font-weight: 700; margin-bottom: 0.3rem; }
+        .about p { color: #555; margin-bottom: 1rem; }
+
+        /* DIENSTEN */
+        .services { padding: 5rem 0; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-header h2 { font-size: 2rem; }
+        .section-header span { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: #b68034; margin-bottom: 0.3rem; }
+        .section-header p { color: #777; max-width: 500px; margin: 0.5rem auto 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; }
+        .service-card { background: #fff; border: 1px solid #eee; border-radius: 4px; overflow: hidden; transition: box-shadow 0.3s; }
+        .service-card:hover { box-shadow: 0 6px 25px rgba(0,0,0,0.1); }
+        .service-card .img-wrap { height: 200px; background: #b68034 url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22200%22><rect fill=%22%232c1e0e%22 width=%22400%22 height=%22200%22/><text x=%22200%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%23b68034%22 font-size=%2218%22 font-family=%22Georgia,serif%22>Dienst</text></svg>'); }
+        .service-card .content { padding: 1.5rem; }
+        .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .service-card p { color: #777; font-size: 0.9rem; }
+
+        /* GALERIJ */
+        .gallery { padding: 5rem 0; background: #1a1a1a; }
+        .gallery .section-header h2 { color: #b68034; }
+        .gallery .section-header p { color: #aaa; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .gallery-grid .img-wrap { height: 250px; border-radius: 4px; background: linear-gradient(135deg, #2c1e0e, #3d2b14); display: flex; align-items: center; justify-content: center; color: #b68034; font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        .gallery-grid .img-wrap:nth-child(2) { background: linear-gradient(135deg, #3d2b14, #543a1e); }
+        .gallery-grid .img-wrap:nth-child(3) { background: linear-gradient(135deg, #543a1e, #6b4c28); }
+
+        /* FAQ */
+        .faq { padding: 5rem 0; background: #fafafa; }
+        .faq-item { background: #fff; border: 1px solid #eee; border-radius: 4px; margin-bottom: 1rem; overflow: hidden; }
+        .faq-item summary { padding: 1.2rem 1.5rem; cursor: pointer; font-weight: 700; font-size: 1rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item summary::after { content: '+'; font-size: 1.3rem; color: #b68034; }
+        .faq-item[open] summary::after { content: '−'; }
+        .faq-item .answer { padding: 0 1.5rem 1.2rem; color: #666; font-size: 0.95rem; }
+
+        /* CONTACT */
+        .contact { padding: 5rem 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-info-block h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #b68034; margin-bottom: 0.4rem; margin-top: 1.5rem; }
+        .contact-info-block h3:first-child { margin-top: 0; }
+        .contact-info-block p, .contact-info-block a { color: #444; font-size: 1rem; }
+        .contact-form { background: #fafafa; padding: 2rem; border-radius: 4px; border: 1px solid #eee; }
+        .contact-form h3 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+        .contact-form label { display: block; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 0.3rem; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 0.7rem; border: 1px solid #ddd; border-radius: 4px; font-family: 'Lato', sans-serif; font-size: 0.95rem; margin-bottom: 1rem; }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        .contact-form .btn-cta { width: 100%; }
+
+        /* FOOTER */
+        .footer { background: #111; color: #888; padding: 2.5rem 0; text-align: center; font-size: 0.85rem; }
+        .footer strong { color: #b68034; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container { padding: 0 2rem; }
+            .navbar .container { padding: 0 2rem; }
+            .nav-links { display: none; }
+            .nav-toggle { display: block; }
+            .hero { padding: 4rem 0; }
+            .hero h1 { font-size: 2rem; }
+            .about-grid, .contact-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">Le Barbier<br><span>Du Ciel</span></a>
+        <ul class="nav-links">
+            <li><a href="#over">Over Ons</a></li>
+            <li><a href="#diensten">Diensten</a></li>
+            <li><a href="#galerij">Galerij</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <h1>Le Barbier Du Ciel</h1>
+        <p class="tagline">There's No School Like Old School Baby</p>
+        <p>Men Only barbershop in het hartje van Kortemark. Classic haircuts, hot towel shave en vakmanschap sinds 2018.</p>
+        <a href="#contact" class="btn-cta">Offerte aanvragen</a>
+    </div>
+</section>
+
+<!-- OVER ONS -->
+<section class="about" id="over">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <img src="https://lebarbierduciel.be/images/uploads/lebarbierduciel/lbdc_abouthome.jpg" alt="Le Barbier Du Ciel barbershop Kortemark" loading="lazy">
+            </div>
+            <div>
+                <h2><span>Ons verhaal</span>There's No School Like Old School Baby</h2>
+                <p>Le Barbier Du Ciel is een Men Only barbershop gelegen in het hartje van Kortemark. Sedert 2018 kan je er terecht voor haar en baard, geïnspireerd door de Amerikaanse barbershops van de roaring twenties tot de rockin' fifties.</p>
+                <p>Je ervaart er de kunst van "Old School Barbering". Een plaats waar de stekker er eventjes uit mag en waar je kan genieten van een tot in de puntjes afgewerkte Classic Haircut of een Italiaanse Hot Towel Shave uitgevoerd volgens de regels der kunst.</p>
+                <p>Bij ons geen bandwerk maar vakmanschap, kwaliteit en hygiëne op de eerste plaats met U als klant in de hoofdrol. Kortom: een plek waar een man, man kan zijn!</p>
+                <p style="margin-top:1rem; font-style:italic; color:#b68034;">At your service!<br><strong>J. Meyus</strong> – Barbier</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIENSTEN -->
+<section class="services" id="diensten">
+    <div class="container">
+        <div class="section-header">
+            <span>Wat wij doen</span>
+            <h2>Onze Diensten</h2>
+            <p>Van een klassieke knipbeurt tot een verzorgende hot towel shave — wij bieden het allemaal.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="img-wrap"></div>
+                <div class="content">
+                    <h3>Cuts & Shaves à la carte</h3>
+                    <p>Kies uit ons volledige aanbod van haar- en baardbehandelingen, volgens de regels der kunst.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="img-wrap"></div>
+                <div class="content">
+                    <h3>Cuts & Shaves Combi</h3>
+                    <p>De perfecte combinatie van een klassieke knipbeurt en een verzorgende scheerbeurt.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="img-wrap"></div>
+                <div class="content">
+                    <h3>Headshave & Shave Combi</h3>
+                    <p>Een volledige headshave gecombineerd met een Italiaanse hot towel shave.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="img-wrap"></div>
+                <div class="content">
+                    <h3>Barber on a Harley</h3>
+                    <p>Onze barbierservice bij uw bedrijf — uniek, memorabel en onvergetelijk.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALERIJ -->
+<section class="gallery" id="galerij">
+    <div class="container">
+        <div class="section-header">
+            <span>Bezoek onze shop</span>
+            <h2>Galerij</h2>
+            <p>Een kijkje in onze barbershop in Kortemark.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="img-wrap">Barbershop interieur</div>
+            <div class="img-wrap">Klassieke knipbeurt</div>
+            <div class="img-wrap">Hot Towel Shave</div>
+            <div class="img-wrap">Baardverzorging</div>
+            <div class="img-wrap">Ons team</div>
+            <div class="img-wrap">Sfeerfoto</div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span>Veelgestelde vragen</span>
+            <h2>FAQ</h2>
+        </div>
+        <details class="faq-item">
+            <summary>Moet ik een afspraak maken?</summary>
+            <div class="answer">Je bent altijd welkom, maar om wachttijden te voorkomen raden we aan om vooraf een afspraak te maken. Neem contact met ons op of kom langs in de shop.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Wat zijn de openingsuren?</summary>
+            <div class="answer">Maandag tot donderdag: 9u–12u en 12u45–20u15. Vrijdag: 9u–12u. Zaterdag: 7u30–12u00.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Is de shop toegankelijk voor mindervaliden?</summary>
+            <div class="answer">Neem gerust contact met ons op zodat we de mogelijkheden kunnen bespreken.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Kunnen jullie ook op locatie komen?</summary>
+            <div class="answer">Ja! Met onze "Barber on a Harley" service komen wij naar uw bedrijf. Neem contact op voor de mogelijkheden.</div>
+        </details>
+        <details class="faq-item">
+            <summary>Welke betaalmethodes worden geaccepteerd?</summary>
+            <div class="answer">Wij acteren cash, bankcontact en overschrijving. Neem contact op voor meer info.</div>
+        </details>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <span>Kom langs</span>
+            <h2>Contact</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-block">
+                <h3>Adres</h3>
+                <p>10de Linieregimentstraat 1A<br>8610 Kortemark</p>
+                <h3>Telefoon</h3>
+                <p><a href="tel:+32495778120">0495/77 81 20</a></p>
+                <h3>E-mail</h3>
+                <p><a href="mailto:lebarbierduciel@icloud.com">lebarbierduciel@icloud.com</a></p>
+                <h3>Openingsuren</h3>
+                <p>
+                    Ma–Do: 9u–12u &amp; 12u45–20u15<br>
+                    Vrijdag: 9u–12u<br>
+                    Zaterdag: 7u30–12u00
+                </p>
+            </div>
+            <div class="contact-form">
+                <h3>Offerte aanvragen</h3>
+                <form action="#" method="POST">
+                    <label for="naam">Naam</label>
+                    <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Uw e-mailadres" required>
+                    <label for="bericht">Bericht</label>
+                    <textarea id="bericht" name="bericht" placeholder="Waar kunnen wij u mee helpen?" required></textarea>
+                    <button type="submit" class="btn-cta">Offerte aanvragen</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 <strong>Le Barbier Du Ciel</strong> – Alle rechten voorbehouden. | 10de Liniereglementstraat 1A, 8610 Kortemark</p>
+    </div>
+</footer>
+
+</body>
+</html>
