@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxivervoer Antwerpen | Taxi & Luchthavenvervoer Merksem</title>
+  <meta name="description" content="Taxivervoer Antwerpen — Professioneel taxibedrijf in Merksem. Luchthavenvervoer, havenvervoer, zakelijk vervoer en koeriersdienst. Bel 0465 80 76 83.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #f59e0b;
+      --primary-dark: #d97706;
+      --dark: #0f172a;
+      --dark-blue: #1e293b;
+      --accent: #fbbf24;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --white: #ffffff;
+      --max-w: 1160px;
+      --shadow: 0 4px 30px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 50px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #334155;
+      line-height: 1.7;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== NAV ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15,23,42,0.97);
+      backdrop-filter: blur(12px);
+      padding: 0.85rem 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .navbar .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .navbar .logo span { color: var(--primary); }
+    .navbar nav a {
+      color: rgba(255,255,255,0.8);
+      margin-left: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .navbar nav a:hover { color: var(--primary); }
+    .hamburger { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    .mobile-nav { display: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      min-height: 92vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800"><rect fill="%230f172a" width="1440" height="800"/><g opacity="0.07"><rect x="100" y="150" width="180" height="120" rx="8" fill="%23f59e0b"/><rect x="350" y="280" width="200" height="140" rx="8" fill="%23f59e0b"/><rect x="620" y="100" width="160" height="100" rx="8" fill="%23f59e0b"/><rect x="850" y="300" width="190" height="130" rx="8" fill="%23f59e0b"/><rect x="1100" y="180" width="170" height="110" rx="8" fill="%23f59e0b"/></g></svg>') center/cover no-repeat;
+      z-index: -1;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; width: 100%; height: 80px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-content { max-width: 750px; padding: 0 2rem; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245,158,11,0.15);
+      color: var(--primary);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      color: var(--white);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.8;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--dark);
+      padding: 0.95rem 2.4rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(245,158,11,0.35);
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 30px rgba(245,158,11,0.45); }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.9rem 2.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+    /* ===== SECTION COMMON ===== */
+    .section { padding: 5.5rem 0; }
+    .section-container { max-width: var(--max-w); margin: 0 auto; padding: 0 3.5rem; }
+    .section-label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--dark);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.5px;
+    }
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-header .section-subtitle { margin: 0 auto; }
+    .bg-light { background: var(--light); }
+
+    /* ===== OVER ONS ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-img-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-img-placeholder {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5); font-size: 1rem;
+    }
+    .about-img-placeholder svg { width: 64px; height: 64px; opacity: 0.4; }
+    .about-text h2 { text-align: left; }
+    .about-text p { margin-bottom: 1.2rem; color: #475569; font-size: 1.02rem; }
+    .about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .stat-box { text-align: center; padding: 1.2rem 0.5rem; background: var(--light); border-radius: 10px; }
+    .stat-number { font-size: 1.8rem; font-weight: 800; color: var(--primary); display: block; }
+    .stat-label { font-size: 0.8rem; color: var(--gray); font-weight: 500; }
+
+    /* ===== DIENSTEN ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      border: 1px solid rgba(0,0,0,0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: rgba(245,158,11,0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.3rem;
+      font-size: 1.5rem;
+    }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 0.7rem; }
+    .service-card p { font-size: 0.95rem; color: var(--gray); line-height: 1.7; }
+
+    /* ===== GALERIJ ===== */
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6); font-size: 0.85rem; font-weight: 500;
+    }
+    .g1 { background: linear-gradient(135deg, #1e293b, #475569); }
+    .g2 { background: linear-gradient(135deg, #334155, #64748b); }
+    .g3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .g4 { background: linear-gradient(135deg, #0f172a, #1e293b); }
+    .gallery-item:hover .gallery-placeholder { opacity: 0.8; }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .faq-question {
+      width: 100%;
+      padding: 1.3rem 1.8rem;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: inherit;
+    }
+    .faq-question::after { content: '+'; font-size: 1.3rem; color: var(--primary); font-weight: 400; }
+    .faq-answer {
+      padding: 0 1.8rem 1.3rem;
+      font-size: 0.95rem;
+      color: var(--gray);
+      line-height: 1.8;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info-card {
+      background: var(--dark);
+      border-radius: var(--radius);
+      padding: 3rem;
+      color: var(--white);
+    }
+    .contact-info-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .contact-info-card p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; font-size: 0.95rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .contact-icon {
+      width: 42px; height: 42px;
+      background: rgba(245,158,11,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .contact-detail-text h4 { font-size: 0.85rem; color: rgba(255,255,255,0.5); font-weight: 500; margin-bottom: 0.2rem; }
+    .contact-detail-text p { font-size: 1rem; color: var(--white); margin: 0; }
+    .contact-detail-text a { color: var(--primary); }
+    .contact-cta-box {
+      background: var(--light);
+      border-radius: var(--radius);
+      padding: 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .contact-cta-box h3 { font-size: 1.5rem; font-weight: 700; color: var(--dark); margin-bottom: 0.8rem; }
+    .contact-cta-box p { color: var(--gray); margin-bottom: 1.8rem; line-height: 1.7; }
+    .contact-cta-box .btn-primary { text-align: center; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .footer a { color: var(--primary); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 3.5rem 0; }
+      .section-container { padding: 0 2rem; }
+      .navbar .nav-inner { padding: 0 2rem; }
+      .navbar nav { display: none; }
+      .hamburger { display: block; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-stats { grid-template-columns: repeat(3, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">Taxi<span>Antwerpen</span></a>
+      <nav>
+        <a href="#over">Over Ons</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#galerij">Galerij</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">🚖 Sinds jaren uw betrouwbare taxi in Antwerpen</span>
+      <h1>Taxivervoer Antwerpen<br><span>Vlot, veilig & comfortabel</span></h1>
+      <p>Professioneel personenvervoer naar alle bestemmingen. Van luchthavenvervoer tot zakelijke ritten — wij brengen u altijd op tijd.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Offerte aanvragen</a>
+        <a href="tel:0465807683" class="btn-outline">📞 0465 80 76 83</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER ONS -->
+  <section class="section" id="over">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <div class="about-img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-label">Over Ons</span>
+          <h2 class="section-title">Uw partner voor taxivervoer in Antwerpen en omgeving</h2>
+          <p>Taxivervoer Antwerpen is een betrouwbaar taxibedrijf gevestigd in Merksem. Wij bieden hoogwaardig personenvervoer voor particulieren en bedrijven in heel Antwerpen en daarbuiten.</p>
+          <p>Ons wagenpark bestaat uit Mercedes-Benz E-klasse berlines, Mercedes Vito minibusjes en Toyota Hybrids. Of u nu 1 persoon bent of een groep van 8 — wij hebben altijd een geschikte wagen beschikbaar. Onze chauffeurs zijn professioneel, vriendelijken en kennen Antwerpen als geen ander.</p>
+          <p>Wij rijden 24 uur op 24, 7 dagen op 7 — ook tijdens feestdagen. Van luchthavenvervoer naar Zaventem, Charleroi of Eindhoven tot vervoer in de haven van Antwerpen: wij staan voor u klaar.</p>
+          <div class="about-stats">
+            <div class="stat-box">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Beschikbaar</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Wagentypes</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">15+</span>
+              <span class="stat-label">Luchthavens</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="section bg-light" id="diensten">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Onze Diensten</span>
+        <h2 class="section-title">Vervoer op maat voor elke gelegenheid</h2>
+        <p class="section-subtitle">Van luchthavenvervoer tot zakelijke ritten — wij bieden een breed scala aan taxidiensten.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">✈️</div>
+          <h3>Luchthavenvervoer</h3>
+          <p>Vervoer naar Zaventem, Charleroi, Eindhoven en meer dan 15 andere luchthavens. Vaste prijzen, geen verrassingen. Wij brengen u op tijd naar uw vlucht en komen u ophalen bij terugkomst.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Zakelijk Vervoer</h3>
+          <p>Betrouwbaar vervoer voor uw medewerkers of klanten. Wij bieden flexibele afspraken en vaste tarieven voor regelmatige ritten. Ook koeriersdienst voor dringende documenten.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚢</div>
+          <h3>Havenvervoer</h3>
+          <p>Professioneel vervoer in en rond de haven van Antwerpen. Wij brengen u naar elke locatie in de haven, op elk tijdstip. Ideaal voor havenwerkers en zakelijke bezoekers.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎉</div>
+          <h3>Shuttle Service</h3>
+          <p>Organiseer een shuttle voor uw feest, bruiloft of evenement. Wij brengen uw gasten veilig naar en van de locatie. Beschikbaar met minibusjes voor groepen tot 8 personen.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚂</div>
+          <h3>Treinstations Taxi</h3>
+          <p>Wij brengen u naar elk station in Antwerpen en omgeving — of halen u op. Altijd op tijd, ook voor vroege vertreken of late aankomsten. Stressvervoer naar het station behoort tot het verleden.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎶</div>
+          <h3>Festival & Evenement</h3>
+          <p>Speciaal vervoer voor festivals en evenementen, waaronder Tomorrowland. Wij brengen u comfortabel naar het festivalterrein en komen u ophalen wanneer u wilt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIJ -->
+  <section class="section" id="galerij">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Galerij</span>
+        <h2 class="section-title">Ons wagenpark & onze diensten</h2>
+        <p class="section-subtitle">Maak kennis met onze voertuigen en de vervoerwijzen die wij aanbieden.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <div class="gallery-placeholder g1">Mercedes E-Klasse</div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder g2">Mercedes Vito Minibus</div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder g3">Luchthavenvervoer</div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-placeholder g4">Havenvervoer Antwerpen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-light" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Veelgestelde Vragen</span>
+        <h2 class="section-title">FAQ</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">Hoe kan ik een taxi reserveren?</button>
+          <div class="faq-answer">U kunt ons telefonisch bereiken op <strong>0465 80 76 83</strong> of een e-mail sturen naar <strong>info@taxivervoer-antwerpen.be</strong>. Wij zijn 24/7 beschikbaar voor reserveringen.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Welke luchthavens bedienen jullie?</button>
+          <div class="faq-answer">Wij rijden naar Zaventem, Charleroi, Eindhoven en meer dan 15 andere luchthavens in binnen- en buitenland. Vraag naar de mogelijkheden voor uw bestemming.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Zijn de tarieven van tevoren vast?</button>
+          <div class="faq-answer">Ja, wij werken met afgesproken vaste tarieven. U weet altijd vooraf wat de rit kost, zonder verrassingen achteraf.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Kunnen jullie ook groepen vervoeren?</button>
+          <div class="faq-answer">Zeker! Met onze Mercedes Vito minibusjes kunnen wij tot 8 passagiers tegelijk vervoeren. Voor grotere groepen kunnen wij meerdere voertuurderzetten.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Bieden jullie zakelijke vervoersdiensten aan?</button>
+          <div class="faq-answer">Ja, wij bieden vervoer voor bedrijven, inclusief het vervoer van medewerkers, klanten en dringende documenten. Neem contact op voor een offerte op maat.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Neem contact op</h2>
+        <p class="section-subtitle">Vraag een offerte aan of reserveer direct uw taxi.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <h3>Contactgegevens</h3>
+          <p>Stuur ons een bericht of bel direct voor een offerte of reservering.</p>
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div class="contact-detail-text">
+              <h4>Adres</h4>
+              <p>Paasbloemstraat 61<br>B-2170 Merksem (Antwerpen)</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div class="contact-detail-text">
+              <h4>Telefoon</h4>
+              <p><a href="tel:0465807683">0465 80 76 83</a></p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-detail-text">
+              <h4>E-mail</h4>
+              <p><a href="mailto:info@taxivervoer-antwerpen.be">info@taxivervoer-antwerpen.be</a></p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">🕐</div>
+            <div class="contact-detail-text">
+              <h4>Beschikbaar</h4>
+              <p>24 uur op 24, 7 dagen op 7</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta-box">
+          <h3>Offerte aanvragen</h3>
+          <p>Interesse in een nieuwe, professionele website voor uw taxibedrijf? Wij maken een moderne, mobiele website die uw bedrijf sterker online presenteert — zodat klanten u nog sneller vinden en kunnen reserveren.</p>
+          <a href="mailto:communication@lvsites.solutions?subject=Offerte%20aanvragen%20-%20Taxivervoer%20Antwerpen" class="btn-primary">Offerte aanvragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 Taxivervoer Antwerpen — Taxi Local BV | Paasbloemstraat 61, 2170 Merksem | <a href="tel:0465807683">0465 80 76 83</a></p>
+  </footer>
+
+</body>
+</html>
