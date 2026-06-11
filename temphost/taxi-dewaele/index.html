@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taxi De Waele — Taxidiensten in Zelzate</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Raleway', sans-serif; color: #333; line-height: 1.6; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 3.5rem;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: #fff;
+    padding: 5rem 0 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #fff;
+    clip-path: ellipse(55% 100% at 50% 100%);
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  .btn {
+    display: inline-block;
+    background: #ebb72b;
+    color: #1a1a2e;
+    padding: 0.85rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #d4a426;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(235, 183, 43, 0.35);
+  }
+
+  /* Section styling */
+  section {
+    padding: 4.5rem 0;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: #1a1a2e;
+  }
+  .section-subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Over Ons */
+  .about {
+    background: #f8f9fa;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+  }
+  .about-text p {
+    margin-bottom: 1rem;
+    color: #555;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .stat {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+  }
+  .stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ebb72b;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 0.25rem;
+  }
+  .about-image {
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    border-radius: 16px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-image::before {
+    content: '🚕';
+    font-size: 5rem;
+    opacity: 0.15;
+    position: absolute;
+  }
+
+  /* Diensten */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+  }
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  }
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.5;
+  }
+
+  /* Galerij */
+  .gallery {
+    background: #f8f9fa;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .gallery-item {
+    height: 220px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .gallery-item:nth-child(1) { background: linear-gradient(135deg, #0f3460, #16213e); }
+  .gallery-item:nth-child(2) { background: linear-gradient(135deg, #1a1a2e, #0f3460); }
+  .gallery-item:nth-child(3) { background: linear-gradient(135deg, #16213e, #1a1a2e); }
+  .gallery-item::after {
+    font-size: 3rem;
+    opacity: 0.12;
+    position: absolute;
+  }
+  .gallery-item:nth-child(1)::after { content: '🚕'; }
+  .gallery-item:nth-child(2)::after { content: '✈️'; }
+  .gallery-item:nth-child(3)::after { content: '🏥'; }
+
+  /* FAQ */
+  .faq-list {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+  }
+  .faq-question {
+    padding: 1.2rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a1a2e;
+    font-size: 1rem;
+  }
+  .faq-question::after {
+    content: '+';
+    font-size: 1.3rem;
+    color: #ebb72b;
+    font-weight: 700;
+  }
+  .faq-answer {
+    padding: 0 1.5rem 1.2rem;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Contact */
+  .contact {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: #fff;
+  }
+  .contact .section-title { color: #fff; }
+  .contact .section-subtitle { color: rgba(255,255,255,0.7); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ebb72b;
+  }
+  .contact-info p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+  }
+  .contact-info a {
+    color: #ebb72b;
+    font-weight: 500;
+  }
+  .contact-form {
+    background: rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: rgba(255,255,255,0.5); }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: #ebb72b; }
+  .contact-form textarea { height: 100px; resize: vertical; }
+  .contact-form .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* Footer */
+  footer {
+    background: #111;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.85rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 0 2rem; }
+    .hero h1 { font-size: 2rem; }
+    .hero { padding: 3.5rem 0 4.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-image { height: 250px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-stats { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Taxi De Waele</h1>
+    <p>Betrouwbaar, comfortabel en stipt taxivervoer in Oost- en West-Vlaanderen. 24/7 beschikbaar, meer dan 20 jaar ervaring.</p>
+    <a href="#contact" class="btn">Offerte aanvragen</a>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section class="about">
+  <div class="container">
+    <h2 class="section-title">Over Ons</h2>
+    <p class="section-subtitle">Al meer dan twintig jaar uw betrouwbare partner in taxidiensten</p>
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Meer dan 20 jaar ervaring in taxidiensten</h3>
+        <p>Taxi &amp; Ambulance De Waele staat voor betrouwbaar vervoer in Oost- en West-Vlaanderen. Wij bieden een uitgebreid aanbod aan diensten zoals taxi, VIP-vervoer, ambulancevervoer en meer.</p>
+        <p>Onze service is 24/7 beschikbaar en altijd professioneel uitgevoerd. Met een modern wagenpark en ervaren chauffeurs zorgen wij ervoor dat uw rit meer is dan enkel transport van A naar B.</p>
+        <p>Onze troeven zijn <strong>bereikbaarheid, betrouwbaarheid en comfort</strong>. Zo maken wij van elke vervoerservaring een positief verhaal.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Jaar ervaring</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Beschikbaar</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Diensten</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <span style="z-index:1;">Taxi &amp; Ambulance De Waele</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Onze Diensten</h2>
+    <p class="section-subtitle">Een breed aanbod aan vervoersmogelijkheden op maat</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚕</div>
+        <h3>Personenvervoer</h3>
+        <p>Boek uw personenvervoer voor u alleen tot groepen van personen. Comfortabel en stipt.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <h3>Luchthavenvervoer</h3>
+        <p>Geen enkele luchthaven is voor ons te ver. Begin uw reis in alle rust en wij doen de rest.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <h3>Zakelijk Vervoer</h3>
+        <p>Veel onderweg naar zakenrelaties? Boek ons zakelijk vervoer en geniet van een luxueuzere wagen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚑</div>
+        <h3>Ambulancevervoer</h3>
+        <p>Heeft u nood aan liggend ambulancevervoer? Wij vervoeren u comfortabel met de juiste zorg.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">♿</div>
+        <h3>Rolstoelvervoer</h3>
+        <p>Taxivervoer waarin u in uw rolstoel kunt blijven zitten. Meer comfort en efficiëntie.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Goederenvervoer</h3>
+        <p>Efficiënte transportoplossingen om uw goederen ongeschonden van punt A naar punt B te brengen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJ -->
+<section class="gallery">
+  <div class="container">
+    <h2 class="section-title">Ons Werk</h2>
+    <p class="section-subtitle">Bekijk enkele impressies van onze dienstverlening</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <span style="z-index:1;">Taxi Diensten</span>
+      </div>
+      <div class="gallery-item">
+        <span style="z-index:1;">Luchthavenvervoer</span>
+      </div>
+      <div class="gallery-item">
+        <span style="z-index:1;">Ziekenvervoer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Veelgestelde Vragen</h2>
+    <p class="section-subtitle">Antwoorden op de meest gestelde vragen</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Hoe kan ik een taxi reserveren?</div>
+        <div class="faq-answer">U kunt ons telefonisch bereiken op <strong>+32 9 310 65 06</strong> of een e-mail sturen naar <strong>info@taxi-dewaele.be</strong>. Wij zijn 24/7 beschikbaar voor reserveringen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">In welke regio's zijn jullie actief?</div>
+        <div class="faq-answer">Wij zijn actief in <strong>Oost-Vlaanderen, West-Vlaanderen</strong> en <strong>Zuid-Nederland</strong>. Voor ritten naar andere regioën of buurlanden kunt u contact met ons opnemen voor de mogelijkheden.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Bieden jullie ziekenvervoer aan?</div>
+        <div class="faq-answer">Ja, wij bieden zowel <strong>ambulancevervoer</strong> (liggend) als <strong>rolstoelvervoer</strong> aan. Onze chauffeurs zijn opgelegd in het vervoer van patiënten met de juiste zorg.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Kan ik een luchthavenrit boeken?</div>
+        <div class="faq-answer">Zeker! Wij bieden luchthavenvervoer naar alle Belgische en buitenlandse luchthavens. Wij zorgen dat u op tijd aankomt en in alle rust uw reis kunt beginnen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Wat zijn jullie tarieven?</div>
+        <div class="faq-answer">Onze tarieven zijn afhankelijk van de ritafstand en het type vervoer. Neem contact met ons op voor een <strong>vrijblijvende offerte</strong> op maat.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Neem contact met ons op voor meer informatie of een offerte op maat</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contactgegevens</h3>
+        <p>📍 <strong>Adres:</strong> Onteigeningsstraat 2, 9060 Zelzate</p>
+        <p>📞 <strong>Telefoon:</strong> <a href="tel:+3293106506">+32 9 310 65 06</a></p>
+        <p>📧 <strong>E-mail:</strong> <a href="mailto:info@taxi-dewaele.be">info@taxi-dewaele.be</a></p>
+        <p>🕐 <strong>Beschikbaarheid:</strong> 24/7</p>
+        <p>🌍 <strong>Regio:</strong> Oost-Vlaanderen, West-Vlaanderen &amp; Zuid-Nederland</p>
+        <br>
+        <a href="mailto:info@taxi-dewaele.be" class="btn">Offerte aanvragen</a>
+      </div>
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Uw naam" required>
+          <input type="email" placeholder="Uw e-mailadres" required>
+          <input type="tel" placeholder="Uw telefoonnummer">
+          <input type="text" placeholder="Onderwerp">
+          <textarea placeholder="Uw bericht..."></textarea>
+          <button type="submit" class="btn">Verstuur bericht</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; 2026 Taxi De Waele — Alle rechten voorbehouden | Onteigeningsstraat 2, 9060 Zelzate</p>
+  </div>
+</footer>
+
+</body>
+</html>
