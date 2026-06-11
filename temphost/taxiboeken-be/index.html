@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxiboeken.be — Taxi & Luchthavenvervoer | Itterbeek</title>
+  <meta name="description" content="Taxiboeken.be — Taxi en luchthavenvervoer in Itterbeek en gans België. Vaste prijzen, 24/7 service, reserveer nu.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Segoe UI', 'Source Sans Pro', sans-serif; color: #222; line-height: 1.6; background: #fff; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== NAVBAR ===== */
+    .navbar { position: sticky; top: 0; z-index: 100; background: #111; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; box-shadow: 0 2px 10px rgba(0,0,0,.3); }
+    .navbar .logo { color: #fff; font-size: 1.3rem; font-weight: 700; letter-spacing: .5px; }
+    .navbar .logo span { color: #ffc107; }
+    .navbar nav a { color: #ccc; margin-left: 1.5rem; font-size: .9rem; transition: color .2s; }
+    .navbar nav a:hover { color: #ffc107; }
+    .nav-cta { background: #ffc107 !important; color: #111 !important; padding: .5rem 1.2rem; border-radius: 4px; font-weight: 600; }
+
+    /* ===== HERO ===== */
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; text-align: center; padding: 5rem 2rem 4rem; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 60px; background: #fff; clip-path: ellipse(55% 100% at 50% 100%); }
+    .hero h1 { font-size: 2.6rem; font-weight: 200; margin-bottom: 1rem; letter-spacing: -.5px; }
+    .hero h1 strong { font-weight: 700; }
+    .hero-accent { color: #ffc107; }
+    .hero p { font-size: 1.15rem; max-width: 600px; margin: 0 auto 2rem; color: #ccc; }
+    .hero .cta-btn { display: inline-block; background: #ffc107; color: #111; padding: .9rem 2.2rem; border-radius: 5px; font-weight: 700; font-size: 1.05rem; transition: transform .2s, box-shadow .2s; }
+    .hero .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,193,7,.4); }
+    .hero-badges { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+    .hero-badges span { background: rgba(255,255,255,.1); padding: .4rem 1rem; border-radius: 20px; font-size: .85rem; color: #ffc107; }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 3.5rem 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-title { font-size: 1.8rem; font-weight: 300; margin-bottom: .5rem; text-align: center; }
+    .section-title strong { font-weight: 700; }
+    .section-subtitle { text-align: center; color: #777; margin-bottom: 2.5rem; font-size: 1rem; max-width: 550px; margin-left: auto; margin-right: auto; }
+    .bg-light { background: #f8f9fa; }
+
+    /* ===== OVER ONS ===== */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-img-wrap { border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,.12); }
+    .about-img-placeholder { background: linear-gradient(135deg, #1a1a2e, #0f3460); height: 320px; display: flex; align-items: center; justify-content: center; color: #ffc107; font-size: 4rem; font-weight: 700; }
+    .about-text h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+    .about-text p { color: #555; margin-bottom: 1rem; }
+    .about-list { list-style: none; padding: 0; }
+    .about-list li { padding: .4rem 0; color: #444; display: flex; align-items: center; gap: .6rem; }
+    .about-list li::before { content: '✓'; color: #ffc107; font-weight: 700; }
+
+    /* ===== DIENSTEN ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card { background: #fff; border-radius: 8px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,.06); transition: transform .2s, box-shadow .2s; border: 1px solid #eee; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,.12); }
+    .service-icon { font-size: 2.5rem; margin-bottom: .8rem; }
+    .service-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .service-card p { color: #666; font-size: .9rem; }
+
+    /* ===== GALERIJ ===== */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .gallery-item { border-radius: 8px; overflow: hidden; height: 220px; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+    .gallery-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2.5rem; font-weight: 700; }
+    .gp-1 { background: linear-gradient(135deg, #0f3460, #1a1a2e); }
+    .gp-2 { background: linear-gradient(135deg, #16213e, #1a1a2e); }
+    .gp-3 { background: linear-gradient(135deg, #1a1a2e, #0f3460); }
+    .gp-4 { background: linear-gradient(135deg, #0f3460, #16213e); }
+    .gp-5 { background: linear-gradient(135deg, #16213e, #0f3460); }
+    .gp-6 { background: linear-gradient(135deg, #1a1a2e, #16213e); }
+
+    /* ===== FAQ ===== */
+    .faq-list { max-width: 750px; margin: 0 auto; }
+    .faq-item { background: #fff; border: 1px solid #e9ecef; border-radius: 6px; margin-bottom: .8rem; overflow: hidden; }
+    .faq-q { padding: 1.1rem 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: .95rem; }
+    .faq-q::after { content: '+'; font-size: 1.3rem; color: #ffc107; transition: transform .3s; }
+    .faq-q.active::after { content: '−'; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-a-inner { padding: 0 1.5rem 1.1rem; color: #666; font-size: .9rem; }
+
+    /* ===== CONTACT ===== */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info { }
+    .contact-info h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1.2rem; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+    .contact-icon { font-size: 1.3rem; min-width: 36px; text-align: center; }
+    .contact-detail p { color: #555; font-size: .95rem; }
+    .contact-detail a { color: #0f3460; font-weight: 600; }
+    .contact-icon-bg { background: #f0f4ff; width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; }
+    .map-placeholder { background: #e8ecf4; border-radius: 8px; height: 300px; display: flex; align-items: center; justify-content: center; color: #889; font-size: 1.1rem; }
+
+    /* ===== FOOTER ===== */
+    footer { background: #111; color: #888; text-align: center; padding: 2rem; font-size: .85rem; }
+    footer a { color: #ffc107; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .section { padding: 2rem 1.2rem; }
+      .hero { padding: 3rem 1.2rem 3rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero-badges { gap: .6rem; }
+      .hero-badges span { font-size: .75rem; padding: .3rem .7rem; }
+      .navbar { padding: 0 1rem; }
+      .navbar nav { display: none; }
+      .navbar .logo { font-size: 1.05rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item { height: 160px; }
+      .section-title { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🚖 Taxi<span>Boeken</span></div>
+  <nav>
+    <a href="#over">Over Ons</a>
+    <a href="#diensten">Diensten</a>
+    <a href="#galerij">Galerij</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Offerte aanvragen</a>
+  </nav>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Taxi &amp; Luchthavenvervoer<br><strong class="hero-accent">Snel, Veilig &amp; Betrouwbaar</strong></h1>
+  <p>Taxiboeken.be brengt u 24/7 veilig, comfortabel en op tijd naar elke bestemming in België en daarbuiten. Vaste prijzen, zonder verrassingen.</p>
+  <a href="#contact" class="cta-btn">Offerte aanvragen</a>
+  <div class="hero-badges">
+    <span>✔ Vaste prijzen</span>
+    <span>✔ 24/7 beschikbaar</span>
+    <span>✔ Online betalen</span>
+    <span>✔ Gratis kinderzitjes</span>
+  </div>
+</div>
+
+<!-- OVER ONS -->
+<div class="section" id="over">
+  <div class="section-inner">
+    <h2 class="section-title">Over <strong>Ons</strong></h2>
+    <p class="section-subtitle">Een betrouwbaar taxibedrijf gevestigd in Itterbeek, actief in gans België</p>
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-placeholder">🚖</div>
+      </div>
+      <div class="about-text">
+        <h3>Taxi &amp; Luchthavenvervoer in België</h3>
+        <p>Taxiboeken.be is uw vertrouwde partner voor taxivervoer in Itterbeek en daarbuiten. Of u nu een rit naar de luchthaven nodig hebt, een zakenreis plant gewoon een taxirit in uw regio boekt — wij staan 24/7 voor u klaar.</p>
+        <p>Via ons eenvoudige online boekingssysteem kunt u blikkens uw rit berekenen en reserveren. Geen ingewikkelde procedures, gewoon snel en betrouwbaar vervoer tegen een eerlijke prijs.</p>
+        <ul class="about-list">
+          <li>Altijd vaste prijzen vooraf</li>
+          <li>Veilige online betaling</li>
+          <li>Professionele en vriendelijke chauffeurs</li>
+          <li>Dekking in gans België en buitenland</li>
+          <li>Gratis kinderzitjes beschikbaar</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIENSTEN -->
+<div class="section bg-light" id="diensten">
+  <div class="section-inner">
+    <h2 class="section-title">Onze <strong>Diensten</strong></h2>
+    <p class="section-subtitle">Wij bieden een breed scala aan transportoplossingen op maat</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚕</div>
+        <h4>Stads- &amp; Regional Vervoer</h4>
+        <p>Snel en comfortabel een ritje binnen uw stad of regio. Boek eenvoudig online en vertrouw op onze punctuele service.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <h4>Luchthavenvervoer</h4>
+        <p>Stressvervoer naar en van Zaventem, Charleroi, Oostende en andere luchthavens. Vaste prijs, wacht孫子g bij aankomst inbegrepen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤵</div>
+        <h4>Privé Chauffeur</h4>
+        <p>Een exclusieve chauffeur voor speciale gelegenheden, zakenreizen of gewoon een luxe ritje. Volledig op uw maat.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛣️</div>
+        <h4>Lange Afstandsritten</h4>
+        <p>Routen door gans België en het buitenland. Comfortabel, veilig met doorzettende rij-experience. Vaste prijs vooraf.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h4>Bedrijfsvervoer</h4>
+        <p>Betrouwbaar transport voor uw medewerkers of klanten. Regelmatig of op aanvraag. Neem contact op voor een offerte op maat.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <h4>Bijzondere Gelegenheden</h4>
+        <p>Bruiloften, verjaardagen, uitstapjes — wij zorgen voor het transport zodat u zich kunt focussen op het feest.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALERIJ -->
+<div class="section" id="galerij">
+  <div class="section-inner">
+    <h2 class="section-title"><strong>Galerij</strong></h2>
+    <p class="section-subtitle">Een indruk van onze wagen en service</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><div class="gallery-placeholder gp-1">🚖</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder gp-2">✈️</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder gp-3">🗺️</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder gp-4">🛣️</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder gp-5">🤵</div></div>
+      <div class="gallery-item"><div class="gallery-placeholder gp-6">🏆</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section bg-light" id="faq">
+  <div class="section-inner">
+    <h2 class="section-title">Veelgestelde <strong>Vragen</strong></h2>
+    <p class="section-subtitle">Alles wat u weten moet over onze taxiservice</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Hoe boek ik een taxi?</div>
+        <div class="faq-a"><div class="faq-a-inner">U kunt eenvoudig online een taxi boeken via onze website of app. Vul uw ophaaladres en bestemming in, kies een tijdstip en bevestig uw reservering. U ontvangt direct een bevestiging.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Wat kost een taxirit?</div>
+        <div class="faq-a"><div class="faq-a-inner">De prijs hangt af van afstand, tijdstip en type vervoer. Via onze online prijsberekening ziet u direct een vast tarief — zonder extra kosten achteraf.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Zijn kinderzitjes beschikbaar?</div>
+        <div class="faq-a"><div class="faq-a-inner">Ja, kinderzitjes zijn gratis beschikbaar op aanvraag. Vermeldt dit bij het reserveren van uw rit zodat wij er rekening mee kunnen houden.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Hoe werkt het luchthavenvervoer?</div>
+        <div class="faq-a"><div class="faq-a-inner">Onze chauffeur haalt u op bij een afgesproken vertrekpunt en brengt u rechtstreeks naar de luchthaven. Bij een afhaal-service wachten wij in hetovernachtingsgebied op u. De wachttijd is in de prijs inbegrepen.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Kan ik annuleren of wijzigen?</div>
+        <div class="faq-a"><div class="faq-a-inner">Ja, u kunt uw reservering kostloos annuleren of wijzigen tot 2 uur voor het vertrek. Dit kunt u eenvoudig doen via de link in uw bevestigingsmail.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Welke bestemmingen bedienen jullie?</div>
+        <div class="faq-a"><div class="faq-a-inner">Wij bestrijken gans België en richten ons eveneens op buitenlandse bestemmingen. Vanaf Itterbeek staan we voor u klaar — waar uw reis ook naarart.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="section-inner">
+    <h2 class="section-title"><strong>Contact</strong></h2>
+    <p class="section-subtitle">Neem contact op voor een offerte of directe reservering</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Gegevens</h3>
+        <div class="contact-detail">
+          <div class="contact-icon-bg">📍</div>
+          <div>
+            <strong>Adres</strong>
+            <p>Plankenstraat 130<br>1701 Itterbeek</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon-bg">📞</div>
+          <div>
+            <strong>Telefoon</strong>
+            <p><a href="tel:+32478276320">+32 478 27 63 20</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon-bg">✉️</div>
+          <div>
+            <strong>E-mail</strong>
+            <p><a href="mailto:info@taxiboeken.be">info@taxiboeken.be</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon-bg">🕐</div>
+          <div>
+            <strong>Bereikbaar</strong>
+            <p>24/7 — ook op feestdagen</p>
+          </div>
+        </div>
+        <br>
+        <a href="mailto:info@taxiboeken.be" class="cta-btn">Offerte aanvragen</a>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1.2rem;">Onze Locatie</h3>
+        <div class="map-placeholder">
+          🗺️ Itterbeek, Vlaams-Brabant
+        </div>
+        <br>
+        <div style="background:#f8f9fa; border-radius:8px; padding:1.2rem; border-left:4px solid #ffc107;">
+          <p style="color:#555;">💡 <strong>Tip:</strong> Stuur ons een mail met uw gewenste route en tijdstip, dan bieden wij u zo snel mogelijk een persoonlijke offerte aan.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2024 Taxiboeken.be — Plankenstraat 130, 1701 Itterbeek</p>
+  <p style="margin-top:.4rem;">Een website door <a href="https://lvsites.solutions" target="_blank" style="color:#ffc107;">LVsites.solutions</a></p>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var a = this.nextElementSibling;
+      var isOpen = a.style.maxHeight && a.style.maxHeight !== '0px';
+      // Close all
+      document.querySelectorAll('.faq-a').forEach(function(el) { el.style.maxHeight = '0px'; });
+      document.querySelectorAll('.faq-q').forEach(function(el) { el.classList.remove('active'); });
+      // Toggle current
+      if (!isOpen) {
+        a.style.maxHeight = a.scrollHeight + 'px';
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
