@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaxisVerts Bruxelles | Uw Taxi in Brussel – 24/7 Beschikbaar</title>
+  <meta name="description" content="TaxisVerts Bruxelles: de groene taxi's in Brussel. Boek eenvoudig via onze app of bel ons op +32 2 349 49 49. Taxi, luchthaventransfers, groepsvervoer en expressbezorging. 24 uur per dag, 7 dagen per week.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1a6b3c;
+      --primary-dark: #0f4a28;
+      --primary-light: #2a8f52;
+      --dark: #1a1a2e;
+      --dark-blue: #16213e;
+      --accent: #2ecc71;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --white: #ffffff;
+      --max-w: 1160px;
+      --shadow: 0 4px 30px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 50px rgba(0,0,0,0.12);
+      --radius: 12px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #333;
+      line-height: 1.7;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(26,26,46,0.97);
+      backdrop-filter: blur(12px);
+      padding: 0.85rem 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .navbar .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 3.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .navbar .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .navbar .logo span { color: var(--accent); }
+    .navbar nav a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .navbar nav a:hover { color: var(--accent); }
+    .hamburger { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    .mobile-nav { display: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #0a3d1f 0%, #1a6b3c 40%, #0f4a28 100%);
+      min-height: 92vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900"><defs><linearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%232ecc71;stop-opacity:0.1"/><stop offset="100%25" style="stop-color:%2327ae60;stop-opacity:0.05"/></linearGradient></defs><rect fill="url(%23g)" width="1440" height="900"/></svg>');
+      background-size: cover;
+      z-index: -1;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(transparent, var(--white));
+      z-index: -1;
+    }
+    .hero-content { padding: 3.5rem; max-width: 780px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(46,204,113,0.2);
+      color: #2ecc71;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(46,204,113,0.3);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero .tagline {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.18rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+    }
+    .btn-cta {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--accent);
+      color: var(--dark);
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.3px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(46,204,113,0.4);
+    }
+    .btn-cta:hover {
+      background: #27ae60;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(46,204,113,0.5);
+    }
+    .hero-badges {
+      display: flex; justify-content: center; gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    .hero-badges .badge {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .hero-badges .badge::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ===== SECTIONS ===== */
+    .section {
+      padding: 5.5rem 3.5rem;
+    }
+    .section .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .section-label {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+    .section-subtitle {
+      color: var(--gray);
+      font-size: 1.08rem;
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    .section-title-center {
+      text-align: center;
+    }
+    .section-subtitle-center {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* ===== OVER ONS ===== */
+    .about {
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-text p {
+      color: #555;
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .stat-card {
+      background: var(--light);
+      padding: 1.8rem;
+      border-radius: var(--radius);
+      text-align: center;
+      border: 1px solid #e9ecef;
+    }
+    .stat-card .number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .stat-card .label {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 0.3rem;
+    }
+
+    /* ===== DIENSTEN ===== */
+    .services {
+      background: var(--light);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      border: 1px solid #e9ecef;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+    }
+    .service-card h3 {
+      font-size: 1.15rem;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+    }
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* ===== GALERIJ ===== */
+    .gallery {
+      background: var(--white);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      position: relative;
+    }
+    .gallery-item .placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .g1 { background: linear-gradient(135deg, #1a6b3c, #2ecc71); }
+    .g2 { background: linear-gradient(135deg, #0f4a28, #1a6b3c); }
+    .g3 { background: linear-gradient(135deg, #27ae60, #2ecc71); }
+    .g4 { background: linear-gradient(135deg, #16213e, #0f3460); }
+    .g5 { background: linear-gradient(135deg, #1a6b3c, #27ae60); }
+    .g6 { background: linear-gradient(135deg, #0a3d1f, #1a6b3c); }
+
+    /* ===== FAQ ===== */
+    .faq {
+      background: var(--light);
+    }
+    .faq-list {
+      max-width: 760px;
+      margin: 3rem auto 0;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      border: 1px solid #e9ecef;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 1.4rem 2rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 1rem;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--primary);
+      transition: transform 0.3s;
+    }
+    .faq-answer {
+      padding: 0 2rem 1.4rem;
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: linear-gradient(135deg, #0a3d1f 0%, #1a6b3c 50%, #0f4a28 100%);
+      color: var(--white);
+      position: relative; overflow: hidden; isolation: isolate;
+    }
+    .contact::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600"><defs><linearGradient id="g" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%232ecc71;stop-opacity:0.06"/><stop offset="100%25" style="stop-color:%2327ae60;stop-opacity:0.03"/></linearGradient></defs><rect fill="url(%23g)" width="1440" height="600"/></svg>');
+      background-size: cover;
+      z-index: -1;
+    }
+    .contact .section-label { color: var(--accent); }
+    .contact .section-title { color: var(--white); }
+    .contact .section-subtitle { color: rgba(255,255,255,0.7); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+    .contact-info .info-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .contact-info .info-icon {
+      width: 44px; height: 44px;
+      background: rgba(46,204,113,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+    .contact-info .info-text h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: var(--white);
+    }
+    .contact-info .info-text p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
+    .contact-cta-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .contact-cta-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .contact-cta-box p {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+    }
+    .contact-cta-box .btn-cta {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 3.5rem;
+      font-size: 0.85rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .section { padding: 3.5rem 2rem; }
+      .hero-content { padding: 2rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-badges { gap: 1rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .section-title { font-size: 1.8rem; }
+      .navbar .nav-inner { padding: 0 2rem; }
+      .navbar nav { display: none; }
+      .hamburger { display: block; }
+      .mobile-nav.active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(26,26,46,0.98); padding: 1.5rem 2rem; }
+      .mobile-nav a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 0.6rem 0; font-size: 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">Taxis<span>Verts</span></a>
+      <nav>
+        <a href="#over">Over Ons</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#galerij">Galerij</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="hamburger" onclick="document.querySelector('.mobile-nav').classList.toggle('active')">☰</button>
+    </div>
+    <div class="mobile-nav">
+      <a href="#over" onclick="document.querySelector('.mobile-nav').classList.remove('active')">Over Ons</a>
+      <a href="#diensten" onclick="document.querySelector('.mobile-nav').classList.remove('active')">Diensten</a>
+      <a href="#galerij" onclick="document.querySelector('.mobile-nav').classList.remove('active')">Galerij</a>
+      <a href="#faq" onclick="document.querySelector('.mobile-nav').classList.remove('active')">FAQ</a>
+      <a href="#contact" onclick="document.querySelector('.mobile-nav').classList.remove('active')">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">🚗 Groene Taxi's in Brussel</div>
+      <h1>Uw Betrouwbare <span>Taxi</span> in Brussel</h1>
+      <p class="tagline">Bereik uw bestemming veilig en comfortabel met onze ervaren chauffeurs. Beschikbaar 24 uur per dag, 7 dagen per week — in Brussel en heel België.</p>
+      <a href="#contact" class="btn-cta">Offerte aanvragen</a>
+      <div class="hero-badges">
+        <span class="badge">24/7 beschikbaar</span>
+        <span class="badge">Luchthaventransfers</span>
+        <span class="badge">Groepsvervoer</span>
+        <span class="badge">Expressbezorging</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVER ONS -->
+  <section id="over" class="section about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">Over Ons</p>
+          <h2 class="section-title">De Groene Taxi's van Brussel sinds 40 Jaar</h2>
+          <p>TaxisVerts is de taxileider in Brussel. Al vier decennia brengen wij passagiers veilig naar hun bestemming — of het nu gaat om een rit door de stad, een luchthaventransfer of een groepsvervoer voor uw evenement.</p>
+          <p>Onze groene taxi's zijn herkenbaar in het Brusselse straatbeeld en onze chauffeurs kennen elke hoek van de stad. Wij investeren in duurzame mobiliteit en bieden een moderne wagenpark met o.a. aangepaste voertuigen voor personen met beperkte mobiliteit.</p>
+          <p>Boek eenvoudig via onze app of bel ons dispatchingteam. Wij staan altijd voor u klaar.</p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="number">40+</div>
+            <div class="label">Jaar ervaring</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">24/7</div>
+            <div class="label">Beschikbaar</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">100%</div>
+            <div class="label">Groene wagens</div>
+          </div>
+          <div class="stat-card">
+            <div class="number">BE</div>
+            <div class="label">Heel België</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section id="diensten" class="section services">
+    <div class="container">
+      <p class="section-label section-title-center">Onze Diensten</p>
+      <h2 class="section-title section-title-center">Alles voor uw Mobiliteit</h2>
+      <p class="section-subtitle section-subtitle-center">Van stadsvervoer tot luchthaventransfers — wij bieden een complete taxiservice op maat.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚕</div>
+          <h3>Stadsvervoer Brussel</h3>
+          <p>Boek een taxi voor al uw ritten binnen Brussel. Snel, veilig en altijd beschikbaar met transparante tarieven.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✈️</div>
+          <h3>Luchthaventransfers</h3>
+          <p>Betrouwbare transfers naar Brussels Airport, Charleroi en andere luchthavens in België en daarbuiten.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">👥</div>
+          <h3>Groepsvervoer</h3>
+          <p>Ruime bussen en shuttels voor groepen, evenementen, bedrijfsuitjes en teambuildingactiviteiten.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📦</div>
+          <h3>Expressbezorging</h3>
+          <p>Laat snel en betrouwbaar pakketten en documenten bezorgen in Brussel en heel België met realtime tracking.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">♿</div>
+          <h3>PMR-Taxi</h3>
+          <p>Special uitgeruste voertuigen en getrainde chauffeurs voor personen met beperkte mobiliteit.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌙</div>
+          <h3>Collecto — Nachttaxi</h3>
+          <p>Voor een vast tarief van €6 naar 200 MIVB-haltes. Beschikbaar van 23:00 tot 06:00 uur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIJ -->
+  <section id="galerij" class="section gallery">
+    <div class="container">
+      <p class="section-label section-title-center">Galerij</p>
+      <h2 class="section-title section-title-center">Onze Wagenpark & Service</h2>
+      <p class="section-subtitle section-subtitle-center">Een moderne vloot groene taxi's, klaar om u veilig en comfortabel te vervoeren.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><div class="placeholder g1">🚕 Onze Groene Taxi's</div></div>
+        <div class="gallery-item"><div class="placeholder g2">✈️ Luchthaventransfers</div></div>
+        <div class="gallery-item"><div class="placeholder g3">👥 Groepsvervoer</div></div>
+        <div class="gallery-item"><div class="placeholder g4">📱 Boek via de App</div></div>
+        <div class="gallery-item"><div class="placeholder g5">♿ PMR Aangepast</div></div>
+        <div class="gallery-item"><div class="placeholder g6">🌙 Collecto Nachttaxi</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <p class="section-label section-title-center">Veelgestelde Vragen</p>
+      <h2 class="section-title section-title-center">Heeft u een Vraag?</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Hoe kan ik een taxi boeken?</div>
+          <div class="faq-answer">U kunt eenvoudig een taxi boeken via onze mobiele app (beschikbaar op iOS en Android), of ons dispatchingteam bellen op +32 2 349 49 49. Wij zijn 24/7 beschikbaar.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Wat zijn de tarieven voor een taxirit in Brussel?</div>
+          <div class="faq-answer">Onze tarieven zijn transparant en vergelijkbaar met de gangbare taxitarieven in Brussel. Voor een exacte prijsopgave kunt u contact met ons opnemen of gebruik maken van onze offerteaanvraag.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Bieden jullie luchthaventransfers aan?</div>
+          <div class="faq-answer">Zeker! Wij bieden luchthaventransfers naar Brussels Airport, Charleroi en andere luchthavens. Boek vooraf voor de beste service en een vaste chauffeur.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is er een PMR-aangepaste taxi beschikbaar?</div>
+          <div class="faq-answer">Ja, wij beschikken over special uitgeruste voertuigen voor personen met beperkte mobiliteit. Onze chauffeurs zijn getraind om u de beste service te bieden.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Wat is Collecto?</div>
+          <div class="faq-answer">Collecto is onze nachttaxiservice: voor een vast tarief van €6 brengt onze taxi u naar een van de 200 MIVB-haltes in Brussel, beschikbaar van 23:00 tot 06:00 uur.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <p class="section-label section-title-center">Contact</p>
+      <h2 class="section-title section-title-center">Neem Contact Op</h2>
+      <p class="section-subtitle section-subtitle-center">Wij staan klaar om u te helpen. Bel ons, mail ons of vraag een offerte aan.</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div class="info-text">
+              <h4>Adres</h4>
+              <p>Rue du Mail 50, 1050 Brussel</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div class="info-text">
+              <h4>Telefoon</h4>
+              <p>+32 2 349 49 49</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-text">
+              <h4>E-mail</h4>
+              <p>info@taxis.be</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🕐</div>
+            <div class="info-text">
+              <h4>Beschikbaarheid</h4>
+              <p>24 uur per dag, 7 dagen per week</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta-box">
+          <h3>Offerte aanvragen</h3>
+          <p>Interesse in een samenwerking? Neem contact met ons op en wij helpen u graag verder met een op maat gemaakte oplossing.</p>
+          <a href="mailto:info@taxis.be" class="btn-cta">Offerte aanvragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2026 TaxisVerts Bruxelles — Alle rechten voorbehouden. | <a href="#" style="color: rgba(255,255,255,0.5);">Privacybeleid</a></p>
+  </footer>
+
+</body>
+</html>
