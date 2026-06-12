@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alibelle – Wellness & Schoonheid Zwevegem</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #4a2618;
+      --primary-light: #6b3a28;
+      --accent: #adbd36;
+      --bg: #f7f3d1;
+      --white: #ffffff;
+      --text: #333330;
+      --text-light: #555;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 2rem; }
+    }
+
+    /* NAV */
+    nav {
+      background: var(--primary);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    nav .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .logo {
+      color: var(--white);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    nav .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 1.8rem; }
+    nav ul li a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav ul li a:hover { color: var(--accent); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--primary) !important;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .mobile-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      .mobile-toggle { display: block; }
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(ellipse at center, rgba(173,189,54,0.12) 0%, transparent 70%);
+    }
+    .hero .container { position: relative; z-index: 1; }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero .subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+    .hero .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(173,189,54,0.4);
+    }
+    .hero .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(173,189,54,0.5);
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero { padding: 3.5rem 1.5rem; }
+    }
+
+    /* SECTION STYLES */
+    section { padding: 4rem 0; }
+    section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 60px; height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* OVER ONS */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-grid img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .about-text p { margin-bottom: 1rem; color: var(--text-light); }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* DIENSTEN */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); }
+    .service-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.15rem;
+    }
+    .service-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* GALERIJ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery-grid .placeholder {
+      background: linear-gradient(135deg, #e8e0c0, #d4cca8);
+      border-radius: var(--radius);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* FAQ */
+    .faq-list { margin-top: 2rem; }
+    .faq-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.05rem;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.3rem;
+      color: var(--accent);
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item .answer {
+      padding: 0 1.5rem 1.2rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .contact-info .info-block {
+      margin-bottom: 1.5rem;
+    }
+    .contact-info .info-block h4 {
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .contact-info .info-block p,
+    .contact-info .info-block a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+    .contact-info .info-block a:hover { color: var(--primary); }
+    .map-placeholder {
+      background: linear-gradient(135deg, #e8e0c0, #d4cca8);
+      border-radius: var(--radius);
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Alibelle<span>.</span></a>
+    <ul>
+      <li><a href="#over">Over Ons</a></li>
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#galerij">Galerij</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Offerte aanvragen</a></li>
+    </ul>
+    <button class="mobile-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <h1>Alibelle <span>Wellness</span></h1>
+    <p class="subtitle">Wellness · Beauty · Massage — Zwevegem</p>
+    <a href="#contact" class="cta-btn">Offerte aanvragen</a>
+  </div>
+</div>
+
+<!-- OVER ONS -->
+<section id="over">
+  <div class="container">
+    <h2>Over Ons</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Bij <strong>Alibelle</strong> in Zwevegem kunt u terecht voor een complete wellness- en schoonheidservaring. Ons instituut biedt een unieke combinatie van ontspanningsbehandelingen, schoonheidsverzorging en massage in een luxe creatieve omgeving.</p>
+        <p>Of u nu komt voor een ontspannende massage, een verzorgende behandeling of een complete wellnessformule — bij Alibelle staan we voor u klaar. We werken uitsluitend op afspraak zodat u steeds de volle aandacht krijgt.</p>
+        <p>Ons team staat klaar om u te verwennen in een sfeervolle en rustige omgeving aan de Ommegangstraat 15 in het hart van Zwevegem.</p>
+      </div>
+      <div>
+        <div class="map-placeholder" style="height:300px; font-size:4rem;">&#127968;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten">
+  <div class="container">
+    <h2>Diensten</h2>
+    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Bij Alibelle bieden wij een breed scala aan behandelingen en formules aan.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">&#128132;</div>
+        <h3>Schoonheidsbehandelingen</h3>
+        <p>Van gezichtsverzorging tot lichaamsbehandelingen — wij bieden een volledig pakket aan schoonheidsverzorging op maat.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#128134;</div>
+        <h3>Massage</h3>
+        <p>Ontspan volledig met onze professionele massages. K uit uit verschillende technieken die aansluiten bij uw behoeften.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127775;</div>
+        <h3>Wellness Formules</h3>
+        <p>Geniet van een complete wellnessformule, perfect voor een ontspannende dag of als cadeau voor een dierbare.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127760;</div>
+        <h3>Overnachting</h3>
+        <p>Maak uw bezoek compleet met een overnachting. De perfecte combinatie van wellness en verblijf.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127873;</div>
+        <h3>Cadeaubon</h3>
+        <p>Geef iemand de kans om te genieten van een weldaad bij Alibelle met een cadeaubon op maat.</p>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9200;</div>
+        <h3>Last-Minute Aanbiedingen</h3>
+        <p>Profiteer van onze last-minute deals voor een voordelige wellness-ervaring. Regelmatig nieuwe aanbiedingen beschikbaar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJ -->
+<section id="galerij">
+  <div class="container">
+    <h2>Galerij</h2>
+    <p style="color: var(--text-light); margin-bottom: 0.5rem;">Een kijkje in onze sfeervolle omgeving.</p>
+    <div class="gallery-grid">
+      <div class="placeholder">&#127749;</div>
+      <div class="placeholder">&#127752;</div>
+      <div class="placeholder">&#127775;</div>
+      <div class="placeholder">&#127968;</div>
+      <div class="placeholder">&#128132;</div>
+      <div class="placeholder">&#128134;</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <h2>Veelgestelde Vragen</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Hoe kan ik een afspraak maken?</summary>
+        <div class="answer">U kunt bij Alibelle altijd op afspraak terecht. Neem telefonisch contact met ons op via +32 56 75 87 61, stuur een e-mail naar info@alibelle.be, of boek online via onze website.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Wat zijn de openingsuren?</summary>
+        <div class="answer">Wij zijn geopend van woensdag tot en met zondag van 09:00 tot 23:30. Maandag en dinsdag zijn wij gesloten. Alle behandelingen zijn op afspraak.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is er voldoende parkeergelegenheid?</summary>
+        <div class="answer">Ja, u kunt vrij parkeren langs de straat bij ons instituut aan de Ommegangstraat 15 in Zwevegem.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Welke betaalmogelijkheden zijn er?</summary>
+        <div class="answer">Wij accepteren cash en bancontact. Voor voorschotten is ook betaling via overschrijving mogelijk.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Kan ik een cadeaubon kopen?</summary>
+        <div class="answer">Zeker! Cadeaubonnen zijn verkrijgbaar en een perfect cadeau voor wie ontspanning en welzijn waardeert. Neem contact met ons op voor de mogelijkheden.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-block">
+          <h4>Adres</h4>
+          <p>Ommegangstraat 15<br>8550 Zwevegem</p>
+        </div>
+        <div class="info-block">
+          <h4>Telefoon</h4>
+          <p><a href="tel:+3256758761">+32 56 75 87 61</a></p>
+        </div>
+        <div class="info-block">
+          <h4>E-mail</h4>
+          <p><a href="mailto:info@alibelle.be">info@alibelle.be</a></p>
+        </div>
+        <div class="info-block">
+          <h4>Openingsuren</h4>
+          <p>Maandag & Dinsdag: gesloten<br>Woensdag t/m Zondag: 09:00 – 23:30<br><em>(op afspraak)</em></p>
+        </div>
+        <div class="info-block">
+          <h4>Volg ons</h4>
+          <p>
+            <a href="https://www.facebook.com/schoonheidalibelle" target="_blank" rel="noopener">Facebook</a> &nbsp;·&nbsp;
+            <a href="https://www.instagram.com/alibelle.prive_wellness/" target="_blank" rel="noopener">Instagram</a>
+          </p>
+        </div>
+        <a href="mailto:info@alibelle.be" class="cta-btn" style="margin-top:1rem; display:inline-block;">Offerte aanvragen</a>
+      </div>
+      <div>
+        <div class="map-placeholder">
+          &#128506; Ommegangstraat 15, Zwevegem
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Alibelle BV — Wellness · Beauty · Massage &mdash; Ommegangstraat 15, 8550 Zwevegem</p>
+  <p style="margin-top:0.5rem;">BTW BE1010 682 590</p>
+</footer>
+
+</body>
+</html>
