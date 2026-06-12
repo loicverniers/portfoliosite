@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slagerij Delbaere – Generaties lang vakmanschap</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #5d111d;
+      --primary-light: #7a1a2a;
+      --accent: #c9a96e;
+      --dark: #1a1a1a;
+      --light: #f5f0eb;
+      --white: #ffffff;
+      --text: #333333;
+      --text-light: #666666;
+      --radius: 12px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Navigation */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--primary);
+      padding: 0 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .navbar .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .navbar .logo { color: var(--accent); font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; }
+    .navbar .logo span { color: var(--white); }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--white); font-size: 0.9rem; opacity: 0.85; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; color: var(--accent); }
+    .hamburger { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(93,17,29,0.92), rgba(93,17,29,0.75)),
+                  url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=1920&q=80') center/cover;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 6rem 2rem 4rem; color: var(--white);
+    }
+    .hero .badge {
+      display: inline-block; border: 1px solid var(--accent); color: var(--accent);
+      padding: 6px 20px; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1.5rem;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.15; margin-bottom: 0.5rem; }
+    .hero h1 .accent { color: var(--accent); }
+    .hero .subtitle { font-size: 1.15rem; opacity: 0.9; margin-bottom: 2rem; max-width: 600px; }
+    .hero .awards { background: rgba(255,255,255,0.12); display: inline-block; padding: 8px 20px; border-radius: 8px; font-size: 0.9rem; margin-bottom: 2.5rem; }
+    .btn {
+      display: inline-block; padding: 14px 36px; border-radius: 30px; font-size: 1rem;
+      font-weight: 600; cursor: pointer; border: none; transition: all 0.3s;
+    }
+    .btn-primary { background: var(--accent); color: var(--primary); }
+    .btn-primary:hover { background: #ddb97a; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); margin-left: 1rem; }
+    .btn-outline:hover { background: var(--white); color: var(--primary); }
+    .btn-dark { background: var(--primary); color: var(--white); }
+    .btn-dark:hover { background: var(--primary-light); }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* Section */
+    .section { padding: 3.5rem 0; }
+    .section-dark { background: var(--primary); color: var(--white); }
+    .section-light { background: var(--light); }
+    .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .section-subtitle { font-size: 1rem; color: var(--text-light); margin-bottom: 2.5rem; }
+    .section-dark .section-subtitle { color: rgba(255,255,255,0.7); }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+    .about-text p { margin-bottom: 1rem; font-size: 1.05rem; }
+    .about-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .about-img img { width: 100%; height: 350px; object-fit: cover; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .stat { text-align: center; padding: 1.5rem; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .stat .number { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat .label { font-size: 0.85rem; color: var(--text-light); }
+
+    /* Services */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: var(--white); border-radius: var(--radius); padding: 2rem;
+      box-shadow: var(--shadow); transition: transform 0.3s; text-align: center;
+    }
+    .service-card:hover { transform: translateY(-4px); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: var(--primary); }
+    .service-card p { font-size: 0.95rem; color: var(--text-light); }
+
+    /* Gallery */
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .gallery-item { border-radius: var(--radius); overflow: hidden; height: 250px; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* Locations */
+    .locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .location-card { background: var(--white); border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); }
+    .location-card h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .location-card .address { color: var(--text-light); margin-bottom: 1rem; }
+    .location-card .hours { font-size: 0.9rem; }
+    .location-card .hours strong { color: var(--primary); }
+
+    /* FAQ */
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { background: var(--white); border-radius: var(--radius); margin-bottom: 1rem; box-shadow: var(--shadow); overflow: hidden; }
+    .faq-question {
+      padding: 1.25rem 1.5rem; cursor: pointer; font-weight: 600; font-size: 1.05rem;
+      display: flex; justify-content: space-between; align-items: center; color: var(--primary);
+    }
+    .faq-question::after { content: '+'; font-size: 1.3rem; font-weight: 400; }
+    .faq-answer { padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s; color: var(--text-light); font-size: 0.95rem; }
+    .faq-item.open .faq-answer { padding: 0 1.5rem 1.25rem; max-height: 300px; }
+    .faq-item.open .faq-question::after { content: '−'; }
+
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .contact-info h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.3rem; }
+    .contact-info p { margin-bottom: 1rem; color: var(--text-light); }
+    .contact-info a { color: var(--accent); }
+    .contact-cta { background: rgba(255,255,255,0.1); border-radius: var(--radius); padding: 2rem; text-align: center; }
+    .contact-cta h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .contact-cta p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+
+    /* Footer */
+    .footer { background: #111; color: #aaa; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
+    .footer a { color: var(--accent); }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .section { padding: 2rem 0; }
+      .container { padding: 0 1rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero { padding: 5rem 1rem 3rem; }
+      .about-grid, .locations-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .stats { grid-template-columns: 1fr; }
+      .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+      .hero .btn-outline { margin-left: 0.75rem; margin-top: 0; }
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .navbar { padding: 0 1rem; }
+      .section-title { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">Slagerij <span>Delbaere</span></a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#over">Over Ons</a></li>
+      <li><a href="#diensten">Diensten</a></li>
+      <li><a href="#galerij">Galerij</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div>
+    <div class="badge">Generaties van vakmanschap</div>
+    <h1>Welkom bij<br><span class="accent">Slagerij Delbaere</span></h1>
+    <p class="subtitle">Een echt familiebedrijf waar vakmanschap en kwaliteit al 3 generaties lang centraal staan.</p>
+    <div class="awards">🏆 TOP 5 Beste Slager van België 2021-2025 & 2025-2027</div>
+    <div>
+      <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+      <a href="#diensten" class="btn btn-outline">Onze diensten</a>
+    </div>
+  </div>
+</section>
+
+<!-- Over Ons -->
+<section class="section" id="over">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">Over Ons</h2>
+        <p>Germain Delbaere vestigde zich in zijn pas overgenomen vleesgroothandel aan de Meulebeeksesteenweg in Tielt. Wat begon als een kleine zaak, groeide uit tot een gerenommeerd bedrijf met twee vestigingen in het hart van Tielt.</p>
+        <p>Vandaag staan wij al <strong>3 generaties</strong> voor u klaar met hetzelfde engagement: ambachtelijke kwaliteit, verse producten en persoonlijke service. In onze twee winkels bieden wij u een ruim assortiment vers vlees, huisgemaakte bereide gerechten en ambachtelijke charcuterie aan.</p>
+        <p>Elke keer verwelkomen wij u met een glimlach en deskundig advies. Of u nu langs komt voor uw dagelijkse boodschappen, een speciaal feestmaal of online bestelling – bij Slagerij Delbaere voelt u zich thuis.</p>
+        <a href="#contact" class="btn btn-dark">Neem contact op</a>
+        <div class="stats">
+          <div class="stat">
+            <div class="number">3</div>
+            <div class="label">Generaties<br>vakmanschap</div>
+          </div>
+          <div class="stat">
+            <div class="number">5x</div>
+            <div class="label">TOP 5 Beste<br>Slager België</div>
+          </div>
+          <div class="stat">
+            <div class="number">2</div>
+            <div class="label">Vestigingen<br>in Tielt</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1551028150-64b9f398f678?w=600&q=80" alt="Slagerij Delbaere team" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diensten -->
+<section class="section section-light" id="diensten">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">Onze Diensten</h2>
+    <p class="section-subtitle" style="text-align:center">Van vers vlees tot huisgemaakte specialiteiten – wij bieden het allemaal aan.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🥩</div>
+        <h3>Vers Vlees</h3>
+        <p>Rundsvlees, varkensvlees, kippen en lamsvlees – altijd vers en van de beste kwaliteit. Onze slagers helpen u graag bij de keuze.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔥</div>
+        <h3>Dry-Aged Vlees</h3>
+        <p>Intens smaakvol vlees, gerijpt volgens de traditionele methode. Een ware traktatie voor elke vleesliefhebber.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🥘</div>
+        <h3>Bereide Gerechten</h3>
+        <p>Pannenklare gerechten, salades, ham- en kaas bereidingen – klaar voor op tafel. Perfect voor drukke dagen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🍖</div>
+        <h3>Barbecue</h3>
+        <p>Alles voor een geslaagde BBQ: gemarineerd vlees, worsten, karbonades en onze huisgemaakte BBQ-saus.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <h3>Online Bestellen</h3>
+        <p>Bestel eenvoudig online en haal uw favoriete producten af in één van onze twee vestigingen in Tielt.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎉</div>
+        <h3>Feestdagen & Bestellingen</h3>
+        <p>Speciale bestellingen voor feestdagen, bedrijfsevents of familiefeesten. Neem op tijd contact op voor de beste service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galerij -->
+<section class="section" id="galerij">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">Galerij</h2>
+    <p class="section-subtitle" style="text-align:center">Een blik op onze winkels, producten en ambacht.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=500&q=80" alt="Vers vlees aan het display" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551028150-64b9f398f678?w=500&q=80" alt="Slagerij winkel" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=500&q=80" alt="Ambachtelijke vleeswaren" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504973960431-1c467e159aa4?w=500&q=80" alt="Kruidenwaren en worsten" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500&q=80" alt="Barbecue vlees" /></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=500&q=80" alt="Huisgemaakte specialiteiten" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- Onze Vestigingen (replacing numbered diensten) -->
+<section class="section section-dark">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center; color:var(--white)">Onze Vestigingen</h2>
+    <p class="section-subtitle" style="text-align:center">Bezoek ons aan een van onze twee locaties in Tielt.</p>
+    <div class="locations-grid">
+      <div class="location-card">
+        <h3>📍 Site Meulebeeksesteenweg</h3>
+        <p class="address">Meulebeeksesteenweg 38<br>8900 Tielt</p>
+        <div class="hours">
+          <strong>Openingsuren:</strong><br>
+          ma: 8:30 – 13:00 / 14:00 – 18:30<br>
+          di: 8:30 – 13:00 / 14:00 – 18:30<br>
+          wo: gesloten<br>
+          do: 8:30 – 13:00 / 14:00 – 18:30<br>
+          vr: 8:30 – 13:00 / 14:00 – 18:30<br>
+          za: 9:00 – 17:00<br>
+          zo: 9:00 – 11:30
+        </div>
+      </div>
+      <div class="location-card">
+        <h3>📍 Site Kortrijkstraat (Centrum)</h3>
+        <p class="address">Kortrijkstraat 7<br>8900 Tielt</p>
+        <div class="hours">
+          <strong>Openingsuren:</strong><br>
+          ma: gesloten<br>
+          di: 8:00 – 18:00<br>
+          wo: 8:00 – 18:00<br>
+          do: 8:00 – 18:00<br>
+          vr: 8:00 – 18:00<br>
+          za: 9:00 – 17:00<br>
+          zo: 9:00 – 11:30
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-light" id="faq">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center">Veelgestelde Vragen</h2>
+    <p class="section-subtitle" style="text-align:center">Heeft u een vraag? Hier vindt u antwoorden op de meest gestelde vragen.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Wat maakt Slagerij Delbaere uniek?</div>
+        <div class="faq-answer">Wij zijn een familiebedrijf met 3 generaties ervaring. Ons vlees is ambachtelijke kwaliteit en wij zijn 5 keer verkozen tot TOP 5 Beste Slager van België. Wij combineren traditie met moderne service, waaronder online bestellen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Kan ik online bestellen?</div>
+        <div class="faq-answer">Ja! Via onze webshop kunt u eenvoudig uw favoriete producten bestellen en afhalen in één van onze twee vestigingen in Tielt. Zo weet u zeker dat uw producten klaar voor u staan.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Waar bevinden zich jullie winkels?</div>
+        <div class="faq-answer">Wij hebben twee vestigingen in Tielt: aan de Meulebeeksesteenweg 38 (onze oudste winkel) en in het centrum aan de Kortrijkstraat 7. Beide winkels zijn makkelijk bereikbaar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Bieden jullie producten aan voor feestdagen?</div>
+        <div class="faq-answer">Zeker! Wij helpen u graag bij het samenstellen van feestelijke maaltijden. Denk aan kerst, Pasen, of een barbecue met vrienden. Neem ruim op tijd contact op zodat wij alles klaar kunnen maken.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Wat verstaan jullie onder dry-aged vlees?</div>
+        <div class="faq-answer">Dry-aged vlees wordt onder gecontroleerde omstandigheden gerijpt, waardoor de smaak intenser wordt en het vlees bijzonder mals wordt. Het is een ambachtelijke techniek die wij met passie toepassen.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Hoe kan ik contact opnemen?</div>
+        <div class="faq-answer">U kunt ons bereiken via telefoon op <strong>051 40 16 66</strong> of via e-mail op <strong>info@slagerijdelbaere.be</strong>. U kunt ook het contactformulier op onze website gebruiken. Wij reageren zo snel mogelijk.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <h2 class="section-title" style="text-align:center; color:var(--white)">Contact</h2>
+    <p class="section-subtitle" style="text-align:center">Heeft u vragen of wilt u een offerte aanvragen? Neem gerust contact met ons op.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>📞 Telefoon</h3>
+        <p><a href="tel:051401666">051 40 16 66</a></p>
+        <h3>✉️ E-mail</h3>
+        <p><a href="mailto:info@slagerijdelbaere.be">info@slagerijdelbaere.be</a></p>
+        <h3>📍 Site Meulebeeksesteenweg</h3>
+        <p>Meulebeeksesteenweg 38, 8900 Tielt</p>
+        <h3>📍 Site Kortrijkstraat</h3>
+        <p>Kortrijkstraat 7, 8900 Tielt</p>
+        <h3>🕐 Openingsuren Meulebeeksesteenweg</h3>
+        <p>ma/di/do/vr: 8:30-13:00 & 14:00-18:30 · wo: gesloten · za: 9:00-17:00 · zo: 9:00-11:30</p>
+        <h3>🕐 Openingsuren Kortrijkstraat</h3>
+        <p>ma: gesloten · di-vr: 8:00-18:00 · za: 9:00-17:00 · zo: 9:00-11:30</p>
+      </div>
+      <div class="contact-cta">
+        <h3>Offerte aanvragen</h3>
+        <p>Wij staan klaar om u te helpen. Neem vandaag nog contact op en ontdek wat wij voor u kunnen betekenen.</p>
+        <a href="mailto:info@slagerijdelbaere.be" class="btn btn-primary">Offerte aanvragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Slagerij Delbaere | Alle voorbehouden.</p>
+    <p style="margin-top:0.5rem;">
+      Meulebeeksesteenweg 38, 8900 Tielt · Kortrijkstraat 7, 8900 Tielt<br>
+      <a href="tel:051401666">051 40 16 66</a> · <a href="mailto:info@slagerijdelbaere.be">info@slagerijdelbaere.be</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
