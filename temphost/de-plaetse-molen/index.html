@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Plaetse Molen — Beenhouwerij & Traiteur | Pittem</title>
+    <meta name="description" content="De Plaetse Molen — uw beenhouwerij en traiteur in Pittem. Ambachtelijke vleesproducten, traiteur gerechten, mobiele frituur en meer.">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #2d5016;
+            --primary-light: #4a7c2e;
+            --accent: #c4882a;
+            --bg-light: #f8f6f2;
+            --bg-white: #ffffff;
+            --text-dark: #2c2c2c;
+            --text-medium: #555;
+            --text-light: #777;
+            --border: #e0ddd6;
+            --shadow: 0 2px 12px rgba(0,0,0,0.08);
+            --radius: 8px;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--bg-white);
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3.5rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--bg-white);
+            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-cta {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--primary-light); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2e 60%, #6b9e3e 100%);
+            color: #fff;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+            background-size: 40px 40px;
+        }
+        .hero .container { position: relative; z-index: 1; }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #d49a3a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(196,136,42,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+        }
+        .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+        /* Section styles */
+        .section { padding: 5rem 0; }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Over Ons */
+        .about { background: var(--bg-light); }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .about-image {
+            background: linear-gradient(135deg, #e8e4dc, #d4cfc6);
+            border-radius: var(--radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            box-shadow: var(--shadow);
+        }
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+        .about-text p {
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        .about-highlights {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .highlight {
+            text-align: center;
+            flex: 1;
+        }
+        .highlight strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        .highlight span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Diensten */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+        .service-card p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Galerij */
+        .gallery { background: var(--bg-light); }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .gallery-item {
+            background: linear-gradient(135deg, #e8e4dc, #d4cfc6);
+            border-radius: var(--radius);
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover { transform: scale(1.02); }
+
+        /* FAQ */
+        .faq-list { max-width: 750px; margin: 0 auto; }
+        .faq-item {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .faq-question {
+            padding: 1.3rem 1.8rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.4rem;
+            color: var(--accent);
+        }
+        .faq-answer {
+            padding: 0 1.8rem 1.3rem;
+            color: var(--text-medium);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact { background: var(--bg-light); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .contact-info h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .contact-detail {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        .contact-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .contact-detail strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .contact-detail p {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+        .map-placeholder {
+            background: linear-gradient(135deg, #e8e4dc, #d4cfc6);
+            border-radius: var(--radius);
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: #fff;
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        .footer p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+        .footer a { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 0 2rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
+            .section { padding: 3.5rem 0; }
+            .section-title { font-size: 1.8rem; }
+            .about-grid,
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-image { height: 250px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .gallery-item { height: 150px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo">De Plaetse <span>Molen</span></div>
+        <ul class="nav-links">
+            <li><a href="#over-ons">Over Ons</a></li>
+            <li><a href="#diensten">Diensten</a></li>
+            <li><a href="#galerij">Galerij</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Offerte aanvragen</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>De Plaetse Molen</h1>
+        <p>Uw smaak, onze passie. Beenhouwerij &amp; traiteur in Pittem voor al uw feesten — groot of klein.</p>
+        <div class="hero-btns">
+            <a href="#contact" class="btn btn-primary">Offerte aanvragen</a>
+            <a href="#diensten" class="btn btn-outline">Onze diensten</a>
+        </div>
+    </div>
+</section>
+
+<!-- Over Ons -->
+<section id="over-ons" class="section about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                📷 Foto: De Plaetse Molen
+            </div>
+            <div class="about-text">
+                <h2>Over De Plaetse Molen</h2>
+                <p>De Plaetse Molen is een begrip in Pittem en omgeving. Als ambachtelijke beenhouwerij en traiteur deleren wij onze passie voor heerlijk vlees en smakelijke gerechten met particulieren en bedrijven.</p>
+                <p>Of het nu gaat om een intiem diner, een groot feest, een barbecue of een zakelijke bijeenkomst — wij staan voor u klaar met producten van topkwaliteit en een service waar u op kunt vertrouwen.</p>
+                <p>Ons aanbod varieert van klassieke beenhouwerijproducten tot volledige trauffets, mobiele frituur en de populaire Mobiele MolenBurger. Altijd vers, altijd ambachtelijk, altijd met aandacht voor detail.</p>
+                <div class="about-highlights">
+                    <div class="highlight">
+                        <strong> Pittem</strong>
+                        <span>Gevestigd in hartje West-Vlaanderen</span>
+                    </div>
+                    <div class="highlight">
+                        <strong>24/7</strong>
+                        <span>Op bestelling afhaal- en leveringsservice</span>
+                    </div>
+                    <div class="highlight">
+                        <strong>100%</strong>
+                        <span>Passie voor kwaliteit</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Diensten -->
+<section id="diensten" class="section services">
+    <div class="container">
+        <h2 class="section-title">Onze Diensten</h2>
+        <p class="section-subtitle">Van ambachtelijke beenhouwerij tot complete traffetservice — wij bieden een breed scala aan diensten voor elke gelegenheid.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🥩</div>
+                <h3>Beenhouwerij</h3>
+                <p>Ambachtelijke vleesproducten, worsten, patés en charcuterie — stuk voor stuk met de hand bereid van de beste ingrediënten.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🍽️</div>
+                <h3>Traiteur</h3>
+                <p>Complete trauffets voor elk evenement: aperitiefhapjes, voorgerechten, soepen, koude en warme buffets, hoofdgerechten en dessertbuffets.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Barbecue</h3>
+                <p>Professionele barbecueservice voor tuinfeesten, bedrijfsevents en familiefeesten. Neem contact op voor de mogelijkheden.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🍟</div>
+                <h3>Mobiele Frituur</h3>
+                <p>Onze mobiele frituur komt bij u langs! Perfect voor volksfeesten, scholen, bedrijfsfeesten en particuliere gelegenheden.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🍔</div>
+                <h3>Mobiele MolenBurger</h3>
+                <p>Lokale favoriet! Ambachtelijbers burgers, vers bereid en geserveerd vanuit onze mobiele unit. Een must voor elk event.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🐄</div>
+                <h3>Particuliere Dieren</h3>
+                <p>Wok voor het slachten en berderen van particuliere dieren. Uitgevoerd met respect voor het dier en volgens alle normen.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Galerij -->
+<section id="galerij" class="section gallery">
+    <div class="container">
+        <h2 class="section-title">Sfeerfoto's</h2>
+        <p class="section-subtitle">Een indruk van onze producten, gerechten en evenementen.</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">📷 Ambachtelijke worsten</div>
+            <div class="gallery-item">📷 Traktatiebuffet</div>
+            <div class="gallery-item">📷 Mobiele frituur</div>
+            <div class="gallery-item">📷 Barbecue-service</div>
+            <div class="gallery-item">📷 Vers vleeswaren</div>
+            <div class="gallery-item">📷 Feestarrangement</div>
+            <div class="gallery-item">📷 MolenBurger</div>
+            <div class="gallery-item">📷 Desserttafel</div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section faq">
+    <div class="container">
+        <h2 class="section-title">Veelgestelde Vragen</h2>
+        <p class="section-subtitle">Heeft u een vraag? Hier vindt u antwoorden op de meestgestelde vragen.</p>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">Hoe kan ik een bestelling plaatsen?</div>
+                <div class="faq-answer">U kunt ons contacteren via telefoon op <strong>051/74 43 39</strong> of via e-mail op <strong>contact@plaetsemolen.be</strong>. Voor grotere bestellingen raden wij aan minimaal 48 op te geven.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Leveren jullie ook thuis?</div>
+                <div class="faq-answer">Ja, wij leveren op bestelling bij u thuis in de regio Pittem en omgeving. Neem contact op voor de leveringsmogelijkheden en eventuele meerkosten.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Wat zijn jullie openingsuren?</div>
+                <div class="faq-answer">Wij zijn op afspraak beschikbaar. Neem telefonisch contact met ons op om een afspraak te maken of om openingsuren te bespreken.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Kunnen jullie ook catering verzorgen voor grote evenementen?</div>
+                <div class="faq-answer">Zeker! Wij verzorgen traktaties en buffets voor evenementen van elke omvang — van intiem diner tot groots bedrijfsevent. Neem contact op voor een offerte op maat.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Wat kost de mobiele frituur of MolenBurger service?</div>
+                <div class="faq-answer">De kosten zijn afhankelijk van het aantal gasten, de duur van het evenement en de gewenste menu-items. Vraag vrijblijvend een offerte aan via onze contactpagina.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Kunnen jullie rekenen met dieetwensen of allergieën?</div>
+                <div class="faq-answer">Wij behandelen graag specifieke dieetwensen en allergieën. Neem bij uw bestelling op met welke behoeften wij rekening moeten houden, zodat wij de beste aanpak bieden.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section contact">
+    <div class="container">
+        <h2 class="section-title">Neem Contact Op</h2>
+        <p class="section-subtitle">Heeft u een vraag of wenst u een offerte aan te vragen? Wij staan klaar om u te helpen.</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contactgegevens</h3>
+                <div class="contact-detail">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Adres</strong>
+                        <p>Lichterveldestraat 19B<br>8740 Pittem</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <strong>Telefoon</strong>
+                        <p><a href="tel:+3251744339">051/74 43 39</a></p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <strong>E-mail</strong>
+                        <p><a href="mailto:contact@plaetsemolen.be">contact@plaetsemolen.be</a></p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <strong>Beschikbaarheid</strong>
+                        <p>Op bestelling af te halen of te leveren bij u thuis</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="mailto:contact@plaetsemolen.be" class="btn btn-primary">Offerte aanvragen</a>
+                </div>
+            </div>
+            <div class="map-placeholder">🗺️ Kaart — Lichterveldestraat 19B, Pittem</div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 De Plaetse Molen — Beenhouwerij &amp; Traiteur | Pittem</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Website gemaakt door <a href="https://lvsites.solutions">LVsites</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
