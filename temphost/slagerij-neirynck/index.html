@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slagerij Neirynck — Meesterschap in vlees | Website Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; background: #faf9f7; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 1rem; }
+
+    /* NAV */
+    .nav { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .nav__logo { font-size: 1.4rem; font-weight: 700; color: #8B1A1A; }
+    .nav__logo span { color: #333; font-weight: 400; font-size: 0.85rem; display: block; }
+    .nav__links { display: flex; gap: 1.5rem; list-style: none; }
+    .nav__links a { font-weight: 500; color: #555; transition: color 0.2s; }
+    .nav__links a:hover { color: #8B1A1A; }
+    .nav__toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, #6B1010 0%, #8B1A1A 40%, #A03030 100%); color: #fff; padding: 5rem 0; text-align: center; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 60px; background: #faf9f7; clip-path: ellipse(55% 100% at 50% 100%); }
+    .hero__title { font-size: 2.6rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .hero__subtitle { font-size: 1.15rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+    .btn { display: inline-block; padding: 0.85rem 2rem; border-radius: 6px; font-weight: 600; font-size: 1rem; cursor: pointer; border: none; transition: all 0.2s; }
+    .btn--primary { background: #D4A030; color: #fff; }
+    .btn--primary:hover { background: #C08C20; transform: translateY(-1px); }
+    .btn--outline { background: transparent; border: 2px solid #fff; color: #fff; margin-left: 0.75rem; }
+    .btn--outline:hover { background: rgba(255,255,255,0.15); }
+
+    /* SECTIONS */
+    .section { padding: 3.5rem 0; }
+    .section--alt { background: #fff; }
+    .section__title { font-size: 1.8rem; font-weight: 700; color: #8B1A1A; margin-bottom: 0.5rem; text-align: center; }
+    .section__bar { width: 50px; height: 3px; background: #D4A030; margin: 0 auto 2rem; border-radius: 2px; }
+    .section__intro { text-align: center; max-width: 680px; margin: 0 auto 2.5rem; color: #666; }
+
+    /* OVER ONS */
+    .about__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .about__text p { margin-bottom: 1rem; color: #555; }
+    .about__stats { display: flex; gap: 2rem; margin-top: 1.5rem; }
+    .about__stat { text-align: center; }
+    .about__stat-number { font-size: 2rem; font-weight: 800; color: #8B1A1A; display: block; }
+    .about__stat-label { font-size: 0.85rem; color: #888; }
+    .about__image { background: linear-gradient(135deg, #f5e6d3, #e8d5c0); border-radius: 12px; height: 320px; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+
+    /* DIENSTEN */
+    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .service-card { background: #fff; border-radius: 10px; padding: 2rem 1.5rem; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+    .service-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .service-card__title { font-size: 1.1rem; font-weight: 700; color: #333; margin-bottom: 0.5rem; }
+    .service-card__text { font-size: 0.9rem; color: #777; }
+
+    /* GALERIJ */
+    .gallery__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .gallery__item { border-radius: 8px; overflow: hidden; aspect-ratio: 1; background: linear-gradient(135deg, #e8d5c0, #d4c0a8); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .gallery__item--wide { grid-column: span 2; aspect-ratio: 2; }
+
+    /* FAQ */
+    .faq__list { max-width: 720px; margin: 0 auto; }
+    .faq__item { background: #fff; border-radius: 8px; margin-bottom: 0.75rem; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden; }
+    .faq__question { padding: 1.1rem 1.5rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #333; }
+    .faq__question::after { content: '+'; font-size: 1.3rem; color: #8B1A1A; }
+    .faq__answer { padding: 0 1.5rem 1.1rem; color: #666; font-size: 0.95rem; }
+
+    /* CONTACT */
+    .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .contact__info { }
+    .contact__item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
+    .contact__icon { font-size: 1.4rem; min-width: 2rem; text-align: center; }
+    .contact__label { font-weight: 600; color: #333; }
+    .contact__value { color: #666; font-size: 0.95rem; }
+    .contact__value a { color: #8B1A1A; }
+    .contact__cta { background: linear-gradient(135deg, #8B1A1A, #A03030); border-radius: 12px; padding: 2.5rem; color: #fff; text-align: center; }
+    .contact__cta h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+    .contact__cta p { opacity: 0.9; margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .contact__cta .btn { background: #D4A030; color: #fff; }
+
+    /* FOOTER */
+    .footer { background: #2A1A10; color: rgba(255,255,255,0.7); padding: 2rem 0; text-align: center; font-size: 0.85rem; }
+    .footer a { color: #D4A030; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .container { padding: 0 1rem; }
+      .section { padding: 2rem 0; }
+      .hero { padding: 3rem 0; }
+      .hero__title { font-size: 1.8rem; }
+      .hero__subtitle { font-size: 1rem; }
+      .nav__links { display: none; }
+      .nav__toggle { display: block; }
+      .about__grid { grid-template-columns: 1fr; }
+      .about__image { height: 200px; }
+      .about__stats { justify-content: center; }
+      .services__grid { grid-template-columns: 1fr; }
+      .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery__item--wide { grid-column: span 2; }
+      .contact__grid { grid-template-columns: 1fr; }
+      .btn--outline { margin-left: 0; margin-top: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <div class="nav__logo">Slagerij Neirynck<br><span>Meesterschap in vlees</span></div>
+      <ul class="nav__links">
+        <li><a href="#over-ons">Over Ons</a></li>
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#galerij">Galerij</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav__toggle" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="hero__title">Slagerij Neirynck</h1>
+    <p class="hero__subtitle">Meesterschap in vlees — Al 30 jaar uw vertrouwde slagerij in Egem-Pittem. Vers vlees, charcuterie & traiteur voor elke gelegenheid.</p>
+    <a href="#contact" class="btn btn--primary">Offerte aanvragen</a>
+    <a href="#diensten" class="btn btn--outline">Onze diensten</a>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over-ons" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Over Ons</h2>
+    <div class="section__bar"></div>
+    <div class="about__grid">
+      <div class="about__text">
+        <p>Patrick Neirynck begon 30 jaar geleden een slagerij aan de kerk in Egem. Ondertussen is de zaak uitgegroeid tot een gekende naam in de streek, met een uitgebreid assortiment vers vlees, charcuterie en bereide gerechten.</p>
+        <p>Daarnaast verzorgen wij ook uw feest: van barbecues en eetfestijnen tot recepties en walking dinners. Ons frietmobiel staat klaar voor evenementen van elke omvang.</p>
+        <p>Ons team staat klaar om u te adviseren over de beste stukken vlees, bereide gerechten en traiteurformules — altijd met aandacht voor kwaliteit en smaak.</p>
+        <div class="about__stats">
+          <div class="about__stat"><span class="about__stat-number">30+</span><span class="about__stat-label">Jaar ervaring</span></div>
+          <div class="about__stat"><span class="about__stat-number">5</span><span class="about__stat-label">Traiteurformules</span></div>
+          <div class="about__stat"><span class="about__stat-number">1</span><span class="about__stat-label">Passie voor vlees</span></div>
+        </div>
+      </div>
+      <div class="about__image">🥩</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section id="diensten" class="section">
+  <div class="container">
+    <h2 class="section__title">Onze Diensten</h2>
+    <div class="section__bar"></div>
+    <p class="section__intro">Van vers vlees tot complete traiteur — wij bieden een breed scala aan producten en diensten voor particulieren en bedrijven.</p>
+    <div class="services__grid">
+      <div class="service-card">
+        <div class="service-card__icon">🥩</div>
+        <h3 class="service-card__title">Slagerij</h3>
+        <p class="service-card__text">Vers vlees van kwaliteit, dagschotels, charcuterie en bereide gerechten — bereid met passie en vakmanschap.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">🔥</div>
+        <h3 class="service-card__title">Barbecue</h3>
+        <p class="service-card__text">Complete barbecueformules voor uw tuinfeest, bedrijfsevent of familiefeest — van vlees tot garnituren.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">🎉</div>
+        <h3 class="service-card__title">Eetfestijn</h3>
+        <p class="service-card__text">Buffetten en gerechten voor grote groepen — feestelijk, smaakvol en verzorgd tot in het detail.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">🥂</div>
+        <h3 class="service-card__title">Receptie</h3>
+        <p class="service-card__text">Walking dinners, babyborrels en recepties — stijlvolle catering voor elke gelegenheid.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">🍟</div>
+        <h3 class="service-card__title">Frietmobiel</h3>
+        <p class="service-card__text">Ons frietmobiel komt naar uw event — perfect voor kermissen, bedrijfsfeesten en evenementen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">👨‍👩‍👧‍👦</div>
+        <h3 class="service-card__title">Kleine Groepen</h3>
+        <p class="service-card__text">Intieme feestjes en kleinescale catering — persoonlijke aandacht voor elke gast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIJ -->
+<section id="galerij" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Galerij</h2>
+    <div class="section__bar"></div>
+    <p class="section__intro">Een kijkje in onze winkel en onze gerechten — kwaliteit en vakmanschap in beeld.</p>
+    <div class="gallery__grid">
+      <div class="gallery__item gallery__item--wide">🍖</div>
+      <div class="gallery__item">🥓</div>
+      <div class="gallery__item">🍗</div>
+      <div class="gallery__item">🥘</div>
+      <div class="gallery__item gallery__item--wide">🍽️</div>
+      <div class="gallery__item">🧀</div>
+      <div class="gallery__item">🥖</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="section__title">Veelgestelde Vragen</h2>
+    <div class="section__bar"></div>
+    <div class="faq__list">
+      <div class="faq__item">
+        <div class="faq__question">Wat zijn de openingsuren?</div>
+        <div class="faq__answer">Wij zijn open van 07u30 tot 12u30 en van 13u30 tot 18u30. Neem contact op voor de actuele openingsuren op feestdagen.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">Kan ik ook online bestellen?</div>
+        <div class="faq__answer">Ja! Via onze webshop kunt u ons volledige assortiment online bestellen. Kijk op slagerijneirynckwebshop.be voor meer info.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">Vervorgen jullie ook traiteur?</div>
+        <div class="faq__answer">Absoluut. Wij bieden diverse traiteurformules: barbecues, eetfestijnen, recepties, frietmobiel en maatwerk voor kleine groepen. Vraag vrijblijvend een offerte aan.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">Voor welke groottes groepen kan ik een offerte aanvragen?</div>
+        <div class="faq__answer">Wij verzorgen events van kleine groepen tot grote feesten. Neem contact op met uw wensen en wij maken een op maat gemaakte offerte.</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__question">Waar is de slagerij gelegen?</div>
+        <div class="faq__answer">Ons adres is Egemsdorpsplein 5, 8740 Pittem (Egem). U vindt ons makkelijk via de kerk in Egem.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title">Contact</h2>
+    <div class="section__bar"></div>
+    <div class="contact__grid">
+      <div class="contact__info">
+        <div class="contact__item">
+          <div class="contact__icon">📍</div>
+          <div><div class="contact__label">Adres</div><div class="contact__value">Egemsdorpsplein 5<br>8740 Pittem</div></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon">📞</div>
+          <div><div class="contact__label">Telefoon</div><div class="contact__value"><a href="tel:+3251466228">051/46.62.28</a></div></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon">📱</div>
+          <div><div class="contact__label">GSM</div><div class="contact__value"><a href="tel:+32475765163">0475/76.51.63</a></div></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon">✉️</div>
+          <div><div class="contact__label">E-mail</div><div class="contact__value"><a href="mailto:info@slagerijneirynck.be">info@slagerijneirynck.be</a></div></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon">🕐</div>
+          <div><div class="contact__label">Openingsuren</div><div class="contact__value">07u30 – 12u30 / 13u30 – 18u30</div></div>
+        </div>
+      </div>
+      <div class="contact__cta">
+        <h3>Offerte aanvragen</h3>
+        <p>Geïnteresseerd in onze dienzen? Neem contact op voor een vrijblijvende offerte. Wij helpen u graag verder.</p>
+        <a href="mailto:info@slagerijneirynck.be" class="btn">Offerte aanvragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Slagerij Neirynck — Egemsdorpsplein 5, 8740 Pittem</p>
+    <p style="margin-top:0.5rem;">Website preview door <a href="https://lvsites.solutions">LVsites</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
